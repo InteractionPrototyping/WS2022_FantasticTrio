@@ -1,0 +1,31 @@
+{
+  "cwd": "/Users/gedra-pc/Desktop/WS2021 TUM/IPP/Practical course/Craftive",
+  "type": [
+    "cordova"
+  ],
+  "name": "Craftive",
+  "framework": "vue",
+  "template": "tabs",
+  "bundler": "vite",
+  "cssPreProcessor": false,
+  "theming": {
+    "customColor": true,
+    "color": "#007aff",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false,
+  "pkg": "io.framework7.myapp",
+  "cordova": {
+    "folder": "cordova",
+    "platforms": [
+      "ios"
+    ],
+    "plugins": [
+      "cordova-plugin-statusbar",
+      "cordova-plugin-keyboard",
+      "cordova-plugin-splashscreen"
+    ]
+  }
+}
