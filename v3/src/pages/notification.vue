@@ -1,5 +1,5 @@
 <template>
-  <f7-page name="catalog">
+  <f7-page name="notification">
     <f7-navbar title="Catalog"></f7-navbar>
     <f7-list>
       <f7-list-item

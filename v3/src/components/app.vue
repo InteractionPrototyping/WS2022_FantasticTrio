@@ -27,19 +27,28 @@
   <f7-views tabs class="safe-areas">
     <!-- Tabbar for switching views-tabs -->
     <f7-toolbar tabbar labels bottom>
-      <f7-link tab-link="#view-home" tab-link-active icon-ios="f7:house_fill" icon-aurora="f7:house_fill" icon-md="material:search" text="Home"></f7-link>
-      <f7-link tab-link="#view-catalog" icon-ios="f7:square_list_fill" icon-aurora="f7:square_list_fill" icon-md="material:view_list" text="Catalog"></f7-link>
-      <f7-link tab-link="#view-settings" icon-ios="f7:gear" icon-aurora="f7:gear" icon-md="material:settings" text="Settings"></f7-link>
+      <f7-link tab-link="#view-home" tab-link-active icon-ios="f7:house_fill" icon-aurora="f7:house_fill" icon-md="material:home" text="Home"></f7-link>
+      <f7-link tab-link="#view-notification" icon-ios="f7:bell_fill" icon-aurora="f7:square_list_fill" icon-md="material:notifications" text="Notification"></f7-link>
+      <f7-link tab-link="#view-settings" icon-ios="f7:person_fill" icon-aurora="f7:gear" icon-md="material:person" text="Profile"></f7-link>
     </f7-toolbar>
 
     <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
     <f7-view id="view-home" main tab tab-active url="/"></f7-view>
 
-    <!-- Catalog View -->
-    <f7-view id="view-catalog" name="catalog" tab url="/catalog/"></f7-view>
+    <!-- Notification View -->
+    <f7-view id="view-notification" name="notification" tab url="/notification/"></f7-view>
 
-    <!-- Settings View -->
+    <!-- Profile View -->
     <f7-view id="view-settings" name="settings" tab url="/settings/"></f7-view>
+
+    <!-- Add-request View -->
+    <f7-view id="view-add-request" name="add-request" tab url="/add-request/"></f7-view>
+
+    <!-- Suitable-helper View -->
+    <f7-view id="view-suitable-helper" name="suitable-helper" tab url="/suitable-helper/"></f7-view>
+
+    <!-- My-request View -->
+    <f7-view id="view-my-request" name="my-request" tab url="/my-request/"></f7-view>
 
   </f7-views>
 

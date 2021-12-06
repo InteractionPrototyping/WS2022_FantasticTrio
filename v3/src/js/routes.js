@@ -2,9 +2,14 @@
 import HomePage from '../pages/home.vue';
 import AboutPage from '../pages/about.vue';
 import FormPage from '../pages/form.vue';
-import CatalogPage from '../pages/catalog.vue';
+import NotificationPage from '../pages/notification.vue';
 import ProductPage from '../pages/product.vue';
 import SettingsPage from '../pages/settings.vue';
+
+// import all vue documents for new pages to this document
+import AddRequestPage from '../pages/add-request.vue';
+import SuitableHelperPage from '../pages/suitable-helper.vue';
+import MyRequestPage from '../pages/my-request.vue';
 
 import DynamicRoutePage from '../pages/dynamic-route.vue';
 import RequestAndLoad from '../pages/request-and-load.vue';
@@ -15,6 +20,21 @@ var routes = [
     path: '/',
     component: HomePage,
   },
+  // set route for add-request page
+  {
+    path: '/add-request/',
+    component: AddRequestPage,
+  },
+  // set route for suitable-helper page
+  {
+    path: '/suitable-helper/',
+    component: SuitableHelperPage,
+  },
+  // set route for my-request page
+  {
+    path: '/my-request/',
+    component: MyRequestPage,
+  },
   {
     path: '/about/',
     component: AboutPage,
@@ -24,8 +44,8 @@ var routes = [
     component: FormPage,
   },
   {
-    path: '/catalog/',
-    component: CatalogPage,
+    path: '/notification/',
+    component: NotificationPage,
   },
   {
     path: '/product/:id/',
