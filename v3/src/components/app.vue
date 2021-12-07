@@ -41,20 +41,11 @@
     <!-- Profile View -->
     <f7-view id="view-settings" name="settings" tab url="/settings/"></f7-view>
 
-    <!-- Add-request View -->
-    <f7-view id="view-add-request" name="add-request" tab url="/add-request/"></f7-view>
-
-    <!-- Suitable-helper View -->
-    <f7-view id="view-suitable-helper" name="suitable-helper" tab url="/suitable-helper/"></f7-view>
-
-    <!-- My-request View -->
-    <f7-view id="view-my-request" name="my-request" tab url="/my-request/"></f7-view>
-
   </f7-views>
 
 
     <!-- Popup -->
-    <f7-popup id="my-popup">
+    <f7-popup id="my-popup" swipe-to-close=true swipe-handler=".swipe-handler">
       <f7-view>
         <f7-page>
           <f7-navbar title="Popup">
@@ -64,6 +55,18 @@
           </f7-navbar>
           <f7-block>
             <p>Popup content goes here.</p>
+                <!-- <f7-block >
+                  <f7-button fill raised href="/add-request/" popup-close>Add a request</f7-button>
+                </f7-block>
+
+                <f7-block >
+                  <f7-button fill raised href="/my-request/" popup-close>View my requests </f7-button>
+                </f7-block> -->
+
+                <f7-list>
+                  <f7-list-item link="/add-request/" title="Add a request"></f7-list-item>
+                  <f7-list-item link="/my-request/" title="View my requests"></f7-list-item>
+                </f7-list>
           </f7-block>
         </f7-page>
       </f7-view>

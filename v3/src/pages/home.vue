@@ -31,11 +31,12 @@
     </f7-block>
 
     <f7-block >
-      <f7-button fill raised tab-link="#view-add-request">Request</f7-button>
+      <!-- <f7-button fill raised tab-link="#view-add-request">Request</f7-button> -->
+      <f7-button fill raised href="/choose-request-function/">Request</f7-button>
     </f7-block>
 
     <f7-block >
-      <f7-button fill raised >Explore</f7-button>
+      <f7-button fill raised >Explore </f7-button>
     </f7-block>
     
     <!-- Hide initial content from template, change display property from "none" to "block" to show it -->
