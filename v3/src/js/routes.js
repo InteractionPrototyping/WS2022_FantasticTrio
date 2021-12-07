@@ -5,6 +5,7 @@ import FormPage from '../pages/form.vue';
 import NotificationPage from '../pages/notification.vue';
 import ProductPage from '../pages/product.vue';
 import SettingsPage from '../pages/settings.vue';
+import ExplorePage from '../pages/explore.vue';
 
 // import all vue documents for new pages to this document
 import AddRequestPage from '../pages/add-request.vue';
@@ -59,6 +60,10 @@ var routes = [
   {
     path: '/dynamic-route/blog/:blogId/post/:postId/',
     component: DynamicRoutePage,
+  },
+  {
+    path: '/explore/',
+    component: ExplorePage,
   },
   {
     path: '/request-and-load/user/:userId/',

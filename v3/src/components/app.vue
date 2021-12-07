@@ -50,6 +50,8 @@
     <!-- My-request View -->
     <f7-view id="view-my-request" name="my-request" tab url="/my-request/"></f7-view>
 
+    <!-- Explore View -->
+    <f7-view id="view-explore" name="explore" tab url="/explore/"></f7-view>
   </f7-views>
 
 
@@ -114,7 +116,11 @@
       const f7params = {
         name: 'Craftive', // App name
         theme: 'auto', // Automatic theme detection
-
+        view:{
+          pushState:true,
+          history:true,
+          pushStateSeparator:"",
+        },
 
         id: 'io.framework7.myapp', // App bundle ID
         // App store
