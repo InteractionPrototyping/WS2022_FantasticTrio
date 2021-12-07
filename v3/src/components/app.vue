@@ -41,6 +41,17 @@
     <!-- Profile View -->
     <f7-view id="view-settings" name="settings" tab url="/settings/"></f7-view>
 
+    <!-- Add-request View -->
+    <f7-view id="view-add-request" name="add-request" tab url="/add-request/"></f7-view>
+
+    <!-- Suitable-helper View -->
+    <f7-view id="view-suitable-helper" name="suitable-helper" tab url="/suitable-helper/"></f7-view>
+
+    <!-- My-request View -->
+    <f7-view id="view-my-request" name="my-request" tab url="/my-request/"></f7-view>
+
+    <!-- Explore View -->
+    <f7-view id="view-explore" name="explore" tab url="/explore/"></f7-view>
   </f7-views>
 
 
@@ -117,7 +128,11 @@
       const f7params = {
         name: 'Craftive', // App name
         theme: 'auto', // Automatic theme detection
-
+        view:{
+          pushState:true,
+          history:true,
+          pushStateSeparator:"",
+        },
 
         id: 'io.framework7.myapp', // App bundle ID
         // App store
