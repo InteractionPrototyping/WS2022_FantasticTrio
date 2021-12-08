@@ -29,7 +29,7 @@
     </f7-block>
 
     <f7-block >
-      <f7-button fill raised  tab-link="#view-explore" data-transition="f7-cover">Explore</f7-button>
+      <f7-button fill raised  href="/explore/">Explore</f7-button>
     </f7-block>
     
     <!-- Hide initial content from template, change display property from "none" to "block" to show it -->

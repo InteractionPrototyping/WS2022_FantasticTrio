@@ -6,6 +6,7 @@ import NotificationPage from '../pages/notification.vue';
 import ProductPage from '../pages/product.vue';
 import SettingsPage from '../pages/settings.vue';
 import ExplorePage from '../pages/explore.vue';
+import ProjectPage from '../pages/project.vue'
 
 // import all vue documents for new pages to this document
 import AddRequestPage from '../pages/add-request.vue';
@@ -82,6 +83,10 @@ var routes = [
   {
     path: '/explore/',
     component: ExplorePage,
+  },
+  {
+    path: '/project/',
+    component: ProjectPage, 
   },
   {
     path: '/request-and-load/user/:userId/',

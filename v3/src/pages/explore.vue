@@ -1,17 +1,12 @@
 <template>
-  <f7-page name="explore" >
-    <f7-navbar >
-      <f7-nav-left>
-      <f7-link tab-link="#view-home" back="true" transition="f7-cover">
-        &lt Back
-      </f7-link>
-      </f7-nav-left>
+  <f7-page name="explore">
+    <f7-navbar  back-link="Back">
       <f7-searchbar placeholder="Tap keywords here!" :clear-button="true" :disable-button="false"></f7-searchbar>
       <f7-link icon-ios="f7:search"></f7-link>
     </f7-navbar>
     <f7-block>
     <f7-row>
-      <f7-col>
+      <f7-col link="#view-project" @click="f7router.navigate('/project/',{reloadCurrent: true,animate: true})">
           <img src="https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg" width="150"/>
           <p>
           The fixing work is awesome!!!
@@ -148,3 +143,11 @@ p{
   float: right;
 }
 </style>
+<script>
+  export default {
+    props: {
+      f7router: Object,
+      f7navbar: Object,
+    }
+  }
+</script>

@@ -52,6 +52,8 @@
 
     <!-- Explore View -->
     <f7-view id="view-explore" name="explore" tab url="/explore/"></f7-view>
+    <!-- Project View -->
+    <f7-view id="view-project" name="project" tab url="/project/"></f7-view>    
   </f7-views>
 
 
