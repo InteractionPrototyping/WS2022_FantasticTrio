@@ -6,83 +6,62 @@
         <f7-button fill href="/my-request/">My Request</f7-button>
       </f7-nav-right>
     </f7-navbar>
-
+    <!-- Template from List View component: Media List -->
     <f7-block-title style="text-align:center">Users you have asked the price</f7-block-title>
     <f7-list media-list>
       <f7-list-item        
         title="Verena Manz"
-        after="86378"
+        after="&#8982; 86378,Munich"
         subtitle="Car repair"
-        text="4.6(10)"
+        text="&#9733; 4.6(10)"
       >
         <template #media>
           <img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="80" />
-        </template>
-        <!-- place icon after post code -->
-        <template v-slot:after>
-          <f7-icon ios="f7:placemark_fill" aurora="f7:placemark" md="material:place_outline"></f7-icon>
-          <f7-icon ios="f7:star_fill" aurora="f7:star_fill" md="material:star"></f7-icon>
-
-          <!-- <f7-button fill>Ask for help</f7-button> -->
         </template>
       </f7-list-item>
     </f7-list>
 
     <f7-block-title style="text-align:center">Here are some nearby skilled helpers</f7-block-title>
-    <f7-list media-list>
+    <f7-list media-list style="height:100px">
       <f7-list-item        
         title="Verena Manz"
-        after="86378"
+        after="&#8982; 86378,Munich"
         subtitle="Car repair"
-        text="4.6(10)"
+        text="&#9733; 4.6(10)"
       >
+
         <template #media>
           <img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="80" />
         </template>
-        <!-- place icon after post code -->
-        <template v-slot:after>
-          <f7-icon ios="f7:placemark_fill" aurora="f7:placemark" md="material:place_outline"></f7-icon>
-          <f7-icon ios="f7:star_fill" aurora="f7:star_fill" md="material:star"></f7-icon>
+        <f7-button fill>Ask for help</f7-button>
 
-          <f7-button fill>Ask for help</f7-button>
-        </template>
       </f7-list-item>
       <f7-list-item
         title="Nils Bremer"
         
-        after="81929"
+        after="&#8982; 81929,Munich"
         subtitle="Car repair"
-        text="4.4(25)"
+        text="&#9733; 4.4(25)"
+        
       >
+      <f7-button fill>Ask for help</f7-button>
         <template #media>
           <img src="https://cdn.framework7.io/placeholder/people-160x160-2.jpg" width="80" />
         </template>
-        <!-- place icon after post code -->
-        <template v-slot:after>
-          <f7-icon ios="f7:placemark_fill" aurora="f7:placemark" md="material:place_outline"></f7-icon>
-          <f7-icon ios="f7:star_fill" aurora="f7:star_fill" md="material:star"></f7-icon>
-
-          <f7-button fill>Ask for help</f7-button>
-        </template>
       </f7-list-item>
+
       <f7-list-item
         title="Dietrich Rombach"
-        after="81511"
+        after="&#8982; 81511,Munich"
         subtitle="Car repair"
-        text="4.5(14)"
-        target="false"
+        text="&#9733; 4.5(14)"
       >
         <template #media>
           <img src="https://cdn.framework7.io/placeholder/people-160x160-3.jpg" width="80" />
         </template>
-        <!-- place icon after post code -->
-        <template v-slot:after>
-          <f7-icon ios="f7:placemark_fill" aurora="f7:placemark" md="material:place_outline"></f7-icon>
-          <f7-icon ios="f7:star_fill" aurora="f7:star_fill" md="material:star"></f7-icon>
-
-          <f7-button fill>Ask for help</f7-button>
-        </template>
+        <f7-button fill>Ask for help</f7-button>
       </f7-list-item>
+
     </f7-list>
   </f7-page>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <f7-page name="add-request" swipe-to-close @page:beforeremove="onPageBeforeRemove" @page:beforeout="onPageBeforeOut">
-    <f7-navbar title="Add Request" back-link="Back" ></f7-navbar>
+    <f7-navbar title="Add Request" back-link="Back"></f7-navbar>
     
     <!-- input field -->
     <f7-list no-hairlines-md>
@@ -11,38 +11,63 @@
         clear-button
       >
       </f7-list-input>
-    </f7-list>
 
-    <f7-list label="keyowrd">
-      <f7-block strong>
-        <f7-chip text="Example Chip" deleteable @click="deleteChip"></f7-chip>
-        <f7-chip text="Chris" media="C" media-bg-color="orange" text-color="black" deleteable @click="deleteChip"></f7-chip>
-        <f7-chip text="Jane Doe" deleteable @click="deleteChip">
-          <template #media>
-            <img src="https://cdn.framework7.io/placeholder/people-100x100-9.jpg"/>
-          </template>
-        </f7-chip>
-        <f7-chip text="One More Chip" deleteable @click="deleteChip"></f7-chip>
-        <f7-chip text="Jennifer" media-bg-color="pink" media="J" deleteable @click="deleteChip"></f7-chip>
-        <f7-chip text="Adam Smith" deleteable @click="deleteChip">
-          <template #media>
-            <img src="https://cdn.framework7.io/placeholder/people-100x100-7.jpg"/>
-          </template>
-        </f7-chip>
-      </f7-block>
-    </f7-list>
-    
-    <f7-list no-hairlines-md>
-
-
-      <f7-list-input
+      <!-- <f7-list-input
         label="Keywords"
         type="select"
         placeholder="Select the appropriate keywords"
         >
-        <option>Car repair</option>
-        <option>Wall paiting</option>
-      </f7-list-input>
+        <option>Auto,Mobiles</option>
+        <option>Betreuung,Pflege</option>
+        <option>Computer,Büroservice</option>
+        <option>Foto,Design,Internet</option>
+        <option>Geld,Steuern,Recht</option>
+        <option>Handwerk,Haus,Bau</option>
+        <option>Haushalt,Gartenarbeit</option>
+        <option>Lernen,Bildung</option>
+        <option>Partyservice,Event</option>
+        <option>Style,Wellness</option>
+        <option>Tierbetreuung</option>
+        <option>Transport,Umzüge</option>
+        <option>Sonstiges</option>
+      </f7-list-input> -->
+
+      <!-- use smart select component to choose keywords -->
+      <f7-list-item title="Keyword" smart-select :smart-select-params="{openIn: 'popup', searchbar: true, searchbarPlaceholder: 'Search keyword'}">
+      <select name="keyword">
+        <optgroup label="<img style='width:25px; height:25px;' src='../icon/car.svg'> Auto,Mobiles" >
+          <option value="Autoreparatur" selected>Autoreparatur</option>
+          <option value="Auto Tuning" >Auto Tuning</option>
+          <option value="Chauffeur">Chauffeur</option>
+          <option value="Fahrzeugbeschriftung">Fahrzeugbeschriftung</option>
+          <option value="Fahrzeugreinigung">Fahrzeugreinigung</option>
+          <option value="Sonstige Kfz-Service">Sonstige Kfz-Service</option>
+        </optgroup>
+        <optgroup label="<img style='width:25px; height:25px;' src='../icon/home.svg'> Haus,Aussenarbeiten ">
+          <option value="Abriss">Abriss</option>
+          <option value="Aussenkonstruktion">Aussenkonstruktion</option>
+          <option value="Baggerarbeiten">Baggerarbeiten</option>
+          <option value="Bautrockenlegung, Baut...">Bautrockenlegung, Baut...</option>
+          <option value="Dachdecker">Dachdecker</option>
+          <option value="Sonstige Aussenarbeit">Sonstige Aussenarbeit</option>
+
+        </optgroup>
+        <optgroup label="<img style='width:25px; height:25px;' src='../icon/painting.svg'>Haus,Innenarbeiten" >
+          <option value="Badsanierung">Badsanierung</option>
+          <option value="Bodenleger">Bodenleger</option>
+          <option value="Deckenarbeiten">Deckenarbeiten</option>
+          <option value="Entrümpelung">Entrümpelung</option>
+          <option value="Sonstige Aussenarbeit">Sonstige Innenarbeit</option>
+        </optgroup>
+        <optgroup label=" <img style='width:25px; height:25px;' src='../icon/gardening.svg'> Gardenarbeiten">
+          <option value="Baumfällung">Baumfällung</option>
+          <option value="Gärtner">Gärtner</option>
+          <option value="Gartenteich">Gartenteich</option>
+          <option value="Grabpflege">Grabpflege</option>
+          <option value="Sonstige Gartenarbeit">Sonstige Gartenarbeit</option>
+        </optgroup>
+      </select>
+    </f7-list-item>
 
       <f7-list-input
         label="Post code"
@@ -51,12 +76,12 @@
       >
       <!-- add my_location icon to automatically get locate information -->
       <template #content-end>
-        <f7-icon ios="f7:scope" aurora="f7:house" md="material:my_location"></f7-icon>
+        <f7-icon style="position:relative; right:16px" ios="f7:scope" aurora="f7:house" md="material:my_location"></f7-icon>
       </template>
       </f7-list-input>
 
       <f7-list-input
-        label="Range Picker"
+        label="Desired date"
         type="datepicker"
         placeholder="Confirme the time span for this request"
         readonly
@@ -79,7 +104,7 @@
         placeholder="Click here to upload photos..."
       >
       <template #content-end>
-        <f7-icon ios="f7:square_arrow_up" aurora="f7:house" md="material:upload"></f7-icon>
+        <f7-icon style="position:relative; right:16px" ios="f7:square_arrow_up" aurora="f7:house" md="material:upload"></f7-icon>
       </template>
       </f7-list-input>
 

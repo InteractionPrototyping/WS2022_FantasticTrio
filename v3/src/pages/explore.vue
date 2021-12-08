@@ -1,8 +1,8 @@
 <template>
-  <f7-page name="explore">
+  <f7-page name="explore" >
     <f7-navbar >
       <f7-nav-left>
-      <f7-link tab-link="#view-home" back="true">
+      <f7-link tab-link="#view-home" back="true" transition="f7-cover">
         &lt Back
       </f7-link>
       </f7-nav-left>
