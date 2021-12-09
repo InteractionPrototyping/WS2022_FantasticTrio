@@ -6,8 +6,9 @@ import NotificationPage from '../pages/notification.vue';
 import ProductPage from '../pages/product.vue';
 import SettingsPage from '../pages/settings.vue';
 import ExplorePage from '../pages/explore.vue';
-import ProjectPage from '../pages/project.vue'
-
+import ProjectPage from '../pages/project.vue';
+import CommentPage from '../pages/comment.vue';
+import InterestedHelper from '../pages/interested-helper.vue';
 // import all vue documents for new pages to this document
 import AddRequestPage from '../pages/add-request.vue';
 import SuitableHelperPage from '../pages/suitable-helper.vue';
@@ -87,6 +88,14 @@ var routes = [
   {
     path: '/project/',
     component: ProjectPage, 
+  },
+  {
+    path: '/comment/',
+    component: CommentPage, 
+  },
+  {
+    path: '/interested-helper/',
+    component: InterestedHelper, 
   },
   {
     path: '/request-and-load/user/:userId/',

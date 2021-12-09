@@ -53,7 +53,11 @@
     <!-- Explore View -->
     <f7-view id="view-explore" name="explore" tab url="/explore/"></f7-view>
     <!-- Project View -->
-    <f7-view id="view-project" name="project" tab url="/project/"></f7-view>    
+    <f7-view id="view-project" name="project" tab url="/project/"></f7-view>
+    <!-- Comment View -->
+    <f7-view id="view-comment" name="comment" tab url="/comment/"></f7-view>
+    <!-- Interested-Helper View -->
+    <f7-view id="view-interested-helper" name="interested-helper" tab url="/interested-helper/"></f7-view>        
   </f7-views>
 
 

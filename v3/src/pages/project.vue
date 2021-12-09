@@ -32,21 +32,21 @@
     <f7-block>
       <h3>Last comment</h3>
       <div class="comment_area">
-        <f7-icon f7="person-fill" size=40px class="person"></f7-icon>
-        <span class="user">Jessi</span>
+        <img src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="28" class="person" />
+        <span class="user">&nbsp;Jessi</span>
         <f7-icon f7="suit_heart" size=20px class="black_heart"></f7-icon>
         <br>
-        <span class="inhalt">I like the article very much,  that help me a lot.</span>
+        <span class="inhalt">&nbsp;I like the article very much,  that help me a &nbsp;lot.</span>
         <br>
         <br>
-        <f7-button fill raised  href="/explore/">Show all comments</f7-button>
+        <f7-button fill raised  href="/comment/">Show all comments</f7-button>
         <f7-list>
         <f7-list-input
          type="text"
          placeholder="leave your comment">
          </f7-list-input>
         </f7-list>
-        <f7-button fill raised  href="/explore/">Submit</f7-button>
+        <f7-button fill raised>Submit</f7-button>
       </div>
     </f7-block>
   </f7-page>

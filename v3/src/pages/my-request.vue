@@ -13,7 +13,7 @@
         <template #media>
           <img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="80" />
         </template>
-        <f7-button fill text="Interested(3)" style="margin-bottom:5px">
+        <f7-button fill text="Interested(3)" style="margin-bottom:5px" href='/interested-helper/'>
           <f7-badge color="red"></f7-badge>
         </f7-button>
         <f7-button fill>Requested(2)</f7-button>
