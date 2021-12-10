@@ -9,6 +9,7 @@ import ExplorePage from '../pages/explore.vue';
 import ProjectPage from '../pages/project.vue';
 import CommentPage from '../pages/comment.vue';
 import InterestedHelper from '../pages/interested-helper.vue';
+import Chat from '../pages/chat.vue';
 // import all vue documents for new pages to this document
 import AddRequestPage from '../pages/add-request.vue';
 import SuitableHelperPage from '../pages/suitable-helper.vue';
@@ -96,6 +97,10 @@ var routes = [
   {
     path: '/interested-helper/',
     component: InterestedHelper, 
+  },
+  {
+    path: '/chat/',
+    component: Chat, 
   },
   {
     path: '/request-and-load/user/:userId/',

@@ -57,7 +57,9 @@
     <!-- Comment View -->
     <f7-view id="view-comment" name="comment" tab url="/comment/"></f7-view>
     <!-- Interested-Helper View -->
-    <f7-view id="view-interested-helper" name="interested-helper" tab url="/interested-helper/"></f7-view>        
+    <f7-view id="view-interested-helper" name="interested-helper" tab url="/interested-helper/"></f7-view> 
+    <!-- Chat View -->     
+    <f7-view id="view-chat" name="chat" tab url="/chat/"></f7-view>      
   </f7-views>
 
 

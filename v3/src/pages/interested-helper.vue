@@ -24,7 +24,7 @@
         <template #media>
           <img src="https://images.pexels.com/photos/2691608/pexels-photo-2691608.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
         </template>
-        <f7-button fill style="margin-bottom:5px">
+        <f7-button fill style="margin-bottom:5px" href="/chat/">
           <f7-icon f7="chat_bubble" size=20px class="chat"></f7-icon>
           Chat
         </f7-button>

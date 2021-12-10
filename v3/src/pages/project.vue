@@ -1,6 +1,10 @@
 <template>
   <f7-page name="project">
-    <f7-navbar title="Project" back-link="Back">
+      <f7-navbar>
+      <f7-navbar-left>
+      <a class="link" @click="f7router.navigate('/explore/',{reloadCurrent: true,animate: true})"><i class="icon icon-back"> </i><span class="">Back <!----></span></a>
+      </f7-navbar-left>
+      <span class="title" style="position:absolute;left:160px">Project</span>
     </f7-navbar>
     <f7-block style="text-align: center">
     <f7-swiper>
@@ -40,13 +44,51 @@
         <br>
         <br>
         <f7-button fill raised  href="/comment/">Show all comments</f7-button>
-        <f7-list>
-        <f7-list-input
-         type="text"
-         placeholder="leave your comment">
-         </f7-list-input>
-        </f7-list>
-        <f7-button fill raised>Submit</f7-button>
+        <br>
+        <br>
+<f7-messagebar
+    ref="messagebar"
+    v-model:value="messageText"
+    placeholder="Leave your comment"
+    :attachments-visible="attachmentsVisible"
+    :sheet-visible="sheetVisible"
+    class="bar"
+    style="position:fixed; bottom:50px"
+  >
+    <template #inner-start>
+      <f7-link
+        icon-ios="f7:camera_fill"
+        icon-aurora="f7:camera_fill"
+        icon-md="material:camera_alt"
+        @click="sheetVisible = !sheetVisible"
+      />
+    </template>
+    <template #inner-end>
+      <f7-link
+        icon-ios="f7:arrow_up_circle_fill"
+        icon-aurora="f7:arrow_up_circle_fill"
+        icon-md="material:send"
+        @click="sendMessage"
+      />
+    </template>
+    <f7-messagebar-attachments>
+      <f7-messagebar-attachment
+        v-for="(image, index) in attachments"
+        :key="index"
+        :image="image"
+        @attachment:delete="deleteAttachment(image)"
+      ></f7-messagebar-attachment>
+    </f7-messagebar-attachments>
+    <f7-messagebar-sheet>
+      <f7-messagebar-sheet-image
+        v-for="(image, index) in images"
+        :key="index"
+        :image="image"
+        :checked="attachments.indexOf(image) >= 0"
+        @change="handleAttachment"
+      ></f7-messagebar-sheet-image>
+    </f7-messagebar-sheet>
+  </f7-messagebar>
       </div>
     </f7-block>
   </f7-page>
@@ -67,13 +109,13 @@
   margin-top: 5px;
 }
 
+
 </style>
 
 <script>
   export default {
     props: {
       f7router: Object,
-      f7navbar: Object,
     }
   }
 </script>
