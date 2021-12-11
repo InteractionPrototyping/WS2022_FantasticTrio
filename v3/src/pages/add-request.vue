@@ -115,7 +115,7 @@
     <f7-block >
       <!-- <f7-button fill raised href="/suitable-helper/" >Submit</f7-button> -->
       <!-- it also shows toast when click submit button -->
-      <f7-button fill @click="showToast" href="/suitable-helper/">Submit</f7-button>
+      <f7-button fill @click="showToast" href="/my-request/">Submit</f7-button>
     </f7-block>
   </f7-page>
 </template>
@@ -135,7 +135,7 @@ export default {
       // Create toast
       if (!self.toast) {
         self.toast = f7.toast.create({
-          text: "Request has been posted, click on the button in the upper right corner to view your request :)",
+          text: "Request has been posted, click first button to ask for help",
           position: 'center',
           closeTimeout: 3000,
         });

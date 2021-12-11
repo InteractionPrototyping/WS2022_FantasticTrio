@@ -24,12 +24,12 @@
 
     <f7-block >
       <!-- <f7-button fill raised tab-link="#view-add-request">Request</f7-button> -->
-      <f7-button fill raised  href="/choose-request-function/">Request</f7-button>
+      <f7-button fill  href="/choose-request-function/">Request</f7-button>
         <!-- <f7-button fill raised @click="openVerticalButtons">Request</f7-button> -->
     </f7-block>
 
     <f7-block >
-      <f7-button fill raised  href="/explore/">Explore</f7-button>
+      <f7-button fill  href="/explore/">Explore</f7-button>
     </f7-block>
     
     <!-- Hide initial content from template, change display property from "none" to "block" to show it -->
@@ -44,10 +44,10 @@
       <f7-block strong>
         <f7-row>
           <f7-col width="50">
-            <f7-button fill raised popup-open="#my-popup">Popup</f7-button>
+            <f7-button fill popup-open="#my-popup">Popup</f7-button>
           </f7-col>
           <f7-col width="50">
-            <f7-button fill raised login-screen-open="#my-login-screen">Login Screen</f7-button>
+            <f7-button fill login-screen-open="#my-login-screen">Login Screen</f7-button>
           </f7-col>
         </f7-row>
       </f7-block>
@@ -56,10 +56,10 @@
       <f7-block strong>
         <f7-row>
           <f7-col width="50">
-            <f7-button class="request" fill raised panel-open="left">Left Panel</f7-button>
+            <f7-button class="request" fill panel-open="left">Left Panel</f7-button>
           </f7-col>
           <f7-col width="50">
-            <f7-button fill raised panel-open="right">Right Panel</f7-button>
+            <f7-button fill panel-open="right">Right Panel</f7-button>
           </f7-col>
         </f7-row>
       </f7-block>
