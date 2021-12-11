@@ -35,7 +35,7 @@
       <!-- use smart select component to choose keywords -->
       <f7-list-item title="Keyword" smart-select :smart-select-params="{openIn: 'popup', searchbar: true, searchbarPlaceholder: 'Search keyword'}">
       <select name="keyword">
-        <optgroup label="<img style='width:25px; height:25px;' src='../icon/car.svg'> Auto,Mobiles" >
+        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/car.svg'> Auto,Mobiles" >
           <option value="Autoreparatur" selected>Autoreparatur</option>
           <option value="Auto Tuning" >Auto Tuning</option>
           <option value="Chauffeur">Chauffeur</option>
@@ -43,7 +43,7 @@
           <option value="Fahrzeugreinigung">Fahrzeugreinigung</option>
           <option value="Sonstige Kfz-Service">Sonstige Kfz-Service</option>
         </optgroup>
-        <optgroup label="<img style='width:25px; height:25px;' src='../icon/home.svg'> Haus,Aussenarbeiten ">
+        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/home.svg'> Haus,Aussenarbeiten ">
           <option value="Abriss">Abriss</option>
           <option value="Aussenkonstruktion">Aussenkonstruktion</option>
           <option value="Baggerarbeiten">Baggerarbeiten</option>
@@ -52,14 +52,14 @@
           <option value="Sonstige Aussenarbeit">Sonstige Aussenarbeit</option>
 
         </optgroup>
-        <optgroup label="<img style='width:25px; height:25px;' src='../icon/painting.svg'>Haus,Innenarbeiten" >
+        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/painting.svg'>Haus,Innenarbeiten" >
           <option value="Badsanierung">Badsanierung</option>
           <option value="Bodenleger">Bodenleger</option>
           <option value="Deckenarbeiten">Deckenarbeiten</option>
           <option value="Entrümpelung">Entrümpelung</option>
           <option value="Sonstige Aussenarbeit">Sonstige Innenarbeit</option>
         </optgroup>
-        <optgroup label=" <img style='width:25px; height:25px;' src='../icon/gardening.svg'> Gardenarbeiten">
+        <optgroup label=" <img style='width:25px; height:25px;' src='../img/add_request_keyword/gardening.svg'> Gardenarbeiten">
           <option value="Baumfällung">Baumfällung</option>
           <option value="Gärtner">Gärtner</option>
           <option value="Gartenteich">Gartenteich</option>
@@ -135,7 +135,7 @@ export default {
       // Create toast
       if (!self.toast) {
         self.toast = f7.toast.create({
-          text: "Request has been posted, click first button to ask for help",
+          text: "Request has been posted, try to click first button to find suitable helpers ",
           position: 'center',
           closeTimeout: 3000,
         });

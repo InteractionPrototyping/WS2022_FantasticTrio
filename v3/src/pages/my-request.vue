@@ -1,5 +1,5 @@
 <template>
-  <f7-page name="my-request">
+  <f7-page name="my_request">
     <f7-navbar title="My Request" back-link="Back" back-link-url="/suitable-helper/"></f7-navbar>
 
     <!-- Template from List View component: Media List -->
@@ -14,7 +14,7 @@
         >
         <f7-chip outline color="#007aff" text="#Car repair"></f7-chip>
           <template #media>
-            <img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="80" />
+            <img src="../img/request_img/Car_repair.png" width="80" />
           </template>
         </f7-list-item>
       </f7-list>
@@ -22,17 +22,17 @@
       <f7-block class="listOfButton myRequest">
         <p class="buttonOfIcon requested">
           <a href='/suitable-helper/'>
-            <img class ="icon requested" src='../icon/my-requests/requested_white.svg' >
+            <img class ="iconOfRequest requested" src='../img/my_requests/requested_white.svg' >
           </a>
         </p>
         <p class="buttonOfIcon interested">
           <a href='/interested-helper/'>
-            <img class ="icon interested" src='../icon/my-requests/interested_white.svg' >
+            <img class ="iconOfRequest interested" src='../img/my_requests/interested_white.svg' >
           </a>
         </p>
         <p class="buttonOfIcon paid">
-          <a href='/suitable-helper/'>
-            <img class ="icon paid" src='../icon/my-requests/paid_white.svg' >
+          <a>
+            <img class ="iconOfRequest paid" src='../img/my_requests/paid_white.svg' >
           </a>
         </p>
       </f7-block>
@@ -40,13 +40,13 @@
       <!-- 2nd request -->
       <f7-list class="myRequest" media-list style="width:85%;display: inline-block; position:relative;">
         <f7-list-item
-          title="Change Brake"
+          title="Assemble furniture"
           after="To 31/12"
           text="&#8982; 81548,Munich"
         >
-        <f7-chip outline color="#007aff" text="#Car repair"></f7-chip>
+        <f7-chip outline color="#007aff" text="#Assemble furniture"></f7-chip>
           <template #media>
-            <img src="https://cdn.framework7.io/placeholder/people-160x160-2.jpg" width="80" />
+            <img src="../img/request_img/Assemble_furniture.jpeg" width="80" height="80" />
           </template>
         </f7-list-item>
       </f7-list>
@@ -54,17 +54,17 @@
       <f7-block class="listOfButton myRequest" >
         <p class="buttonOfIcon requested finished">
           <a href='/suitable-helper/'>
-            <img class ="icon requested" src='../icon/my-requests/requested.svg' >
+            <img class ="iconOfRequest requested" src='../img/my_requests/requested.svg' >
           </a>
         </p>
         <p class="buttonOfIcon interested">
           <a href='/interested-helper/'>
-            <img class ="icon interested" src='../icon/my-requests/interested_white.svg' >
+            <img class ="iconOfRequest interested" src='../img/my_requests/interested_white.svg' >
           </a>
         </p>
         <p class="buttonOfIcon paid">
-          <a href='/suitable-helper/'>
-            <img class ="icon paid" src='../icon/my-requests/paid_white.svg' >
+          <a>
+            <img class ="iconOfRequest paid" src='../img/my_requests/paid_white.svg' >
           </a>
         </p>
       </f7-block>
@@ -72,13 +72,13 @@
       <!-- 3rd request -->
       <f7-list class="myRequest" media-list style="width:85%;display: inline-block">
         <f7-list-item
-          title="Change Brake"
+          title="Paint the wall"
           after="To 31/12"
           text="&#8982; 81548,Munich"
         >
-        <f7-chip outline color="#007aff" text="#Car repair"></f7-chip>
+        <f7-chip outline color="#007aff" text="#Paint wall"></f7-chip>
           <template #media>
-            <img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="80" />
+            <img src="../img/request_img/Paint_wall.jpeg" width="80" />
           </template>
         </f7-list-item>
       </f7-list>
@@ -86,17 +86,17 @@
       <f7-block class="listOfButton myRequest">
         <p class="buttonOfIcon requested finished">
           <a href='/suitable-helper/'>
-            <img class ="icon requested" src='../icon/my-requests/requested.svg' >
+            <img class ="iconOfRequest requested" src='../img/my_requests/requested.svg' >
           </a>
         </p>
         <p class="buttonOfIcon interested finished">
           <a href='/interested-helper/'>
-            <img class ="icon interested" src='../icon/my-requests/interested.svg' >
+            <img class ="iconOfRequest interested" src='../img/my_requests/interested.svg' >
           </a>
         </p>
         <p class="buttonOfIcon paid">
-          <a href='/suitable-helper/'>
-            <img class ="icon paid" src='../icon/my-requests/paid_white.svg' >
+          <a>
+            <img class ="iconOfRequest paid" src='../img/my_requests/paid_white.svg' >
           </a>
         </p>
       </f7-block>
@@ -122,18 +122,18 @@
         <!-- icon coloum for 3 functions and status -->
         <f7-block class="listOfButton myRequest" >
           <p class="buttonOfIcon requested finished">
-            <a href='/suitable-helper/'>
-              <img class ="icon requested" src='../icon/my-requests/requested.svg' >
+            <a>
+              <img class ="iconOfRequest requested" src='../img/my_requests/requested.svg' >
             </a>
           </p>
           <p class="buttonOfIcon interested finished">
-            <a href='/interested-helper/'>
-              <img class ="icon interested" src='../icon/my-requests/interested.svg' >
+            <a>
+              <img class ="iconOfRequest interested" src='../img/my_requests/interested.svg' >
             </a>
           </p>
           <p class="buttonOfIcon paid finished">
-            <a href='/suitable-helper/'>
-              <img class ="icon paid" src='../icon/my-requests/paid.svg' >
+            <a>
+              <img class ="iconOfRequest paid" src='../img/my_requests/paid.svg' >
             </a>
           </p>
         </f7-block>
@@ -150,7 +150,7 @@
     height:33px;
     text-align:center;
   }
-  .icon {
+  .iconOfRequest {
     width:25px;
     height:25px;
     padding:4px;

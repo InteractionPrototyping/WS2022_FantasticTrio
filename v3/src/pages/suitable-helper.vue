@@ -8,7 +8,7 @@
     </f7-navbar>
     <!-- Template from List View component: Media List -->
     <f7-block-title style="text-align:center">Users you have asked the price</f7-block-title>
-    <f7-list media-list>
+    <f7-list media-list style="filter：gray; -moz-opacity:.3;opacity:0.3;">
       <f7-list-item        
         title="Verena Manz"
         after="&#9733; 4.6(10)"
