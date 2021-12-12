@@ -6,7 +6,7 @@
       
     <f7-block-title style="text-align:center">Check your request status here</f7-block-title>
       <!-- 1st request -->
-      <f7-list class="myRequest" media-list style="width:85%;display: inline-block">
+      <f7-list class="myRequest" media-list style="width:90%;display: inline-block">
         <f7-list-item
           title="Change Brake"
           after="To 31/12"
@@ -38,7 +38,7 @@
       </f7-block>
 
       <!-- 2nd request -->
-      <f7-list class="myRequest" media-list style="width:85%;display: inline-block; position:relative;">
+      <f7-list class="myRequest" media-list style="width:90%;display: inline-block; position:relative;">
         <f7-list-item
           title="Assemble furniture"
           after="To 31/12"
@@ -70,7 +70,7 @@
       </f7-block>
 
       <!-- 3rd request -->
-      <f7-list class="myRequest" media-list style="width:85%;display: inline-block">
+      <f7-list class="myRequest" media-list style="width:90%;display: inline-block">
         <f7-list-item
           title="Paint the wall"
           after="To 31/12"
@@ -78,7 +78,7 @@
         >
         <f7-chip outline color="#007aff" text="#Paint wall"></f7-chip>
           <template #media>
-            <img src="../img/request_img/Paint_wall.jpeg" width="80" />
+            <img src="../img/request_img/Paint_wall.jpeg" width="80" height="80" />
           </template>
         </f7-list-item>
       </f7-list>
@@ -107,7 +107,7 @@
       </f7-block-title>
       <!-- make list to be gray -->
       <f7-block style="filter：gray; -moz-opacity:.3;opacity:0.3;paddinng;0px">
-        <f7-list class="myRequest" media-list style="width:85%;display: inline-block; position:relative;">
+        <f7-list class="myRequest" media-list style="width:90%;display: inline-block; position:relative;">
           <f7-list-item
             title="Change Brake"
             after="To 31/12"
@@ -156,7 +156,7 @@
     padding:4px;
   }
   .listOfButton {
-    width:15%;
+    width:10%;
     margin:0;
     display:inline-block;
     padding:0px;

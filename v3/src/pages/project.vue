@@ -99,7 +99,6 @@
       </f7-list>
       <f7-button
         fill
-        raised
         href="/comment/"
         style="position: relative; bottom: 50px"
         >Show all comments</f7-button

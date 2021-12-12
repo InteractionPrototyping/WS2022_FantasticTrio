@@ -32,7 +32,7 @@
         <template #media>
           <img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="80" />
         </template>
-        <f7-button fill>Ask for help</f7-button>
+        <f7-button fill style="display:inline-block;position:absolute;right:15px">Ask for help</f7-button>
 
       </f7-list-item>
       <f7-list-item
@@ -43,7 +43,7 @@
         
       >
       <f7-chip outline color="#007aff" text="#Car repair"></f7-chip>
-      <f7-button fill>Ask for help</f7-button>
+      <f7-button fill style="display:inline-block;position:absolute;right:15px">Ask for help</f7-button>
         <template #media>
           <img src="https://cdn.framework7.io/placeholder/people-160x160-2.jpg" width="80" />
         </template>
@@ -58,7 +58,7 @@
         <template #media>
           <img src="https://cdn.framework7.io/placeholder/people-160x160-3.jpg" width="80" />
         </template>
-        <f7-button fill>Ask for help</f7-button>
+        <f7-button fill style="display:inline-block;position:absolute;right:15px">Ask for help</f7-button>
       </f7-list-item>
 
     </f7-list>

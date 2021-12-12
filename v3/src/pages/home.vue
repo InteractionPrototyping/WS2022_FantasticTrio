@@ -1,22 +1,10 @@
 <template>
   <f7-page name="home">
-    <!-- Top Navbar -->
-    <!-- <f7-navbar large :sliding="false">
-      <f7-nav-left>
-        <f7-link icon-ios="f7:menu" icon-aurora="f7:menu" icon-md="material:menu" panel-open="left"></f7-link>
-      </f7-nav-left>
-      <f7-nav-title sliding>Craftive</f7-nav-title>
-      <f7-nav-right>
-        <f7-link icon-ios="f7:menu" icon-aurora="f7:menu" icon-md="material:menu" panel-open="right"></f7-link>
-      </f7-nav-right>
-      <f7-nav-title-large>Craftive</f7-nav-title-large>
-    </f7-navbar> -->
-
-    <f7-navbar title="Craftive"></f7-navbar><br>
-
+    <f7-navbar class="home_navbar" title="Craftive"></f7-navbar><br>
+    <img id="bg_img" src="../img/request_img/Background_img.jpeg">
 
     <!-- Page content-->
-    <f7-block >
+    <f7-block>
       <!-- description of this app -->
       <h1 style="text-align: center">Need a handyman or help with a project?</h1>
       <h2 style="text-align: center">Post your request or get inspired by other users' projects in the Explore function!</h2>
@@ -24,13 +12,21 @@
 
     <f7-block >
       <!-- <f7-button fill raised tab-link="#view-add-request">Request</f7-button> -->
-      <f7-button fill  href="/choose-request-function/">Request</f7-button>
+      <f7-button fill raised popover-open=".popover-menu">Request</f7-button>
         <!-- <f7-button fill raised @click="openVerticalButtons">Request</f7-button> -->
     </f7-block>
 
     <f7-block >
-      <f7-button fill  href="/explore/">Explore</f7-button>
+      <f7-button fill raised href="/explore/">Explore</f7-button>
     </f7-block>
+
+    <f7-popover class="popover-menu">
+      <!-- <f7-block-title style="text-align:center">Choose one function</f7-block-title> -->
+      <f7-list>
+        <f7-list-button bold href="/add-request/" popover-close title="Add Request"></f7-list-button>
+        <f7-list-button bold href="/my-request/" popover-close title="View my Request"></f7-list-button>
+      </f7-list>
+    </f7-popover>
     
     <!-- Hide initial content from template, change display property from "none" to "block" to show it -->
     <f7-block style="display:none">
@@ -84,6 +80,19 @@
 </template>
 
 <style scoped>
+  /* .home_navbar {
+    opacity:0.3;
+    filter:alpha(opacity=30);
+  } */
+  #bg_img {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity:0.25;
+    filter:alpha(opacity=25);
+  }
   .button {
     height: 80px;
     font-size: 30px;
