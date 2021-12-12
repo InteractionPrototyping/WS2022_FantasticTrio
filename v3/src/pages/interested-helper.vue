@@ -6,7 +6,7 @@
     <f7-list media-list>
       <f7-list-item
         title="Jack.M"
-        after="10/12"
+        after="10/12/2021"
         text="&#8982; 81548,Munich"
         style="margin-bottom: 20px"
       >
@@ -38,7 +38,7 @@
           Call
         </f7-button>
       </f7-list-item>
-      <f7-list-item title="Lisa" after="05/12" text="&#8982; 81550,Munich">
+      <f7-list-item title="Lisa" after="05/12/2021" text="&#8982; 81550,Munich">
         <f7-row>
           <f7-col>
             <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>

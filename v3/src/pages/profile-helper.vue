@@ -5,14 +5,25 @@
   <!-- Template from List View component: Media List -->
     <f7-list media-list>
       <f7-list-item        
-        title="Verena Manz &#9792;"
-        subtitle="&#8982; 86378, Munich"
-        text="&#9733;&#9733;&#9733;&#9733;&#9734;"       
+        title="Alice M. &#9792;"
+        subtitle="&#8982; 86378, Munich" 
+        style="margin-bottom: 20px"     
       >
+      <f7-button fill>
+      <f7-icon f7="star_fill" size="15px" class="star"></f7-icon>
+      <f7-icon f7="star_fill" size="15px" class="star"></f7-icon>
+      <f7-icon f7="star_fill" size="15px" class="star"></f7-icon>
+      <f7-icon f7="star_fill" size="15px" class="star"></f7-icon>
+      <f7-icon f7="star_lefthalf_fill" size="15px" class="star"></f7-icon>
+      <span>&nbsp;4.6/5</span>
+      </f7-button>
+
       <f7-button fill raised href="/review/">Show reviews</f7-button> 
-        <template #media>
-          <img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="80" />
-        </template>
+         <template #media>
+            <img
+              src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              width="80"/>
+          </template>
         <!-- price button -->
         <!-- <f7-button fill raised href="/suitable-helper/" >Ask for price</f7-button> -->
         <!-- it also shows toast when click price button -->
