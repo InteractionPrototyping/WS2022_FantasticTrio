@@ -67,6 +67,7 @@
       </div>
       <f7-list media-list style="height: 100px">
         <f7-list-item title="Alice M." text="Expert of car repair">
+          <br>
         <f7-button fill raised href="/profile-helper/">SHOW USER PROFILE</f7-button>        
           <template #media>
             <img

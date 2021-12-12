@@ -9,27 +9,20 @@
         subtitle="&#8982; 86378, Munich" 
         style="margin-bottom: 20px"     
       >
-      <f7-button fill>
-      <f7-icon f7="star_fill" size="15px" class="star"></f7-icon>
-      <f7-icon f7="star_fill" size="15px" class="star"></f7-icon>
-      <f7-icon f7="star_fill" size="15px" class="star"></f7-icon>
-      <f7-icon f7="star_fill" size="15px" class="star"></f7-icon>
-      <f7-icon f7="star_lefthalf_fill" size="15px" class="star"></f7-icon>
+      <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
+      <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
+      <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
+      <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
+      <f7-icon f7="star_lefthalf_fill" size="20px" class="star"></f7-icon>
       <span>&nbsp;4.6/5</span>
-      </f7-button>
-
       <f7-button fill raised href="/review/">Show reviews</f7-button> 
+      <br>
+      <!--Price button-->
+      <f7-button fill raised href="/suitable-helper/">Ask for price</f7-button>
+      
          <template #media>
-            <img
-              src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              width="80"/>
+            <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
           </template>
-        <!-- price button -->
-        <!-- <f7-button fill raised href="/suitable-helper/" >Ask for price</f7-button> -->
-        <!-- it also shows toast when click price button -->
-        <f7-block>
-        <f7-button fill @click="showToast" href="/suitable-helper/">Ask for price</f7-button>
-        </f7-block>
       </f7-list-item>
     </f7-list>
 
@@ -44,11 +37,9 @@
         subtitle="Gardening"
         text="I am good at gardening as well." 
       >  
-        <!-- show more button -->
-        <f7-block >
-        <f7-button fill raised href="/profile-gallery/">Show more</f7-button>
-        <!-- alternative possibility instead of button?: link="#" href="/profile-gallery/" -->
-       </f7-block>
+      <!-- show more button -->
+      <br>
+      <f7-button fill raised href="/profile-gallery/">Show more</f7-button>
       </f7-list-item>
     </f7-list>
 
@@ -57,10 +48,9 @@
         title="DESCRIPTION"
         text="Hello, I´m Verena. I am 34 years old and a qualified car mechanic."       
       >
-        <!-- show more button -->
-        <f7-block >
-        <f7-button fill raised  href="/profile-gallery/">Show more</f7-button>
-       </f7-block>
+      <!-- show more button -->
+      <br>
+      <f7-button fill raised href="/profile-gallery/">Show more</f7-button>
       </f7-list-item>
     </f7-list>
 
@@ -68,7 +58,7 @@
       <f7-list-item      
         title="PROFILE GALLERY"      
       >
-      <f7-block>
+    <f7-block>
         <f7-row>
       <f7-col link="#view-project" @click="f7router.navigate('/project/',{reloadCurrent: true,animate: true})">
           <img src="https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg" width="150"/>
@@ -93,11 +83,10 @@
           <f7-icon f7="suit_heart_fill" size=20px class="black_heart"></f7-icon>
       </f7-col>
     </f7-row>
+    <!-- show more button -->
+      <br>
+      <f7-button fill raised href="/profile-gallery/">Show more</f7-button>
       </f7-block> 
-        <!-- show more button -->
-        <f7-block >
-        <f7-button fill raised  href="/profile-gallery/">Show more</f7-button>
-       </f7-block>
       </f7-list-item>
     </f7-list>
 

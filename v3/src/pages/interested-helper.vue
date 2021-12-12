@@ -5,7 +5,7 @@
     <!-- Helper's information -->
     <f7-list media-list>
       <f7-list-item
-        title="Jack.M"
+        title="Jack Miller"
         after="10/12/2021"
         text="&#8982; 81548,Munich"
         style="margin-bottom: 20px"
@@ -20,7 +20,8 @@
             <span>&nbsp;4.6/5</span>
           </f7-col>
           <f7-col>
-            <f7-button fill>10&#8364;</f7-button>
+          <!--by clicking the button pop-over-menu will be opened-->
+            <f7-button fill raised popover-open=".popover-menu">10&#8364;</f7-button>
           </f7-col>
         </f7-row>
         <template #media>
@@ -29,6 +30,18 @@
             width="80"
           />
         </template>
+
+        <!--Pop-over menu-->
+        <f7-popover class="popover-menu">
+          <!-- <f7-block-title style="text-align:center">Choose one function</f7-block-title> -->
+          <f7-list>
+            <f7-list-button bold popover-close title="Credit or Debit Card"></f7-list-button>
+            <f7-list-button bold popover-close title="Paypal"></f7-list-button>
+            <f7-list-button bold popover-close title="Cash"></f7-list-button>
+            <f7-list-button bold popover-close title="Klarna (Bank Transfer)"></f7-list-button>
+          </f7-list>
+        </f7-popover>
+
         <f7-button fill style="margin-bottom: 5px" href="/chat/">
           <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>
           Chat
@@ -38,7 +51,7 @@
           Call
         </f7-button>
       </f7-list-item>
-      <f7-list-item title="Lisa" after="05/12/2021" text="&#8982; 81550,Munich">
+      <f7-list-item title="Lisa Wright" after="05/12/2021" text="&#8982; 81550,Munich">
         <f7-row>
           <f7-col>
             <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
@@ -49,7 +62,8 @@
             <span>&nbsp;4.9/5</span>
           </f7-col>
           <f7-col>
-            <f7-button fill>15&#8364;</f7-button>
+          <!--by clicking the button pop-over-menu will be opened-->
+            <f7-button fill raised popover-open=".popover-menu">15&#8364;</f7-button>
           </f7-col>
         </f7-row>
         <template #media>
@@ -58,6 +72,18 @@
             width="80"
           />
         </template>
+
+        <!--Pop-over menu-->
+        <f7-popover class="popover-menu">
+          <!-- <f7-block-title style="text-align:center">Choose one function</f7-block-title> -->
+          <f7-list>
+            <f7-list-button bold popover-close title="Credit or Debit Card"></f7-list-button>
+            <f7-list-button bold popover-close title="Paypal"></f7-list-button>
+            <f7-list-button bold popover-close title="Cash"></f7-list-button>
+            <f7-list-button bold popover-close title="Klarna (Bank Transfer)"></f7-list-button>
+          </f7-list>
+        </f7-popover>
+
         <f7-button fill style="margin-bottom: 5px">
           <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>
           Chat
