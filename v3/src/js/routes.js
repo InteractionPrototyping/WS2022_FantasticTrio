@@ -22,6 +22,10 @@ import DynamicRoutePage from '../pages/dynamic-route.vue';
 import RequestAndLoad from '../pages/request-and-load.vue';
 import NotFoundPage from '../pages/404.vue';
 
+import ReviewPage from '../pages/review.vue';
+import ProfileHelperPage from '../pages/profile-helper.vue';
+import ProfileGalleryPage from '../pages/profile-gallery.vue';
+
 var routes = [
   {
     path: '/',
@@ -101,6 +105,18 @@ var routes = [
   {
     path: '/chat/',
     component: Chat, 
+  },
+  {
+    path: '/review/',
+    component: ReviewPage, 
+  },
+  {
+    path: '/profile-helper/',
+    component: ProfileHelperPage, 
+  },
+  {
+    path: '/profile-gallery/',
+    component: ProfileGalleryPage, 
   },
   {
     path: '/request-and-load/user/:userId/',
