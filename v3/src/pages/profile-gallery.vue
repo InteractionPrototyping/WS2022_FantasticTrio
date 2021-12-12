@@ -5,12 +5,12 @@
      <!-- Template from List View component: Media List -->
     <f7-list media-list>
       <f7-list-item        
-        title="Verena Manz &#9792;"
+        title="Alice Manz &#9792;"
         subtitle="&#8982; 86378, Munich"
         text="&#9733; 4.6(10)" 
       >
         <template #media>
-          <img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="80" />
+         <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
         </template>
       </f7-list-item>
     </f7-list>

@@ -5,7 +5,7 @@
   <!-- Template from List View component: Media List -->
     <f7-list media-list>
       <f7-list-item        
-        title="Alice M. &#9792;"
+        title="Alice Manz &#9792;"
         subtitle="&#8982; 86378, Munich" 
         style="margin-bottom: 20px"     
       >
@@ -46,7 +46,7 @@
     <f7-list media-list>
       <f7-list-item        
         title="DESCRIPTION"
-        text="Hello, I´m Verena. I am 34 years old and a qualified car mechanic."       
+        text="Hello, I´m Alice. I am 34 years old and a qualified car mechanic."       
       >
       <!-- show more button -->
       <br>
