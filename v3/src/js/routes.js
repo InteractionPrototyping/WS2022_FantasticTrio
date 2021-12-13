@@ -116,6 +116,7 @@ var routes = [
   {
     path: '/profile-helper/',
     component: ProfileHelperPage, 
+    name: 'profile-helper',
   },
   {
     path: '/profile-gallery/',

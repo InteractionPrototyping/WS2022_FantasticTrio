@@ -31,13 +31,13 @@
     
     <f7-list media-list >
       <f7-list-item        
-        title="Verena Manz"
+        title="Alice M."
         after="&#9733; 4.6(10)"
         text="&#8982; 86378,Munich"
       >
-      <f7-chip outline color="#007aff" text="#Car repair"></f7-chip>
-        <template #media>
-          <img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="80" />
+        <f7-chip outline color="#007aff" text="#Car repair"></f7-chip>
+        <template #media >
+           <img @click="this.f7router.navigate({name:'profile-helper'})" src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
         </template>
         <f7-button fill raised @click="showToastIcon" style="display:inline-block;position:absolute;right:15px">Ask for price</f7-button>
 
@@ -93,7 +93,10 @@ export default {
     f7Block,
     f7Button,
   },
-  
+  props: {
+      f7route: Object,
+      f7router: Object,
+    },
   methods: {  
     showToastIcon() {
       const self = this;
