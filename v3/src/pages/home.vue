@@ -13,8 +13,8 @@
 
     <f7-block >
       <!-- <f7-button fill raised tab-link="#view-add-request">Request</f7-button> -->
-      <f7-button fill round popover-open=".popover-menu">Request</f7-button>
-      <!-- <f7-button fill raised @click="openVerticalButtons">Request</f7-button> -->
+      <!-- <f7-button fill round popover-open=".popover-menu">Request</f7-button> -->
+      <f7-button fill round raised @click="openVerticalButtons">Request</f7-button>
     </f7-block>
 
     <f7-block >
@@ -114,6 +114,10 @@
 <script>
 import { f7Button,f7 } from 'framework7-vue';
 export default {
+  props: {
+      f7route: Object,
+      f7router: Object,
+    },
   components: {
     f7Button,
   },
@@ -126,14 +130,22 @@ export default {
             {
               text: 'Add a request',
               bold: true,
-              onClick: function() {f7router.navigate('/add-request/', {
-                reloadCurrent:true,
-                animate: true,
-              })}
+              close: true,
+              onClick: () => {
+                this.f7router.navigate({name:'add-request'})
+              }
             },
             {
               text: 'View my requests',
               bold: true,
+              close: true,
+              onClick: () => {
+                f7.dialog.alert(
+                  "You don't post any request yet,click 'OK' to add a request:)", 
+                  () => {
+                    this.f7router.navigate({name:'add-request'})
+                  });
+              }
             },
           ],
           verticalButtons: true,

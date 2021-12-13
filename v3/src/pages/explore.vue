@@ -17,7 +17,6 @@
           link="#view-project"
           @click="
             f7router.navigate('/project/', {
-              reloadCurrent: true,
               animate: true,
             })
           "
@@ -203,7 +202,7 @@ p{
   float: right;
 }
 </style>
-<script>
+// <script>
 export default {
   props: {
     f7router: Object,

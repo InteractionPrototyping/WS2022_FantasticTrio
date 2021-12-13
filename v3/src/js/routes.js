@@ -35,16 +35,19 @@ var routes = [
   {
     path: '/add-request/',
     component: AddRequestPage,
+    name: 'add-request',
   },
   // set route for suitable-helper page
   {
     path: '/suitable-helper/',
     component: SuitableHelperPage,
+    name:'suitable-helper',
   },
   // set route for my-request page
   {
     path: '/my-request/',
     component: MyRequestPage,
+    name:'my-request',
   },
   // set route for toast page
   {
