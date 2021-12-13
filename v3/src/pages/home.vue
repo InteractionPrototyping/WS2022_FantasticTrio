@@ -12,12 +12,12 @@
 
     <f7-block >
       <!-- <f7-button fill raised tab-link="#view-add-request">Request</f7-button> -->
-      <f7-button fill raised popover-open=".popover-menu">Request</f7-button>
-        <!-- <f7-button fill raised @click="openVerticalButtons">Request</f7-button> -->
+      <f7-button fill popover-open=".popover-menu">Request</f7-button>
+      <!-- <f7-button fill raised @click="openVerticalButtons">Request</f7-button> -->
     </f7-block>
 
     <f7-block >
-      <f7-button fill raised href="/explore/">Explore</f7-button>
+      <f7-button fill href="/explore/">Explore</f7-button>
     </f7-block>
 
     <f7-popover class="popover-menu">
@@ -125,6 +125,10 @@ export default {
             {
               text: 'Add a request',
               bold: true,
+              onClick: function() {f7router.navigate('/add-request/', {
+                reloadCurrent:true,
+                animate: true,
+              })}
             },
             {
               text: 'View my requests',

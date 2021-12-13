@@ -11,4 +11,12 @@
   --f7-theme-color-tint: #298fff;
 }
 
+/* :root {
+  --f7-theme-color: #ff9500;
+  --f7-theme-color-rgb: 255, 149, 0;
+  --f7-theme-color-shade: #d67d00;
+  --f7-theme-color-tint: #ffa629;
+} */
+
+
 /* Your app custom styles here */

@@ -63,7 +63,7 @@
           </f7-col>
           <f7-col>
           <!--by clicking the button pop-over-menu will be opened-->
-            <f7-button fill raised popover-open=".popover-menu">15&#8364;</f7-button>
+            <f7-button fill popover-open=".popover-menu">15&#8364;</f7-button>
           </f7-col>
         </f7-row>
         <template #media>
