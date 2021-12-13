@@ -7,8 +7,8 @@
 :root {
   --f7-theme-color: #263a68;
   --f7-theme-color-rgb: 38, 58, 104;
-  --f7-theme-color-shade: #263a68;
-  --f7-theme-color-tint: #263a68;
+  --f7-theme-color-shade: #1b294a;
+  --f7-theme-color-tint: #314b86;
 }
 
 /* Invert navigation bars to fill style */
