@@ -61,7 +61,7 @@
             <a href="/interested-helper/">
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
               price_check
-              <f7-badge color="teal">2</f7-badge>
+              <f7-badge color="green">2</f7-badge>
             </f7-icon>
           </a>
         </p>
@@ -93,7 +93,7 @@
           <a href="/interested-helper/">
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white">
               price_check
-              <f7-badge color="teal">2</f7-badge>
+              <f7-badge color="green">2</f7-badge>
               </f7-icon>
           </a>
         </p>
@@ -136,7 +136,7 @@
             <!-- <a href="/interested-helper/"> -->
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
               price_check
-              <!-- <f7-badge color="teal">2</f7-badge> -->
+              <!-- <f7-badge color="green">2</f7-badge> -->
             </f7-icon>
           <!-- </a> -->
         </p>
@@ -156,15 +156,8 @@
     margin:11px 0 11px 0;
   }
   .buttonOfIcon {
-<<<<<<< Updated upstream
     background-color:#2d4066;
-=======
-<<<<<<< HEAD
-    background-color:#263a68;
-=======
-    background-color:#2d4066;
->>>>>>> 576316e23693b24a65befa246bb516cc26135a24
->>>>>>> Stashed changes
+
     margin:0;
     /* padding:10px 0 10px 0; */
     height:50px;
@@ -197,13 +190,13 @@ export default {
   methods: {
     openAlert() {
       f7.dialog.alert(
-        'No one has offeteal you a price now! <br> Try to find some suitable helpers:)',
+        'No one has offered you a price now! <br> Try to find some suitable helpers:)',
         'Craftive',
       );
     },
     openConfirm() {
       f7.dialog.confirm(
-        'No one has offeteal you a price now! <br> Try to find some suitable helpers:)',
+        'No one has offered you a price now! <br> Try to find some suitable helpers:)',
         () => {
         f7router.navigate('/suitable-helper/',{
           reloadCurrent:true,

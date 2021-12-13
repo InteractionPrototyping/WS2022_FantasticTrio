@@ -136,7 +136,7 @@ export default {
           text: 'Click list button in the right corner of navbar to view the status of your posted request:)',
           closeButton: true,
           closeButtonText: 'I got it!',
-          closeButtonColor: 'teal',
+          closeButtonColor: 'green',
         });
       }
       // Open it
