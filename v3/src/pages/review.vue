@@ -108,6 +108,11 @@
 
   </f7-page>
 </template>
+<style scoped>
+.item-subtitle{
+  color: #2a3c60 !important;
+}
+</style>
 
 
 
