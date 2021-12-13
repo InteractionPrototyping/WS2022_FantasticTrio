@@ -23,18 +23,20 @@
         <p class="buttonOfIcon requested">
           <a href='/suitable-helper/'>
             <img class ="iconOfRequest requested" src='../img/my_requests/requested_white.svg' >
+            (0)
           </a>
         </p>
         <p class="buttonOfIcon interested">
           <a href='/interested-helper/'>
             <img class ="iconOfRequest interested" src='../img/my_requests/interested_white.svg' >
+            (0)
           </a>
         </p>
-        <p class="buttonOfIcon paid">
+        <!-- <p class="buttonOfIcon paid">
           <a>
             <img class ="iconOfRequest paid" src='../img/my_requests/paid_white.svg' >
           </a>
-        </p>
+        </p> -->
       </f7-block>
 
       <!-- 2nd request -->
@@ -87,18 +89,20 @@
         <p class="buttonOfIcon requested finished">
           <a href='/suitable-helper/'>
             <img class ="iconOfRequest requested" src='../img/my_requests/requested.svg' >
+            (0)
           </a>
         </p>
         <p class="buttonOfIcon interested finished">
           <a href='/interested-helper/'>
             <img class ="iconOfRequest interested" src='../img/my_requests/interested.svg' >
+            (0)
           </a>
         </p>
-        <p class="buttonOfIcon paid">
+        <!-- <p class="buttonOfIcon paid">
           <a>
             <img class ="iconOfRequest paid" src='../img/my_requests/paid_white.svg' >
           </a>
-        </p>
+        </p> -->
       </f7-block>
 
       <!-- finished request -->
@@ -156,7 +160,7 @@
     padding:4px;
   }
   .listOfButton {
-    width:10%;
+    width:15%;
     margin:0;
     display:inline-block;
     padding:0px;
