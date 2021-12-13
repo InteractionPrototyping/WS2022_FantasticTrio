@@ -190,7 +190,7 @@ export default {
     openAlert() {
       f7.dialog.alert(
         'No one has offered you a price now! <br> Try to find some suitable helpers:)',
-        'Alert',
+        'Craftive',
       );
     },
     openConfirm() {

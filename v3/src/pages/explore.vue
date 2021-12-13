@@ -17,6 +17,7 @@
           link="#view-project"
           @click="
             f7router.navigate('/project/', {
+              reloadCurrent:true,
               animate: true,
             })
           "
