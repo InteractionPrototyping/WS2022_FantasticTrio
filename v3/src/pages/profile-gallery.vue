@@ -2,7 +2,8 @@
   <f7-page name="profile-gallery">
     <f7-navbar title="Profile Gallery" back-link="Back"></f7-navbar>
 
-     <!-- Template from List View component: Media List -->
+    <!-- Individual parts of the page are each structured as a media list-->
+    <!-- Template from List View component: Media List -->
     <f7-list media-list>
       <f7-list-item        
         title="Alice Manz &#9792;"
@@ -15,8 +16,10 @@
       </f7-list-item>
     </f7-list>
 
-     <f7-block>
+    <!--Gallery projects overview-->
+    <f7-block>
     <f7-row>
+      <!--Link to the project-->
       <f7-col link="#view-project" @click="f7router.navigate('/project/',{reloadCurrent: true,animate: true})">
           <img src="https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg" width="150"/>
           <p>
@@ -117,6 +120,7 @@
   </f7-page>
 </template>
 
+<!--Style-->
 <style scoped>
 .col{
     background: #fff;
@@ -130,11 +134,13 @@
 }
 .date{
   float: left;
+  font-size: 15px;
 }
 p{
   margin: 0px;
   padding: 0px;
   height: 34px;
+  font-size: 17px;
 }
 .black_heart{
   display: inline;
@@ -142,6 +148,7 @@ p{
 }
 .follower{
   float: right;
+  font-size: 15px;
 }
 </style>
 
