@@ -133,10 +133,10 @@ export default {
       // Create toast
       if (!self.toastWithCustomButton) {
         self.toastWithCustomButton = f7.toast.create({
-          text: 'Click button in the right corner of navbar to view the status of your posted request:)',
+          text: 'Click list button in the right corner of navbar to view the status of your posted request:)',
           closeButton: true,
           closeButtonText: 'I got it!',
-          closeButtonColor: 'red',
+          closeButtonColor: 'green',
         });
       }
       // Open it
