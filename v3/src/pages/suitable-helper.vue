@@ -2,9 +2,15 @@
   <f7-page name="suitable-helper">
     <f7-navbar title="Suitable Helper" back-link="Back" back-link-url="/add-request/">
       <!-- click this button to go to my-request page -->
-      <!-- <f7-nav-right>
-        <f7-button fill href="/my-request/">My Request</f7-button>
-      </f7-nav-right> -->
+      <f7-nav-right>
+        <!-- <f7-button outlined href="/my-request/">My Request</f7-button> -->
+      <f7-link
+          href="/my-request/"
+          icon-ios="f7:list_dash"
+          icon-aurora="f7:list_dash"
+          icon-md="material:list"
+        ></f7-link> 
+      </f7-nav-right>
     </f7-navbar>
     <!-- Template from List View component: Media List -->
     <f7-block-title style="text-align:center">Users you have asked the price</f7-block-title>
@@ -16,7 +22,7 @@
       >
       <f7-chip outline color="#007aff" text="#Car repair"></f7-chip>
         <template #media>
-           <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
+           <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" height="80" />
         </template>
       </f7-list-item>
     </f7-list>

@@ -38,7 +38,8 @@
           icon-aurora="f7:square_list_fill"
           icon-md="material:notifications"
           text="Notification"
-        ></f7-link>
+        >
+        </f7-link>
         <f7-link
           tab-link="#view-settings"
           icon-ios="f7:person_fill"

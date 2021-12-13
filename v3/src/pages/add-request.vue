@@ -12,26 +12,6 @@
       >
       </f7-list-input>
 
-      <!-- <f7-list-input
-        label="Keywords"
-        type="select"
-        placeholder="Select the appropriate keywords"
-        >
-        <option>Auto,Mobiles</option>
-        <option>Betreuung,Pflege</option>
-        <option>Computer,Büroservice</option>
-        <option>Foto,Design,Internet</option>
-        <option>Geld,Steuern,Recht</option>
-        <option>Handwerk,Haus,Bau</option>
-        <option>Haushalt,Gartenarbeit</option>
-        <option>Lernen,Bildung</option>
-        <option>Partyservice,Event</option>
-        <option>Style,Wellness</option>
-        <option>Tierbetreuung</option>
-        <option>Transport,Umzüge</option>
-        <option>Sonstiges</option>
-      </f7-list-input> -->
-
       <!-- use smart select component to choose keywords -->
       <f7-list-item title="Keyword" smart-select :smart-select-params="{openIn: 'popup', searchbar: true, searchbarPlaceholder: 'Search keyword'}">
       <select name="keyword">
@@ -115,7 +95,7 @@
     <f7-block >
       <!-- <f7-button fill raised href="/suitable-helper/" >Submit</f7-button> -->
       <!-- it also shows toast when click submit button -->
-      <f7-button fill @click="showToast" href="/my-request/">Submit</f7-button>
+      <f7-button fill @click="showToast" href="/suitable-helper/">Submit</f7-button>
     </f7-block>
   </f7-page>
 </template>
@@ -135,9 +115,9 @@ export default {
       // Create toast
       if (!self.toast) {
         self.toast = f7.toast.create({
-          text: "Request has been posted, try to click first button to find suitable helpers ",
+          text: "Request has been posted! <br> Click the button in the upper right corner to view the request list:) ",
           position: 'center',
-          closeTimeout: 3000,
+          closeTimeout: 4000,
         });
       }
       // Open it

@@ -1,6 +1,7 @@
 <template>
   <f7-page name="home">
-    <f7-navbar class="home_navbar" title="Craftive"></f7-navbar><br>
+    <f7-navbar class="home_navbar" title="Craftive">
+</f7-navbar><br>
     <img id="bg_img" src="../img/request_img/Background_img.jpeg">
 
     <!-- Page content-->
@@ -12,12 +13,12 @@
 
     <f7-block >
       <!-- <f7-button fill raised tab-link="#view-add-request">Request</f7-button> -->
-      <f7-button fill popover-open=".popover-menu">Request</f7-button>
+      <f7-button fill round popover-open=".popover-menu">Request</f7-button>
       <!-- <f7-button fill raised @click="openVerticalButtons">Request</f7-button> -->
     </f7-block>
 
     <f7-block >
-      <f7-button fill href="/explore/">Explore</f7-button>
+      <f7-button fill round href="/explore/">Explore</f7-button>
     </f7-block>
 
     <f7-popover class="popover-menu">

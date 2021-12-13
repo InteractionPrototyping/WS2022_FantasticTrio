@@ -6,11 +6,12 @@
       
     <f7-block-title style="text-align:center">Check your request status here</f7-block-title>
       <!-- 1st request -->
-      <f7-list class="myRequest" media-list style="width:90%;display: inline-block">
+      <f7-list class="myRequest" media-list style="width:85%;display: inline-block">
         <f7-list-item
           title="Change Brake"
           after="To 31/12"
           text="&#8982; 81548,Munich"
+          style="padding:0"
         >
         <f7-chip outline color="#007aff" text="#Car repair"></f7-chip>
           <template #media>
@@ -18,31 +19,58 @@
           </template>
         </f7-list-item>
       </f7-list>
-      <!-- icon coloum for 3 functions and status -->
-      <f7-block class="listOfButton myRequest">
-        <p class="buttonOfIcon requested">
-          <a href='/suitable-helper/'>
-            <img class ="iconOfRequest requested" src='../img/my_requests/requested_white.svg' >
-            (0)
-          </a>
-        </p>
+      <!-- icon coloum for 2 functions and status -->
+      <f7-block class="listOfButton">
         <p class="buttonOfIcon interested">
-          <a href='/interested-helper/'>
-            <img class ="iconOfRequest interested" src='../img/my_requests/interested_white.svg' >
-            (0)
+          <a href="/suitable-helper/">
+            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+              person_search
+            </f7-icon>
           </a>
         </p>
-        <!-- <p class="buttonOfIcon paid">
-          <a>
-            <img class ="iconOfRequest paid" src='../img/my_requests/paid_white.svg' >
-          </a>
-        </p> -->
+        <p @click="openAlert" class="buttonOfIcon interested">
+            <f7-icon size= "28px" class="material-icons status-icon" style="color:white">
+              price_check
+              </f7-icon>
+        </p>
       </f7-block>
 
       <!-- 2nd request -->
-      <f7-list class="myRequest" media-list style="width:90%;display: inline-block; position:relative;">
+      <f7-list class="myRequest not-1st" media-list style="width:85%;display: inline-block;">
         <f7-list-item
-          title="Assemble furniture"
+          title="Paint wall"
+          after="To 31/12"
+          text="&#8982; 81548,Munich"
+        >
+        <f7-chip outline color="#007aff" text="#Paint wall"></f7-chip>
+          <template #media>
+            <img src="../img/request_img/Paint_wall.jpeg" width="80" />
+          </template>
+        </f7-list-item>
+      </f7-list>
+      <!-- icon coloum for 2 functions and status -->
+      <f7-block class="listOfButton not-1st">
+        <p class="buttonOfIcon interested">
+          <a href="/suitable-helper/">
+            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+              person_search
+            </f7-icon>
+          </a>
+        </p>
+        <p  class="buttonOfIcon interested">
+            <a href="/interested-helper/">
+            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+              price_check
+              <f7-badge color="green">2</f7-badge>
+            </f7-icon>
+          </a>
+        </p>
+      </f7-block>
+
+      <!-- 3rd request -->
+      <f7-list class="myRequest" media-list style="width:85%;display: inline-block">
+        <f7-list-item
+          title="Assemble furnituer"
           after="To 31/12"
           text="&#8982; 81548,Munich"
         >
@@ -52,58 +80,27 @@
           </template>
         </f7-list-item>
       </f7-list>
-      <!-- icon coloum for 3 functions and status -->
-      <f7-block class="listOfButton myRequest" >
-        <p class="buttonOfIcon requested finished">
-          <a href='/suitable-helper/'>
-            <img class ="iconOfRequest requested" src='../img/my_requests/requested.svg' >
-          </a>
-        </p>
+      <!-- icon coloum for 2 functions and status -->
+      <f7-block class="listOfButton">
         <p class="buttonOfIcon interested">
-          <a href='/interested-helper/'>
-            <img class ="iconOfRequest interested" src='../img/my_requests/interested_white.svg' >
+          <a href="/suitable-helper/">
+            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+              person_search
+            </f7-icon>
           </a>
         </p>
-        <p class="buttonOfIcon paid">
-          <a>
-            <img class ="iconOfRequest paid" src='../img/my_requests/paid_white.svg' >
+        <p  class="buttonOfIcon interested">
+          <a href="/interested-helper/">
+            <f7-icon size= "28px" class="material-icons status-icon" style="color:white">
+              price_check
+              <f7-badge color="green">2</f7-badge>
+              </f7-icon>
           </a>
         </p>
       </f7-block>
 
-      <!-- 3rd request -->
-      <f7-list class="myRequest" media-list style="width:90%;display: inline-block">
-        <f7-list-item
-          title="Paint the wall"
-          after="To 31/12"
-          text="&#8982; 81548,Munich"
-        >
-        <f7-chip outline color="#007aff" text="#Paint wall"></f7-chip>
-          <template #media>
-            <img src="../img/request_img/Paint_wall.jpeg" width="80" height="80" />
-          </template>
-        </f7-list-item>
-      </f7-list>
-      <!-- icon coloum for 3 functions and status -->
-      <f7-block class="listOfButton myRequest">
-        <p class="buttonOfIcon requested finished">
-          <a href='/suitable-helper/'>
-            <img class ="iconOfRequest requested" src='../img/my_requests/requested.svg' >
-            (0)
-          </a>
-        </p>
-        <p class="buttonOfIcon interested finished">
-          <a href='/interested-helper/'>
-            <img class ="iconOfRequest interested" src='../img/my_requests/interested.svg' >
-            (0)
-          </a>
-        </p>
-        <!-- <p class="buttonOfIcon paid">
-          <a>
-            <img class ="iconOfRequest paid" src='../img/my_requests/paid_white.svg' >
-          </a>
-        </p> -->
-      </f7-block>
+      
+
 
       <!-- finished request -->
       <f7-block-title style="text-align:center">
@@ -111,53 +108,59 @@
       </f7-block-title>
       <!-- make list to be gray -->
       <f7-block style="filter：gray; -moz-opacity:.3;opacity:0.3;paddinng;0px">
-        <f7-list class="myRequest" media-list style="width:90%;display: inline-block; position:relative;">
-          <f7-list-item
-            title="Change Brake"
-            after="To 31/12"
-            text="&#8982; 81548,Munich"
-          >
-          <f7-chip outline color="#007aff" text="#Car repair"></f7-chip>
-            <template #media>
-              <img src="https://cdn.framework7.io/placeholder/people-160x160-2.jpg" width="80" />
-            </template>
-          </f7-list-item>
-        </f7-list>
-        <!-- icon coloum for 3 functions and status -->
-        <f7-block class="listOfButton myRequest" >
-          <p class="buttonOfIcon requested finished">
-            <a>
-              <img class ="iconOfRequest requested" src='../img/my_requests/requested.svg' >
-            </a>
-          </p>
-          <p class="buttonOfIcon interested finished">
-            <a>
-              <img class ="iconOfRequest interested" src='../img/my_requests/interested.svg' >
-            </a>
-          </p>
-          <p class="buttonOfIcon paid finished">
-            <a>
-              <img class ="iconOfRequest paid" src='../img/my_requests/paid.svg' >
-            </a>
-          </p>
-        </f7-block>
+      
+      <!-- 2nd request -->
+      <f7-list class="myRequest" media-list style="width:85%;display: inline-block;">
+        <f7-list-item
+          title="Change Brake"
+          after="To 31/12"
+          text="&#8982; 81548,Munich"
+          style="padding:0"
+        >
+        <f7-chip outline color="#007aff" text="#Car repair"></f7-chip>
+          <template #media>
+            <img src="../img/request_img/Car_repair.png" width="80" />
+          </template>
+        </f7-list-item>
+      </f7-list>
+      <!-- icon coloum for 2 functions and status -->
+      <f7-block class="listOfButton ">
+        <p class="buttonOfIcon interested">
+          <!-- <a href="/suitable-helper/"> -->
+            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+              person_search
+            </f7-icon>
+          <!-- </a> -->
+        </p>
+        <p class="buttonOfIcon interested">
+            <!-- <a href="/interested-helper/"> -->
+            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+              price_check
+              <!-- <f7-badge color="green">2</f7-badge> -->
+            </f7-icon>
+          <!-- </a> -->
+        </p>
+      </f7-block>
+
       </f7-block>
 
   </f7-page>
 </template>
 
 <style>
+  .myRequest {
+    margin:0;
+    padding:0;
+  }
+  .status-icon {
+    margin:11px 0 11px 0;
+  }
   .buttonOfIcon {
     background-color:#007aff;
     margin:0;
-    padding:0;
-    height:33px;
+    /* padding:10px 0 10px 0; */
+    height:50px;
     text-align:center;
-  }
-  .iconOfRequest {
-    width:25px;
-    height:25px;
-    padding:4px;
   }
   .listOfButton {
     width:15%;
@@ -165,14 +168,43 @@
     display:inline-block;
     padding:0px;
     position:relative;
-    top: 9px;
-  }
-  .myRequest {
-    margin:0;
-    padding: 0;
+    bottom: 11px;
   }
   .finished {
-    background-color:white;
+    background-color:#aed4fd;
   }
 </style>
+
+<script>
+  import { f7Navbar, f7Page, f7BlockTitle, f7Block, f7Button, f7Row, f7 } from 'framework7-vue';
+export default {
+  components: {
+    f7Navbar,
+    f7Page,
+    f7BlockTitle,
+    f7Block,
+    f7Button,
+    f7Row,
+  },
+  methods: {
+    openAlert() {
+      f7.dialog.alert(
+        'No one has offered you a price now! <br> Try to find some suitable helpers:)',
+        'Alert',
+      );
+    },
+    openConfirm() {
+      f7.dialog.confirm(
+        'No one has offered you a price now! <br> Try to find some suitable helpers:)',
+        () => {
+        f7router.navigate('/suitable-helper/',{
+          reloadCurrent:true,
+          animate: true,
+        });
+      });
+    },
+  },
+};
+</script>
+
 
