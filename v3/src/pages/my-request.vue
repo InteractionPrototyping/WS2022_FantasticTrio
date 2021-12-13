@@ -156,7 +156,7 @@
     margin:11px 0 11px 0;
   }
   .buttonOfIcon {
-    background-color:#007aff;
+    background-color:#2d4066;
     margin:0;
     /* padding:10px 0 10px 0; */
     height:50px;
