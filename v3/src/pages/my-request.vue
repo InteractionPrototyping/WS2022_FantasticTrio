@@ -13,7 +13,7 @@
           text="&#8982; 81548,Munich"
           style="padding:0"
         >
-        <f7-chip outline color="#007aff" text="#Car repair"></f7-chip>
+        <f7-chip outline color="#263a68" text="#Car repair"></f7-chip>
           <template #media>
             <img src="../img/request_img/Car_repair.png" width="80" />
           </template>
@@ -42,7 +42,7 @@
           after="To 31/12"
           text="&#8982; 81548,Munich"
         >
-        <f7-chip outline color="#007aff" text="#Paint wall"></f7-chip>
+        <f7-chip outline color="#263a68" text="#Paint wall"></f7-chip>
           <template #media>
             <img src="../img/request_img/Paint_wall.jpeg" width="80" />
           </template>
@@ -61,7 +61,7 @@
             <a href="/interested-helper/">
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
               price_check
-              <f7-badge color="green">2</f7-badge>
+              <f7-badge color="teal">2</f7-badge>
             </f7-icon>
           </a>
         </p>
@@ -74,7 +74,7 @@
           after="To 31/12"
           text="&#8982; 81548,Munich"
         >
-        <f7-chip outline color="#007aff" text="#Assemble furniture"></f7-chip>
+        <f7-chip outline color="#263a68" text="#Assemble furniture"></f7-chip>
           <template #media>
             <img src="../img/request_img/Assemble_furniture.jpeg" width="80" height="80" />
           </template>
@@ -93,7 +93,7 @@
           <a href="/interested-helper/">
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white">
               price_check
-              <f7-badge color="green">2</f7-badge>
+              <f7-badge color="teal">2</f7-badge>
               </f7-icon>
           </a>
         </p>
@@ -117,7 +117,7 @@
           text="&#8982; 81548,Munich"
           style="padding:0"
         >
-        <f7-chip outline color="#007aff" text="#Car repair"></f7-chip>
+        <f7-chip outline color="#263a68" text="#Car repair"></f7-chip>
           <template #media>
             <img src="../img/request_img/Car_repair.png" width="80" />
           </template>
@@ -136,7 +136,7 @@
             <!-- <a href="/interested-helper/"> -->
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
               price_check
-              <!-- <f7-badge color="green">2</f7-badge> -->
+              <!-- <f7-badge color="teal">2</f7-badge> -->
             </f7-icon>
           <!-- </a> -->
         </p>
@@ -156,7 +156,15 @@
     margin:11px 0 11px 0;
   }
   .buttonOfIcon {
+<<<<<<< Updated upstream
     background-color:#2d4066;
+=======
+<<<<<<< HEAD
+    background-color:#263a68;
+=======
+    background-color:#2d4066;
+>>>>>>> 576316e23693b24a65befa246bb516cc26135a24
+>>>>>>> Stashed changes
     margin:0;
     /* padding:10px 0 10px 0; */
     height:50px;
@@ -189,13 +197,13 @@ export default {
   methods: {
     openAlert() {
       f7.dialog.alert(
-        'No one has offered you a price now! <br> Try to find some suitable helpers:)',
+        'No one has offeteal you a price now! <br> Try to find some suitable helpers:)',
         'Craftive',
       );
     },
     openConfirm() {
       f7.dialog.confirm(
-        'No one has offered you a price now! <br> Try to find some suitable helpers:)',
+        'No one has offeteal you a price now! <br> Try to find some suitable helpers:)',
         () => {
         f7router.navigate('/suitable-helper/',{
           reloadCurrent:true,

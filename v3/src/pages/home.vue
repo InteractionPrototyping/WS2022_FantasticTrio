@@ -18,7 +18,7 @@
     </f7-block>
 
     <f7-block >
-      <f7-button fill round href="/explore/">Explore</f7-button>
+      <f7-button fill round raised href="/explore/">Explore</f7-button>
     </f7-block>
 
     <f7-popover class="popover-menu">
@@ -140,12 +140,9 @@ export default {
               bold: true,
               close: true,
               onClick: () => {
-                f7.dialog.alert(
-                  "You don't post any request yet,click 'OK' to add a request:)", 
-                  () => {
-                    this.f7router.navigate({name:'add-request'})
-                  });
-              }
+                  this.f7router.navigate({name:'my-request'})
+                  }
+              
             },
           ],
           verticalButtons: true,

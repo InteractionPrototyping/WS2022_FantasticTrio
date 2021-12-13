@@ -95,7 +95,7 @@
     <f7-block >
       <!-- <f7-button fill raised href="/suitable-helper/" >Submit</f7-button> -->
       <!-- it also shows toast when click submit button -->
-      <f7-button fill @click="showToastWithCustomButton" href="/suitable-helper/">Submit</f7-button>
+      <f7-button fill raised @click="showToastWithCustomButton" href="/suitable-helper/">Submit</f7-button>
       <!-- <f7-button fill @click="openConfirm" >Submit</f7-button>       -->
     </f7-block>
   </f7-page>
@@ -136,7 +136,7 @@ export default {
           text: 'Click list button in the right corner of navbar to view the status of your posted request:)',
           closeButton: true,
           closeButtonText: 'I got it!',
-          closeButtonColor: 'green',
+          closeButtonColor: 'teal',
         });
       }
       // Open it
