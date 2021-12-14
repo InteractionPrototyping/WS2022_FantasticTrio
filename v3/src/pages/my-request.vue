@@ -102,7 +102,7 @@
           <a href="/interested-helper/" style="color:white">
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white">
               price_check
-              <f7-badge color="green">2</f7-badge>
+              <!-- <f7-badge color="green">2</f7-badge> -->
               </f7-icon>
               (2)
           </a>
