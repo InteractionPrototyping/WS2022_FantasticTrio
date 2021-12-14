@@ -82,14 +82,11 @@
         <div class="popup popup-about">
           <div class="block">
             <p><a class="link popup-close" href="#">Close popup</a></p>
-            <p>Chose your payment option</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac diam ac quam euismod porta vel a nunc.
-          Quisque sodales scelerisque est, at porta justo cursus ac. Integer vitae quam a ante lobortis lobortis. Nam
-          vehicula sagittis quam, sit amet congue purus consequat sed. Maecenas eget mattis lectus. Aliquam luctus
-          luctus leo ac fringilla. Sed nec eros vel purus tincidunt tincidunt in in orci. Sed tellus neque,
-          pellentesque
-          nec metus id, congue elementum odio. Donec turpis tellus, mollis ac leo eget, accumsan fermentum lorem.
-          Aliquam et elementum neque. Vestibulum sed egestas ipsum.</p>
+            <p>Choose your payment option</p>
+              <div>Credit or Debit Card</div>
+              <div>Paypal</div>
+              <div>Cash</div>
+              <div>Klarna (Bank Transfer)</div>
           </div>
         </div>
 
