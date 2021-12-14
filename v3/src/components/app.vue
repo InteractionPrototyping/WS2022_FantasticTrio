@@ -47,7 +47,7 @@
           <span class="tabbar-label">Notification</span>
         </f7-link>
         <f7-link
-          tab-link="#view-settings"
+          tab-link="#view-own-profile"
           icon-ios="f7:person_fill"
           icon-aurora="f7:gear"
           icon-md="material:person"
@@ -68,10 +68,10 @@
 
       <!-- Profile View -->
       <f7-view
-        id="view-settings"
-        name="settings"
+        id="view-own-profile"
+        name="own-profile"
         tab
-        url="/settings/"
+        url="/own-profile/"
       ></f7-view>
 
       <!-- Add-request View -->
@@ -108,11 +108,16 @@
       <f7-view
         id="view-interested-helper"
         name="interested-helper"
-        tab
-        url="/interested-helper/"
+        tab url="/interested-helper/"
       ></f7-view>
       <!-- Chat View -->
       <f7-view id="view-chat" name="chat" tab url="/chat/"></f7-view>
+      <!--Review View-->
+      <f7-view id="view-review" name="review" tab url="/review/"></f7-view>
+      <!--Profile Helper View-->
+      <f7-view id="view-profile-helper" name="profile-helper" tab url="/profile-helper/"></f7-view>
+      <!--Profile Gallery View-->
+      <f7-view id="view-profile-gallery" name="profile-gallery" tab url="/profile-gallery/"></f7-view>
     </f7-views>
 
     <!-- Popup -->

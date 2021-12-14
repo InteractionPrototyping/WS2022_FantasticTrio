@@ -22,7 +22,8 @@
           <f7-col>
           <!--by clicking the button popup-menu will be opened-->
           <f7-button fill raised class="button popup-open" href="#" data-popup=".popup-about">
-            10&#8364;</f7-button>
+            10&#8364;</f7-button> 
+
           </f7-col>
         </f7-row>
         <template #media>
@@ -31,9 +32,6 @@
             width="80"
           />
         </template>
-
-        <!--Popup menu-->
-        
 
         <f7-button fill style="margin-bottom: 5px" href="/chat/">
           <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>
@@ -55,9 +53,9 @@
             <span>&nbsp;4.9/5</span>
           </f7-col>
           <f7-col>
-          <!--by clicking the button popup-menu will be opened-->
+          <!--by clicking the button popup-menu will be opened -->
           <f7-button fill raised class="button popup-open" href="#" data-popup=".popup-about">
-            15&#8364;</f7-button>
+            15&#8364;</f7-button> 
           </f7-col>
         </f7-row>
         <template #media>
@@ -78,17 +76,20 @@
           </f7-list>
         </f7-popover> -->
 
-        <!--Pop-up menu function-->
+        <!--Pop-up menu function --> 
         <div class="popup popup-about">
           <div class="block">
-            <p><a class="link popup-close" href="#">Close popup</a></p>
-            <p>Choose your payment option</p>
-              <div>Credit or Debit Card</div>
-              <div>Paypal</div>
-              <div>Cash</div>
-              <div>Klarna (Bank Transfer)</div>
+            <p><a class="link popup-close" href="#">
+              Close
+              </a></p>
+            <p>Choose your payment option</p>  
+            <div>Credit or Debit Card</div>
+            <div>Paypal</div>
+            <div>Cash</div>
+            <div>Klarna (Bank Transfer)</div>
+
           </div>
-        </div>
+        </div> 
 
         <f7-button fill style="margin-bottom: 5px">
           <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>

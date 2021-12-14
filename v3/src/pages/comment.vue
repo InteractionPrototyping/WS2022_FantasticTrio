@@ -8,7 +8,7 @@
         <f7-list-item
           title="Jessi"
           after="05/12/2021"
-          text="I like the article very much,  that help me a lot."
+          text="I like the article very much, it helped me a lot."
         >
           <template #media>
             <img
@@ -20,7 +20,7 @@
         <f7-list-item
           title="Eric"
           after="04/12/2021"
-          text="Thanks for you sharing!"
+          text="Thanks for sharing!"
         >
           <template #media>
             <img
