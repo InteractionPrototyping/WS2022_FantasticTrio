@@ -4,7 +4,7 @@ import AboutPage from '../pages/about.vue';
 import FormPage from '../pages/form.vue';
 import NotificationPage from '../pages/notification.vue';
 import ProductPage from '../pages/product.vue';
-import SettingsPage from '../pages/settings.vue';
+import OwnProfilePage from '../pages/own-profile.vue';
 import ExplorePage from '../pages/explore.vue';
 import ProjectPage from '../pages/project.vue';
 import CommentPage from '../pages/comment.vue';
@@ -81,8 +81,8 @@ var routes = [
     component: ProductPage,
   },
   {
-    path: '/settings/',
-    component: SettingsPage,
+    path: '/own-profile/',
+    component: OwnProfilePage,
   },
 
   {

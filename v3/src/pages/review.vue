@@ -9,7 +9,7 @@
       <!--Arrangement in table form-->
       <f7-row no-gap>
         <f7-col>
-          4.0
+          <p class="overall-score">4.0</p>
         </f7-col>
         <f7-col>
           <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
@@ -110,6 +110,11 @@
 </template>
 <style scoped>
 .item-subtitle{
+  color: #2a3c60 !important;
+}
+.overall-score{
+  font-size: 30px;
+  margin: 0px;
   color: #2a3c60 !important;
 }
 </style>
