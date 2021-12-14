@@ -20,8 +20,9 @@
             <span>&nbsp;4.6/5</span>
           </f7-col>
           <f7-col>
-          <!--by clicking the button pop-over-menu will be opened-->
-            <f7-button fill raised popover-open=".popover-menu">10&#8364;</f7-button>
+          <!--by clicking the button popup-menu will be opened-->
+          <f7-button fill raised class="button popup-open" href="#" data-popup=".popup-about">
+            10&#8364;</f7-button>
           </f7-col>
         </f7-row>
         <template #media>
@@ -31,16 +32,8 @@
           />
         </template>
 
-        <!--Pop-over menu-->
-        <f7-popover class="popover-menu">
-          <!-- <f7-block-title style="text-align:center">Choose one function</f7-block-title> -->
-          <f7-list>
-            <f7-list-button bold popover-close title="Credit or Debit Card"></f7-list-button>
-            <f7-list-button bold popover-close title="Paypal"></f7-list-button>
-            <f7-list-button bold popover-close title="Cash"></f7-list-button>
-            <f7-list-button bold popover-close title="Klarna (Bank Transfer)"></f7-list-button>
-          </f7-list>
-        </f7-popover>
+        <!--Popup menu-->
+        
 
         <f7-button fill style="margin-bottom: 5px" href="/chat/">
           <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>
@@ -62,8 +55,9 @@
             <span>&nbsp;4.9/5</span>
           </f7-col>
           <f7-col>
-          <!--by clicking the button pop-over-menu will be opened-->
-            <f7-button fill popover-open=".popover-menu">15&#8364;</f7-button>
+          <!--by clicking the button popup-menu will be opened-->
+          <f7-button fill raised class="button popup-open" href="#" data-popup=".popup-about">
+            15&#8364;</f7-button>
           </f7-col>
         </f7-row>
         <template #media>
@@ -74,15 +68,30 @@
         </template>
 
         <!--Pop-over menu-->
-        <f7-popover class="popover-menu">
+       <!-- <f7-popover class="popover-menu"> -->
           <!-- <f7-block-title style="text-align:center">Choose one function</f7-block-title> -->
-          <f7-list>
+        <!--  <f7-list>
             <f7-list-button bold popover-close title="Credit or Debit Card"></f7-list-button>
             <f7-list-button bold popover-close title="Paypal"></f7-list-button>
             <f7-list-button bold popover-close title="Cash"></f7-list-button>
             <f7-list-button bold popover-close title="Klarna (Bank Transfer)"></f7-list-button>
           </f7-list>
-        </f7-popover>
+        </f7-popover> -->
+
+        <!--Pop-up menu function-->
+        <div class="popup popup-about">
+          <div class="block">
+            <p><a class="link popup-close" href="#">Close popup</a></p>
+            <p>Chose your payment option</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac diam ac quam euismod porta vel a nunc.
+          Quisque sodales scelerisque est, at porta justo cursus ac. Integer vitae quam a ante lobortis lobortis. Nam
+          vehicula sagittis quam, sit amet congue purus consequat sed. Maecenas eget mattis lectus. Aliquam luctus
+          luctus leo ac fringilla. Sed nec eros vel purus tincidunt tincidunt in in orci. Sed tellus neque,
+          pellentesque
+          nec metus id, congue elementum odio. Donec turpis tellus, mollis ac leo eget, accumsan fermentum lorem.
+          Aliquam et elementum neque. Vestibulum sed egestas ipsum.</p>
+          </div>
+        </div>
 
         <f7-button fill style="margin-bottom: 5px">
           <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>

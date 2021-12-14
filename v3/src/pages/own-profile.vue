@@ -6,7 +6,7 @@
   <!-- Template from List View component: Media List -->
     <f7-list media-list>
       <f7-list-item        
-        title="Alice Manz &#9792;"
+        title="Jessi Briem &#9792;"
         subtitle="&#8982; 86378, Munich" 
         style="margin-bottom: 20px"     
       >
@@ -19,11 +19,11 @@
       <!--Button "Show reviews"-->
       <f7-button fill raised href="/review/">Show reviews</f7-button> 
       <br>
-      <!--Button "Ask for price"-->
-      <f7-button fill raised href="/suitable-helper/">Ask for price</f7-button>
+      <!--Button "Edit my profile"-->
+      <f7-button fill raised>Edit my profile</f7-button>
         <!--Profile picture-->
          <template #media>
-            <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
+            <img src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80"/>
           </template>
       </f7-list-item>
     </f7-list>
