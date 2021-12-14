@@ -22,16 +22,22 @@
       <!-- icon coloum for 2 functions and status -->
       <f7-block class="listOfButton">
         <p class="buttonOfIcon interested">
-          <a href="/suitable-helper/">
+          <a href="/suitable-helper/" style="color:white">
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
               person_search
             </f7-icon>
+            (1)
           </a>
         </p>
         <p @click="openAlert" class="buttonOfIcon interested">
+          <a style="color:white">
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white">
               price_check
-              </f7-icon>
+            </f7-icon>
+            (0)
+          </a>
+            
+              
         </p>
       </f7-block>
 
@@ -51,18 +57,20 @@
       <!-- icon coloum for 2 functions and status -->
       <f7-block class="listOfButton not-1st">
         <p class="buttonOfIcon interested">
-          <a href="/suitable-helper/">
+          <a href="/suitable-helper/" style="color:white">
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
               person_search
             </f7-icon>
+            (3)
           </a>
         </p>
         <p  class="buttonOfIcon interested">
-            <a href="/interested-helper/">
+            <a href="/interested-helper/" style="color:white">
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
               price_check
               <f7-badge color="green">2</f7-badge>
             </f7-icon>
+            (2)
           </a>
         </p>
       </f7-block>
@@ -83,18 +91,20 @@
       <!-- icon coloum for 2 functions and status -->
       <f7-block class="listOfButton">
         <p class="buttonOfIcon interested">
-          <a href="/suitable-helper/">
+          <a href="/suitable-helper/" style="color:white">
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
               person_search
             </f7-icon>
+            (5)
           </a>
         </p>
         <p  class="buttonOfIcon interested">
-          <a href="/interested-helper/">
+          <a href="/interested-helper/" style="color:white">
             <f7-icon size= "28px" class="material-icons status-icon" style="color:white">
               price_check
               <f7-badge color="green">2</f7-badge>
               </f7-icon>
+              (2)
           </a>
         </p>
       </f7-block>
