@@ -20,7 +20,7 @@
       <f7-button fill raised href="/review/">Show reviews</f7-button> 
       <br>
       <!--Button "Ask for price"-->
-      <f7-button fill raised href="/suitable-helper/">Ask for price</f7-button>
+      <f7-button fill raised href="/suitable-helper/" @click="showToastIcon" >Ask for price</f7-button>
         <!--Profile picture-->
          <template #media>
             <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
@@ -129,4 +129,47 @@ p{
   font-size: 15px;
 }
 </style>
+
+<script>
+import { f7Navbar, f7Page, f7Block, f7Button, f7, theme } from 'framework7-vue';
+export default {
+  components: {
+    f7Navbar,
+    f7Page,
+    f7Block,
+    f7Button,
+  },
+  props: {
+      f7route: Object,
+      f7router: Object,
+    },
+  methods: {  
+    showToastIcon() {
+      const self = this;
+      // Create toast
+      if (!self.toastIcon) {
+        self.toastIcon = f7.toast.create({
+          icon:
+            theme.ios || theme.aurora
+              ? '<i class="f7-icons">paperplane_fill</i>'
+              : '<i class="material-icons">send</i>',
+          text: "User receives your request:)",
+          position: 'center',
+          closeTimeout: 1500,
+        });
+      }
+      // Open it
+      self.toastIcon.open();
+    },
+    onPageBeforeOut() {
+      f7.toast.close();
+    },
+    onPageBeforeRemove() {
+      const self = this;
+      // Destroy toasts when page removed
+      if (self.toastIcon) self.toastIcon.destroy();
+    },
+  },
+};
+</script>
 

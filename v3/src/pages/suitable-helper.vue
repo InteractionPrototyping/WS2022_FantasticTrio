@@ -109,7 +109,7 @@ export default {
               : '<i class="material-icons">send</i>',
           text: "User receives your request:)",
           position: 'center',
-          closeTimeout: 1000,
+          closeTimeout: 1500,
         });
       }
       // Open it
