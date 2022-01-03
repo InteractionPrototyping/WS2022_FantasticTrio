@@ -177,6 +177,8 @@
   margin-bottom: 16px;
   font-size: 12px;
   height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px  rgba(0, 0, 0, 0.4);
 }
 .person {
   display: inline;

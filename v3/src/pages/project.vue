@@ -65,7 +65,7 @@
         <f7-icon f7="suit_heart_fill" size="20px" class="black_heart"></f7-icon>
         <span style="position: relative; left: 30px; top: 6px"> 7 </span>
       </div>
-      <f7-list media-list style="height: 100px">
+      <f7-list inset media-list style="height: 100px">
         <f7-list-item title="Alice M." text="Expert of car repair">
           <br>
         <f7-button fill raised href="/profile-helper/">SHOW USER PROFILE</f7-button>        
@@ -84,7 +84,7 @@
       <h3 style="padding: 0">Last comment</h3>
       <f7-list
         media-list
-        style="height: 100px; position: relative; bottom: 20px"
+        style="height: 100px; position: relative; bottom: 20px" inset
       >
         <f7-list-item
           title="Jessi"
@@ -171,6 +171,7 @@
   float: right;
   margin-top: 5px;
 }
+
 </style>
 
 <script>
