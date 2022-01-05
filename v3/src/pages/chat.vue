@@ -16,8 +16,9 @@
       <img
         src="https://images.pexels.com/photos/2691608/pexels-photo-2691608.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
         width="120"
+        class="avatar"
       />
-      <f7-list media-list>
+      <f7-list media-list inset>
         <f7-list-item
           title="Jack.M"
           after="Car repair"
@@ -140,6 +141,13 @@ img {
 }
 .message_background {
   background-color: initial;
+}
+.avatar{
+  border-radius: 50%; 
+  width: 35vmin;
+   height: 35vmin; 
+   object-fit: cover; 
+   object-position: center;
 }
 </style>
 <script>

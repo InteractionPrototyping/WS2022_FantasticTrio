@@ -73,6 +73,7 @@
             <img
               src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="40"
+              class="avatar"
             />
           </template>
         </f7-list-item>
@@ -95,6 +96,7 @@
             <img
               src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="28"
+              class="avatar"
             />
           </template>
         </f7-list-item>
@@ -170,6 +172,13 @@
   display: flex;
   float: right;
   margin-top: 5px;
+}
+.avatar{
+  border-radius: 50%; 
+  width: 15vmin;
+   height: 15vmin; 
+   object-fit: cover; 
+   object-position: center;
 }
 
 </style>

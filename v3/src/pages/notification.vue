@@ -16,7 +16,8 @@
             <img
               src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="40"
-            />
+              class="avatar"
+            >
           </template>
       </f7-list-item>
       <f7-list-item
@@ -34,6 +35,7 @@
             <img
               src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="40"
+              class="avatar"
             />
           </template>
       </f7-list-item>
@@ -48,12 +50,13 @@
             <img
               src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="40"
+              class="avatar"
             />
           </template>
       </f7-list-item>
       <f7-list-item
         link="#" 
-        title="Helena Seefelder"
+        title="Helena See"
         after="Yesterday"
         subtitle="...sent you a message"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
@@ -66,12 +69,13 @@
             <img
               src="https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="40"
+              class="avatar"
             />
           </template>
       </f7-list-item>
       <f7-list-item
         link="#" 
-        title="Sarah Müller"
+        title="Sarah Müll"
         after="19/09/2020"
         subtitle="...sent you a message"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
@@ -81,6 +85,7 @@
             <img
               src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="40"
+              class="avatar"  
             />
           </template>
       </f7-list-item>
@@ -89,5 +94,15 @@
 
   </f7-page>
 </template>
+<style scoped>
+.avatar{
+  border-radius: 50%; 
+  width: 20vmin;
+   height: 20vmin; 
+   object-fit: cover; 
+   object-position: center;
+}
+
+</style>
 
 

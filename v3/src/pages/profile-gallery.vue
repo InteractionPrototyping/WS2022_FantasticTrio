@@ -11,7 +11,7 @@
         text="&#9733; 4.6(10)" 
       >
         <template #media>
-         <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
+         <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" class="avatar" />
         </template>
       </f7-list-item>
     </f7-list>
@@ -122,34 +122,55 @@
 
 <!--Style-->
 <style scoped>
-.col{
-    background: #fff;
-    text-align: center;
-    color: #000;
-    border: 1px solid #ddd;
-    padding: 5px;
-    margin-bottom: 16px;
-    font-size: 12px;
-    height: 200px;
-}
 .date{
   float: left;
-  font-size: 15px;
+  font-size: 10px;
+}
+
+.avatar{
+  border-radius: 50%; 
+  width: 25vmin;
+   height: 25vmin; 
+   object-fit: cover; 
+   object-position: center;
+}
+.col {
+  background: #fff;
+  text-align: center;
+  color: #000;
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px  rgba(0, 0, 0, 0.4);
+}
+.person {
+  display: inline;
+  float: left;
+  bottom:1px;
+}
+.writer {
+  float: left;
 }
 p{
   margin: 0px;
   padding: 0px;
   height: 34px;
-  font-size: 17px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: var(--f7-font-family);
 }
-.black_heart{
+.black_heart {
   display: inline;
   float: right;
+  bottom:1px;
 }
-.follower{
+.follower {
   float: right;
-  font-size: 15px;
 }
+
 </style>
 
 <script>

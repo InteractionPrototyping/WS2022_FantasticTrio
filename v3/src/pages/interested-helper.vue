@@ -30,6 +30,7 @@
           <img
             src="https://images.pexels.com/photos/2691608/pexels-photo-2691608.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
             width="80"
+            class="avatar"
           />
         </template>
 
@@ -62,6 +63,7 @@
           <img
             src="https://images.pexels.com/photos/1918246/pexels-photo-1918246.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
             width="80"
+            class="avatar"
           />
         </template>
 
@@ -103,4 +105,13 @@
     </f7-list>
   </f7-page>
 </template>
+<style scoped>
+.avatar{
+  border-radius: 50%; 
+  width: 20vmin;
+   height: 20vmin; 
+   object-fit: cover; 
+   object-position: center;
+}
+</style>
 

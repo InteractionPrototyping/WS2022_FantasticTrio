@@ -14,6 +14,7 @@
             <img
               src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="80"
+              class="avatar"
             />
           </template>
         </f7-list-item>
@@ -26,6 +27,7 @@
             <img
               src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="80"
+              class="avatar"
             />
           </template>
         </f7-list-item>
@@ -38,6 +40,7 @@
             <img
               src="https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="80"
+              class="avatar"
             />
           </template>
         </f7-list-item>
@@ -50,6 +53,7 @@
             <img
               src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="80"
+              class="avatar"
             />
           </template>
         </f7-list-item>
@@ -62,6 +66,7 @@
             <img
               src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="80"
+              class="avatar"
             />
           </template>
         </f7-list-item>
@@ -74,6 +79,7 @@
             <img
               src="https://images.pexels.com/photos/5486199/pexels-photo-5486199.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="80"
+              class="avatar"
             />
           </template>
         </f7-list-item>
@@ -130,4 +136,13 @@
     </f7-block>
   </f7-page>
 </template>
+<style scoped>
+.avatar{
+  border-radius: 50%; 
+  width: 25vmin;
+   height: 25vmin; 
+   object-fit: cover; 
+   object-position: center;
+}
+</style>
 
