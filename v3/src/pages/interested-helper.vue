@@ -38,7 +38,7 @@
           <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>
           Chat
         </f7-button>
-        <f7-button fill style="background-color: red">
+        <f7-button fill>
           <f7-icon f7="phone" size="20px" class="call"></f7-icon>
           Call
         </f7-button>
@@ -97,7 +97,7 @@
           <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>
           Chat
         </f7-button>
-        <f7-button fill style="background-color: red">
+        <f7-button fill>
           <f7-icon f7="phone" size="20px" class="call"></f7-icon>
           Call
         </f7-button>

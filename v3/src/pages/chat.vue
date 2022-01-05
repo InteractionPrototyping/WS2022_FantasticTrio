@@ -8,7 +8,6 @@
         f7="phone_fill"
         size="30px"
         class="right"
-        style="color: red"
       ></f7-icon>
     </f7-navbar>
     <!-- Helper's information -->

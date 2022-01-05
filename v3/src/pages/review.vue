@@ -48,7 +48,7 @@
       >
         <!--Profile picture-->
         <template #media>
-            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="40"/>
+            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="avatar" width="40"/>
           </template>
       </f7-list-item>
 
@@ -61,7 +61,7 @@
       >
         <!--Profile picture-->
         <template #media>
-            <img src="https://images.pexels.com/photos/5486199/pexels-photo-5486199.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="40"/>
+            <img src="https://images.pexels.com/photos/5486199/pexels-photo-5486199.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="avatar" width="40"/>
           </template>
       </f7-list-item>
 
@@ -74,7 +74,7 @@
       >
         <!--Profile picture-->
         <template #media>
-            <img src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="40"/>
+            <img src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="avatar" width="40"/>
           </template>
       </f7-list-item>
 
@@ -87,7 +87,7 @@
       >
         <!--Profile picture-->
         <template #media>
-            <img src="https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="40"/>
+            <img src="https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="avatar" width="40"/>
           </template>
       </f7-list-item>
 
@@ -100,7 +100,7 @@
       >
         <!--Profile picture-->
         <template #media>
-            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="40"/>
+            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="avatar" width="40"/>
           </template>
       </f7-list-item>
     </f7-list>
@@ -117,6 +117,14 @@
   margin: 0px;
   color: #2a3c60 !important;
 }
+.avatar{
+  border-radius: 50%; 
+  width: 12vmin;
+   height: 12vmin; 
+   object-fit: cover; 
+   object-position: center;
+}
+
 </style>
 
 

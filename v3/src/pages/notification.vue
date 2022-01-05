@@ -18,6 +18,7 @@
               width="40"
               class="avatar"
             >
+            <i class="badgeToimg"></i>
           </template>
       </f7-list-item>
       <f7-list-item
@@ -27,9 +28,6 @@
         subtitle="...sent you a message"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
       >
-      <!--Badge to indicate unread message-->
-      <!--ToDo: Correct positioning of the badge-->
-      <f7-badge color="green">1</f7-badge>
         <!--Profile picture-->
         <template #media>
             <img
@@ -52,6 +50,7 @@
               width="40"
               class="avatar"
             />
+            <i class="badgeToimg"></i>
           </template>
       </f7-list-item>
       <f7-list-item
@@ -63,7 +62,6 @@
       >
       <!--Badge to indicate unread message-->
       <!--ToDo: Correct positioning of the badge-->
-      <f7-badge color="green">2</f7-badge>
         <!--Profile picture-->
         <template #media>
             <img
@@ -101,6 +99,16 @@
    height: 20vmin; 
    object-fit: cover; 
    object-position: center;
+}
+.badgeToimg{
+  display: flex;
+  height: 15px;
+  width:15px;
+  background-color: #4cd964;
+  border-radius: 50%;
+  position: absolute;
+  left: 70px;
+  top: 10px;
 }
 
 </style>

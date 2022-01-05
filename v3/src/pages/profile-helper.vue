@@ -23,7 +23,7 @@
       <f7-button fill raised href="/suitable-helper/" @click="showToastIcon" >Ask for price</f7-button>
         <!--Profile picture-->
          <template #media>
-            <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
+            <img  class="avatar" src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
           </template>
       </f7-list-item>
     </f7-list>
@@ -66,7 +66,7 @@
     <f7-block>
         <f7-row>
       <f7-col>
-          <img src="https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg" width="140"/>
+          <img src="https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg" class= "gallery" width="140"/>
           <p>
           The fixing work is awesome!!!
           </p> 
@@ -77,7 +77,7 @@
           <f7-icon f7="suit_heart_fill" size=20px class="black_heart"></f7-icon>
       </f7-col>
       <f7-col>
-          <img src="https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg" width="140"/>
+          <img src="https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg" class= "gallery" width="140"/>
           <p>
           A tip to keep your garden clean
           </p> 
@@ -100,33 +100,57 @@
 
 <!--Style-->
 <style scoped>
-.col{
-    background: #fff;
-    text-align: center;
-    color: #000;
-    border: 1px solid #ddd;
-    padding: 5px;
-    margin-bottom: 16px;
-    font-size: 12px;
-    height: 200px;
-}
 .date{
   float: left;
-  font-size: 15px;
+  font-size: 10px;
+}
+
+.avatar{
+  border-radius: 50%; 
+  width: 25vmin;
+   height: 25vmin; 
+   object-fit: cover; 
+   object-position: center;
+}
+.col {
+  background: #fff;
+  text-align: center;
+  color: #000;
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px  rgba(0, 0, 0, 0.4);
+}
+.person {
+  display: inline;
+  float: left;
+  bottom:1px;
+}
+.writer {
+  float: left;
 }
 p{
   margin: 0px;
   padding: 0px;
   height: 34px;
-  font-size: 17px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: var(--f7-font-family);
 }
-.black_heart{
+.black_heart {
   display: inline;
   float: right;
+  bottom:1px;
 }
-.follower{
+.follower {
   float: right;
-  font-size: 15px;
+}
+.gallery{
+  position: relative;
+  right: 2px;
 }
 </style>
 

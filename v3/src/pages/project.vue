@@ -28,6 +28,7 @@
             src="https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg"
             width="350"
             height="200"
+            class="picture"
           />
         </f7-swiper-slide>
         <f7-swiper-slide>
@@ -35,6 +36,7 @@
             src="https://46yxb83hlyy77jig73dh02ok-wpengine.netdna-ssl.com/wp-content/uploads/2019/09/61-Basic-Auto-Mechanic-Skills-To-Fix-Your-Car-Yourself-ss-750x420.jpg"
             width="350"
             height="200"
+            class="picture"
           />
         </f7-swiper-slide>
         <f7-swiper-slide>
@@ -42,6 +44,7 @@
             src="https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg="
             width="350"
             height="200"
+            class="picture"
           />
         </f7-swiper-slide>
       </f7-swiper>
