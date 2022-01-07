@@ -2,157 +2,185 @@
   <f7-page name="my_request">
     <f7-navbar title="My Request" back-link="Back" back-link-url="/suitable-helper/"></f7-navbar>
 
-    <!-- Template from List View component: Media List -->
-      
-    <f7-block-title style="text-align:center">Check your request status here</f7-block-title>
+    <template #fixed>
+      <!-- Extended FAB Center Bottom (Red) -->
+      <f7-fab href="/add-request/" position="center-bottom" text="Create" color="#263a68">
+        <f7-icon ios="f7:plus" aurora="f7:plus" md="material:add"></f7-icon>
+      </f7-fab>
+    </template>
+    <!-- request list  -->
+    <f7-block-title style="text-align:center">
+      Check your request status here
+    </f7-block-title>
+
+    <f7-list media-list>
       <!-- 1st request -->
-      <f7-list class="myRequest" media-list style="width:85%;display: inline-block">
-        <f7-list-item
-          title="Change Brake"
+      <f7-list-item
+        title="Audi A6's front brake pads are broken and need repair"
           after="To 31/12"
           text="&#8982; 81548,Munich"
-          style="padding:0"
-        >
-        <f7-chip outline color="#263a68" text="#Car repair"></f7-chip>
-          <template #media>
-            <img src="../img/request_img/Car_repair.png" width="80" />
-          </template>
-        </f7-list-item>
-      </f7-list>
-      <!-- icon coloum for 2 functions and status -->
-      <f7-block class="listOfButton">
-        <p class="buttonOfIcon interested">
-          <a href="/suitable-helper/" style="color:white">
-            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
-              person_search
-            </f7-icon>
-            (1)
-          </a>
-        </p>
-        <p @click="openAlert" class="buttonOfIcon interested">
-          <a style="color:white">
-            <f7-icon size= "28px" class="material-icons status-icon" style="color:white">
-              price_check
-            </f7-icon>
-            (0)
-          </a>
-            
-              
-        </p>
-      </f7-block>
+      >
+        <f7-row>
+          <!-- keyword chip -->
+          <f7-col>
+            <f7-chip outline color="#263a68" text="#Car repair"></f7-chip>
+          </f7-col>
+          <!-- button to check price -->
+          <f7-col>
+            <f7-button fill>
+              <a href="/interested-helper/" style="color:white">
+                <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+                  price_check
+                  <!-- <f7-badge color="green"></f7-badge> -->
+                </f7-icon>
+                (10&#8364)
+              </a>
+            </f7-button>
+          </f7-col>
+        </f7-row>
+        <!-- img for request -->
+        <template #media>
+          <img src="../img/request_img/Car_repair.png" width="80" />
+        </template>
+      </f7-list-item>
 
       <!-- 2nd request -->
-      <f7-list class="myRequest not-1st" media-list style="width:85%;display: inline-block;">
-        <f7-list-item
-          title="Paint wall"
-          after="To 31/12"
-          text="&#8982; 81548,Munich"
-        >
-        <f7-chip outline color="#263a68" text="#Paint wall"></f7-chip>
-          <template #media>
-            <img src="../img/request_img/Paint_wall.jpeg" width="80" />
-          </template>
-        </f7-list-item>
-      </f7-list>
-      <!-- icon coloum for 2 functions and status -->
-      <f7-block class="listOfButton not-1st">
-        <p class="buttonOfIcon interested">
-          <a href="/suitable-helper/" style="color:white">
-            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
-              person_search
-            </f7-icon>
-            (3)
-          </a>
-        </p>
-        <p  class="buttonOfIcon interested">
-            <a href="/interested-helper/" style="color:white">
-            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
-              price_check
-              <f7-badge color="green">2</f7-badge>
-            </f7-icon>
-            (2)
-          </a>
-        </p>
-      </f7-block>
+      <f7-list-item
+        title="Four walls of the bedroom need to be renovated and painted"
+        after="To 31/12"
+        text="&#8982; 81548,Munich"
+      >
+        <f7-row>
+          <!-- keyword chip -->
+          <f7-col>
+            <f7-chip outline color="#263a68" text="#Paint wall"></f7-chip>
+          </f7-col>
+          <!-- button to check price -->
+          <f7-col>
+            <f7-button fill>
+              <a href="/interested-helper/" style="color:white">
+                <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+                  price_check
+                  <!-- <f7-badge color="green"></f7-badge> -->
+                </f7-icon>
+                (0)
+              </a>
+            </f7-button>
+          </f7-col>
+        </f7-row>
+        <!-- img for request -->
+        <template #media>
+          <img src="../img/request_img/Paint_wall.jpeg" width="80" />
+        </template>
+      </f7-list-item>
 
       <!-- 3rd request -->
-      <f7-list class="myRequest" media-list style="width:85%;display: inline-block">
-        <f7-list-item
-          title="Assemble furnituer"
+      <f7-list-item
+        title="Newly purchased IKEA nightstand needs to be assembled"
           after="To 31/12"
           text="&#8982; 81548,Munich"
-        >
-        <f7-chip outline color="#263a68" text="#Assemble furniture"></f7-chip>
-          <template #media>
-            <img src="../img/request_img/Assemble_furniture.jpeg" width="80" height="80" />
-          </template>
-        </f7-list-item>
-      </f7-list>
-      <!-- icon coloum for 2 functions and status -->
-      <f7-block class="listOfButton">
-        <p class="buttonOfIcon interested">
-          <a href="/suitable-helper/" style="color:white">
-            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
-              person_search
-            </f7-icon>
-            (5)
-          </a>
-        </p>
-        <p  class="buttonOfIcon interested">
-          <a href="/interested-helper/" style="color:white">
-            <f7-icon size= "28px" class="material-icons status-icon" style="color:white">
-              price_check
-              <!-- <f7-badge color="green">2</f7-badge> -->
-              </f7-icon>
-              (2)
-          </a>
-        </p>
-      </f7-block>
-
-      
+      >
+        <f7-row>
+          <!-- keyword chip -->
+          <f7-col>
+            <f7-chip outline color="#263a68" text="#Assembl furnitur"></f7-chip>
+          </f7-col>
+          <!-- button to check price -->
+          <f7-col>
+            <f7-button fill>
+              <a href="/interested-helper/" style="color:white">
+                <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+                  price_check
+                  <!-- <f7-badge color="green"></f7-badge> -->
+                </f7-icon>
+                (0)
+              </a>
+            </f7-button>
+          </f7-col>
+        </f7-row>
+        <!-- img for request -->
+        <template #media>
+          <img src="../img/request_img/Assemble_furniture.jpeg" width="80" height="80" />
+        </template>
+      </f7-list-item>
+    </f7-list>
 
 
-      <!-- finished request -->
-      <f7-block-title style="text-align:center">
-        Finished requests
-      </f7-block-title>
-      <!-- make list to be gray -->
-      <f7-block style="filter：gray; -moz-opacity:.3;opacity:0.3;paddinng;0px">
-      
-      <!-- 2nd request -->
-      <f7-list class="myRequest" media-list style="width:85%;display: inline-block;">
-        <f7-list-item
-          title="Change Brake"
+
+
+
+
+
+    <!-- finished request -->
+    <f7-block-title style="text-align:center">
+      Finished request
+    </f7-block-title>    
+    <f7-list media-list style="filter：gray; -moz-opacity:.3;opacity:0.3;paddinng;0px">
+      <!-- 1st request -->
+      <f7-list-item
+        title="Audi A6's front brake pads are broken and need repair"
           after="To 31/12"
           text="&#8982; 81548,Munich"
-          style="padding:0"
-        >
-        <f7-chip outline color="#263a68" text="#Car repair"></f7-chip>
-          <template #media>
-            <img src="../img/request_img/Car_repair.png" width="80" />
-          </template>
-        </f7-list-item>
-      </f7-list>
-      <!-- icon coloum for 2 functions and status -->
-      <f7-block class="listOfButton ">
-        <p class="buttonOfIcon interested">
-          <!-- <a href="/suitable-helper/"> -->
-            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
-              person_search
-            </f7-icon>
-          <!-- </a> -->
-        </p>
-        <p class="buttonOfIcon interested">
-            <!-- <a href="/interested-helper/"> -->
-            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
-              price_check
-              <!-- <f7-badge color="green">2</f7-badge> -->
-            </f7-icon>
-          <!-- </a> -->
-        </p>
-      </f7-block>
+      >
+        <f7-row>
+          <!-- keyword chip -->
+          <f7-col>
+            <f7-chip outline color="#263a68" text="#Car repair"></f7-chip>
+          </f7-col>
+          <!-- button to check price -->
+          <f7-col>
+            <f7-button fill>
+              <a href="/interested-helper/" style="color:white">
+                <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+                  price_check
+                  <!-- <f7-badge color="green"></f7-badge> -->
+                </f7-icon>
+                (10&#8364)
+              </a>
+            </f7-button>
+          </f7-col>
+        </f7-row>
+        <!-- img for request -->
+        <template #media>
+          <img src="../img/request_img/Car_repair.png" width="80" />
+        </template>
+      </f7-list-item>
 
-      </f7-block>
+    </f7-list>
+
+    <!-- <f7-list accordion-list>
+      <f7-list-item accordion-item title="Finished request">
+        <f7-accordion-content>
+          <f7-list media-list style="filter：gray; -moz-opacity:.3;opacity:0.3;paddinng;0px">
+                <f7-list-item
+                  title="Audi A6's front brake pads are broken and need repair"
+                    after="To 31/12"
+                    text="&#8982; 81548,Munich"
+                >
+                  <f7-row>
+                    <f7-col>
+                      <f7-chip outline color="#263a68" text="#Car repair"></f7-chip>
+                    </f7-col>
+                    <f7-col>
+                      <f7-button fill>
+                        <a href="/interested-helper/" style="color:white">
+                          <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+                            price_check
+                          </f7-icon>
+                          (10&#8364)
+                        </a>
+                      </f7-button>
+                    </f7-col>
+                  </f7-row>
+                  <template #media>
+                    <img src="../img/request_img/Car_repair.png" width="80" />
+                  </template>
+                </f7-list-item>
+          </f7-list>
+        </f7-accordion-content>
+      </f7-list-item>
+    </f7-list> -->
+
 
   </f7-page>
 </template>
@@ -169,7 +197,6 @@
     background-color:#2d4066;
 
     margin:0;
-    /* padding:10px 0 10px 0; */
     height:50px;
     text-align:center;
   }
@@ -180,9 +207,6 @@
     padding:0px;
     position:relative;
     bottom: 11px;
-  }
-  .finished {
-    background-color:#aed4fd;
   }
 </style>
 

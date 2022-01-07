@@ -32,20 +32,26 @@
           icon-md="material:home"
           text="Home"
         ></f7-link>
-        <!-- <f7-link
-          tab-link="#view-notification"
-          icon-ios="f7:bell_fill"
-          icon-aurora="f7:square_list_fill"
-          icon-md="material:notifications"
-          text="Notification"
+
+
+
+
+        <f7-link
+          tab-link="#view-explore"
+          icon-ios="f7:lightbulb_fill"
+          icon-aurora="f7:lightbulb_fill"
+          icon-md="material:lightbulb"
+          text="Explore"
         >
-        </f7-link> -->
+        </f7-link>
+
         <f7-link tab-link='#view-notification'>
           <f7-icon ios="f7:bell_fill" aurora="f7:bell_fill" md="material:notifications">
             <f7-badge color="green">2</f7-badge>
           </f7-icon>
           <span class="tabbar-label">Notification</span>
         </f7-link>
+
         <f7-link
           tab-link="#view-own-profile"
           icon-ios="f7:person_fill"

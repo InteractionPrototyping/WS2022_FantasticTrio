@@ -95,7 +95,7 @@
     <f7-block >
       <!-- <f7-button fill raised href="/suitable-helper/" >Submit</f7-button> -->
       <!-- it also shows toast when click submit button -->
-      <f7-button fill raised @click="showToastWithCustomButton" href="/suitable-helper/">Submit</f7-button>
+      <f7-button fill raised @click="showToast" href="/my-request/">Submit</f7-button>
       <!-- <f7-button fill @click="openConfirm" >Submit</f7-button>       -->
     </f7-block>
   </f7-page>
@@ -120,9 +120,9 @@ export default {
       // Create toast
       if (!self.toast) {
         self.toast = f7.toast.create({
-          text: "Request has been posted! <br> Click the button in the upper right corner to view the request list:) ",
-          position: 'top',
-          closeTimeout: 4000,
+          text: "Request has been posted!",
+          position: 'center',
+          closeTimeout: 2000,
         });
       }
       // Open it
@@ -133,7 +133,7 @@ export default {
       // Create toast
       if (!self.toastWithCustomButton) {
         self.toastWithCustomButton = f7.toast.create({
-          text: 'Click list button in the right corner of navbar to view the status of your posted request:)',
+          text: 'Request has been submitted!',
           closeButton: true,
           closeButtonText: 'I got it!',
           closeButtonColor: 'green',
