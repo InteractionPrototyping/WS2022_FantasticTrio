@@ -1,7 +1,7 @@
 <template>
   <f7-page name="explore">
     <!-- Navbar area -->
-    <f7-navbar back-link="Back">
+    <f7-navbar back-link="Back" >
       <f7-searchbar
         placeholder="Tap keywords here!"
         :clear-button="true"
@@ -206,6 +206,7 @@ p{
 }
 </style>
 // <script>
+import '../js/explore_data.js'
 export default {
   props: {
     f7router: Object,
