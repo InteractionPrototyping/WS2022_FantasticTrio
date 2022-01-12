@@ -69,7 +69,7 @@
         <span style="position: relative; left: 30px; top: 6px"> 7 </span>
       </div>
       <f7-list inset media-list style="height: 100px">
-        <f7-list-item title="Alice M." text="Expert of car repair">
+        <f7-list-item title="Alice Johnson" text="Expert of car repair">
           <br>
         <f7-button fill raised href="/profile-helper/">SHOW USER PROFILE</f7-button>        
           <template #media>
@@ -91,7 +91,7 @@
         style="height: 100px; position: relative; bottom: 20px" inset
       >
         <f7-list-item
-          title="Jessi"
+          title="Jessi Briem"
           text="I like the article very much,  that help me a lot."
           after="05/12/2021"
         >

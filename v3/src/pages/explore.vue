@@ -2,12 +2,44 @@
   <f7-page name="explore">
     <!-- Navbar area -->
     <f7-navbar back-link="Back" >
-      <f7-searchbar
-        placeholder="Tap keywords here!"
-        :clear-button="true"
-        :disable-button="false"
-      ></f7-searchbar>
-      <f7-link icon-ios="f7:search"></f7-link>
+      <!-- use smart select component to choose keywords -->
+      <f7-list>
+      <f7-list-item title="Keyword" smart-select :smart-select-params="{openIn: 'popup', searchbar: true, searchbarPlaceholder: 'Search keyword'}">
+      <select name="keyword">
+        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/car.svg'> Auto,Mobiles" >
+          <option value="Autoreparatur" selected>Autoreparatur</option>
+          <option value="Auto Tuning" >Auto Tuning</option>
+          <option value="Chauffeur">Chauffeur</option>
+          <option value="Fahrzeugbeschriftung">Fahrzeugbeschriftung</option>
+          <option value="Fahrzeugreinigung">Fahrzeugreinigung</option>
+          <option value="Sonstige Kfz-Service">Sonstige Kfz-Service</option>
+        </optgroup>
+        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/home.svg'> Haus,Aussenarbeiten ">
+          <option value="Abriss">Abriss</option>
+          <option value="Aussenkonstruktion">Aussenkonstruktion</option>
+          <option value="Baggerarbeiten">Baggerarbeiten</option>
+          <option value="Bautrockenlegung, Baut...">Bautrockenlegung, Baut...</option>
+          <option value="Dachdecker">Dachdecker</option>
+          <option value="Sonstige Aussenarbeit">Sonstige Aussenarbeit</option>
+
+        </optgroup>
+        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/painting.svg'>Haus,Innenarbeiten" >
+          <option value="Badsanierung">Badsanierung</option>
+          <option value="Bodenleger">Bodenleger</option>
+          <option value="Deckenarbeiten">Deckenarbeiten</option>
+          <option value="Entrümpelung">Entrümpelung</option>
+          <option value="Sonstige Aussenarbeit">Sonstige Innenarbeit</option>
+        </optgroup>
+        <optgroup label=" <img style='width:25px; height:25px;' src='../img/add_request_keyword/gardening.svg'> Gardenarbeiten">
+          <option value="Baumfällung">Baumfällung</option>
+          <option value="Gärtner">Gärtner</option>
+          <option value="Gartenteich">Gartenteich</option>
+          <option value="Grabpflege">Grabpflege</option>
+          <option value="Sonstige Gartenarbeit">Sonstige Gartenarbeit</option>
+        </optgroup>
+      </select>
+    </f7-list-item>
+    </f7-list>
     </f7-navbar>
     <f7-block>
       <!-- Project list -->
@@ -30,7 +62,7 @@
           <br />
           <br />
           <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
-          <span class="writer">Alice M.</span>
+          <span class="writer">Alice</span>
           <span class="follower">7</span>
           <f7-icon
             f7="suit_heart_fill"
@@ -43,11 +75,11 @@
             src="https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg"
             width="150"
           />
-          <p>A tip to keep you garten clean</p>
+          <p>A tip to keep you garden clean</p>
           <br />
           <br />
           <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
-          <span class="writer">Johnen</span>
+          <span class="writer">Johan</span>
           <span class="follower">14</span>
           <f7-icon
             f7="suit_heart_fill"
@@ -63,7 +95,7 @@
             width="150"
             height="100"
           />
-          <p>Gartening is wonderful</p>
+          <p>Gardening is wonderful</p>
           <br />
           <br />
           <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
@@ -151,11 +183,11 @@
             src="https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg"
             width="150"
           />
-          <p>A tip to keep you garten clean</p>
+          <p>A tip to keep you garden clean</p>
           <br />
           <br />
           <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
-          <span class="writer">Johnen</span>
+          <span class="writer">Johnan</span>
           <span class="follower">14</span>
           <f7-icon
             f7="suit_heart_fill"

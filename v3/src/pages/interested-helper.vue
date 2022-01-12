@@ -20,10 +20,8 @@
             <span>&nbsp;4.6/5</span>
           </f7-col>
           <f7-col>
-          <!--by clicking the button popup-menu will be opened-->
-          <f7-button fill raised class="button popup-open" href="#" data-popup=".popup-about">
-            10&#8364;</f7-button> 
-
+          <!-- In data-sheet attribute we specify CSS selector of sheet we need to open-->
+          <p><a class="button button-fill sheet-open" href="#" data-sheet=".my-sheet">10€</a></p>
           </f7-col>
         </f7-row>
         <template #media>
@@ -54,9 +52,8 @@
             <span>&nbsp;4.9/5</span>
           </f7-col>
           <f7-col>
-          <!--by clicking the button popup-menu will be opened -->
-          <f7-button fill raised class="button popup-open" href="#" data-popup=".popup-about">
-            15&#8364;</f7-button> 
+          <!-- In data-sheet attribute we specify CSS selector of sheet we need to open-->
+          <p><a class="button button-fill sheet-open" href="#" data-sheet=".my-sheet">15€</a></p>
           </f7-col>
         </f7-row>
         <template #media>
@@ -67,31 +64,32 @@
           />
         </template>
 
-        <!--Pop-over menu-->
-       <!-- <f7-popover class="popover-menu"> -->
-          <!-- <f7-block-title style="text-align:center">Choose one function</f7-block-title> -->
-        <!--  <f7-list>
-            <f7-list-button bold popover-close title="Credit or Debit Card"></f7-list-button>
-            <f7-list-button bold popover-close title="Paypal"></f7-list-button>
-            <f7-list-button bold popover-close title="Cash"></f7-list-button>
-            <f7-list-button bold popover-close title="Klarna (Bank Transfer)"></f7-list-button>
-          </f7-list>
-        </f7-popover> -->
-
-        <!--Pop-up menu function --> 
-        <div class="popup popup-about">
-          <div class="block">
-            <p><a class="link popup-close" href="#">
-              Close
-              </a></p>
-            <p>Choose your payment option</p>  
-            <div>Credit or Debit Card</div>
-            <div>Paypal</div>
-            <div>Cash</div>
-            <div>Klarna (Bank Transfer)</div>
-
+        <!--Sheet Modal-->    
+        <!-- Sheet Modal Container -->
+        <div class="sheet-modal my-sheet">
+          <!-- Sheet Modal Toolbar-->
+          <div class="toolbar">
+            <div class="toolbar-inner">
+              <div class="left"></div>
+              <div class="right">
+                <a href="#" class="link sheet-close">Close</a>
+              </div>
+            </div>
           </div>
-        </div> 
+          <!-- Sheet Modal Inner -->
+          <div class="sheet-modal-inner">
+            <!-- Sheet Modal content -->
+            <div class="block">
+              <div class="display-flex padding justify-content-space-between align-items-center"> 
+                <div style="font-size: 30px"><b>Total:</b></div>
+                <div style="font-size: 30px"><b>15€</b></div>
+             </div>
+              <div class="padding-horizontal padding-bottom"> 
+                <a class="button button-large button-fill" style="font-size: 20px">Make Payment</a>
+             </div> 
+            </div>
+          </div>
+        </div>
 
         <f7-button fill style="margin-bottom: 5px">
           <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>

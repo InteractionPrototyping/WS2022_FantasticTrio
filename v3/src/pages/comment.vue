@@ -6,7 +6,7 @@
       <!-- Comment content -->
       <f7-list media-list style="height: 150px">
         <f7-list-item
-          title="Jessi"
+          title="Jessi Briem"
           after="05/12/2021"
           text="I like the article very much, it helped me a lot."
         >
@@ -19,7 +19,7 @@
           </template>
         </f7-list-item>
         <f7-list-item
-          title="Eric"
+          title="Eric Bach"
           after="04/12/2021"
           text="Thanks for sharing!"
         >
@@ -32,7 +32,7 @@
           </template>
         </f7-list-item>
         <f7-list-item
-          title="Christina"
+          title="Christina Ruck"
           after="30/11/2021"
           text="The tips are all useless for me."
         >
@@ -45,7 +45,7 @@
           </template>
         </f7-list-item>
         <f7-list-item
-          title="Jeson"
+          title="Jeson Smith"
           after="25/11/2021"
           text="Cool idea! I will try it next time :)"
         >
@@ -58,7 +58,7 @@
           </template>
         </f7-list-item>
         <f7-list-item
-          title="Alice"
+          title="Alice Wilson"
           after="21/11/2021"
           text="Thanks,I will try it on my father's car."
         >
@@ -71,7 +71,7 @@
           </template>
         </f7-list-item>
         <f7-list-item
-          title="Hans"
+          title="Hans Schmitt"
           after="15/11/2021"
           text="At least I need one my own car"
         >

@@ -24,17 +24,24 @@
 
   <!--Drop down menu for filtering the reviews-->
   <!-- ToDo: Adjusting the color-->
-    <f7-menu>
-      <f7-menu-item text="Latest reviews" dropdown>
-        <f7-menu-dropdown left>
-          <f7-menu-dropdown-item href="#" text="Latest reviews"></f7-menu-dropdown-item>
-          <f7-menu-dropdown-item divider></f7-menu-dropdown-item>
-          <f7-menu-dropdown-item href="#" text="Best reviews"></f7-menu-dropdown-item>
-          <f7-menu-dropdown-item divider></f7-menu-dropdown-item>
-          <f7-menu-dropdown-item href="#" text="Worst reviews"></f7-menu-dropdown-item>
-        </f7-menu-dropdown>
-      </f7-menu-item>
-    </f7-menu>
+  <!-- Menu item with dropdown -->
+     <div class="menu">
+      <div class="menu-inner">
+        <div class="menu-item menu-item-dropdown" style="background-color: #6FAAE0;">
+          <div class="menu-item-content">Filter reviews</div>
+          <div class="menu-dropdown menu-dropdown-left" style="background-color: #6FAAE0;">
+            <div class="menu-dropdown-content" style="background-color: #6FAAE0;">
+              <a href="#" class="menu-dropdown-link menu-close">Latest reviews</a>
+              <div class="menu-dropdown-divider"></div>
+              <a href="#" class="menu-dropdown-link menu-close">Best reviews</a>
+              <div class="menu-dropdown-divider"></div>
+              <a href="#" class="menu-dropdown-link menu-close">Worst reviews</a>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+
 
     <!--Individual reviews arranged in block-form as a media-list-->
     <f7-block>
@@ -123,6 +130,9 @@
    height: 12vmin; 
    object-fit: cover; 
    object-position: center;
+}
+.dropdown-menu{
+  background-color: red;
 }
 
 </style>

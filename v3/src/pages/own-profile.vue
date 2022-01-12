@@ -17,10 +17,13 @@
       <f7-icon f7="star_lefthalf_fill" size="20px" class="star"></f7-icon>
       <span>&nbsp;4.6/5</span>
       <!--Button "Show reviews"-->
-      <f7-button fill raised href="/review/">Show reviews</f7-button> 
+      <f7-button fill raised href="/review/">Show reviews </f7-button> 
+      
       <br>
       <!--Button "Edit my profile"-->
-      <f7-button fill raised>Edit my profile</f7-button>
+      <f7-button fill raised>Edit my profile
+         <i class="material-icons" style="position:relative; right:0px; size=40px">edit</i>
+      </f7-button>
         <!--Profile picture-->
          <template #media>
             <img src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" class="avatar"/>
@@ -50,7 +53,7 @@
     <f7-list media-list>
       <f7-list-item        
         title="DESCRIPTION"
-        text="Hello, I´m Alice. I am 34 years old and a qualified car mechanic."       
+        text="Hello, I´m Jessi. I am 34 years old and a qualified car mechanic."       
       >
       <!-- show more button -->
       <br>
@@ -156,6 +159,12 @@ p{
 .gallery{
   position: relative;
   right: 2px;
+}
+.material-icons {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  margin: 10px;
 }
 </style>
 

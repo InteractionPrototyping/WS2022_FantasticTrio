@@ -56,7 +56,8 @@
       >
       <!-- add my_location icon to automatically get locate information -->
       <template #content-end>
-        <f7-icon style="position:relative; right:16px" ios="f7:scope" aurora="f7:house" md="material:my_location"></f7-icon>
+    <!--    <f7-icon style="position:relative; right:16px" ios="f7:scope" aurora="f7:house" md="material:my_location"></f7-icon> -->
+        <f7-icon f7="map_pin_ellipse" style="position:relative; right:16px"></f7-icon>
       </template>
       </f7-list-input>
 

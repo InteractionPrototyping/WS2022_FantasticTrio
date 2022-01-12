@@ -73,7 +73,7 @@
       </f7-list-item>
       <f7-list-item
         link="#" 
-        title="Sarah Müll"
+        title="Sarah Müller"
         after="19/09/2020"
         subtitle="...sent you a message"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
