@@ -1,6 +1,6 @@
 <template>
   <f7-page name="add-request" swipe-to-close @page:beforeremove="onPageBeforeRemove" @page:beforeout="onPageBeforeOut">
-    <f7-navbar title="Add Request" back-link="Back"></f7-navbar>
+    <f7-navbar title="Add Request" back-link="Back" style="font-size: 20px"></f7-navbar>
     
     <!-- input field -->
     <f7-list no-hairlines-md>
@@ -57,7 +57,7 @@
       <!-- add my_location icon to automatically get locate information -->
       <template #content-end>
     <!--    <f7-icon style="position:relative; right:16px" ios="f7:scope" aurora="f7:house" md="material:my_location"></f7-icon> -->
-        <f7-icon f7="map_pin_ellipse" style="position:relative; right:16px"></f7-icon>
+        <f7-icon f7="map_pin_ellipse" style="position:relative; right:16px; color:#263A68"></f7-icon>
       </template>
       </f7-list-input>
 
@@ -75,9 +75,6 @@
         placeholder="Insert your description here..."
       >
       </f7-list-input>
-
-
-    
       
       <f7-list-input
         label="Photos"
@@ -85,7 +82,7 @@
         placeholder="Click here to upload photos..."
       >
       <template #content-end>
-        <f7-icon style="position:relative; right:16px" ios="f7:square_arrow_up" aurora="f7:house" md="material:upload"></f7-icon>
+        <f7-icon style="position:relative; right:16px; color:#263A68" ios="f7:square_arrow_up" aurora="f7:house" md="material:upload"></f7-icon>
       </template>
       </f7-list-input>
 
@@ -93,14 +90,31 @@
     </f7-list>
 
     <!-- submit button -->
-    <f7-block >
+    <f7-block>
       <!-- <f7-button fill raised href="/suitable-helper/" >Submit</f7-button> -->
       <!-- it also shows toast when click submit button -->
       <f7-button fill raised @click="showToast" href="/my-request/">Submit</f7-button>
-      <!-- <f7-button fill @click="openConfirm" >Submit</f7-button>       -->
+      <!-- <f7-button fill @click="openConfirm" >Submit</f7-button> -->
     </f7-block>
   </f7-page>
 </template>
+
+<style scoped>
+.no-hairlines-md {
+  --f7-label-font-size: 25px;
+  --f7-input-font-size: 18px;
+  --f7-label-text-color:#263A68;
+}
+.list{
+  --f7-list-item-title-font-size: 25px;
+  --f7-list-item-after-font-size: 18px;
+  --f7-list-item-title-text-color: #263A68;
+}
+.button-raised{
+  --f7-button-height: 50px;
+  --f7-button-font-size: 25px;
+}
+</style>
 
 <script>
 import { f7Navbar, f7Page, f7Block, f7Button, f7, theme } from 'framework7-vue';

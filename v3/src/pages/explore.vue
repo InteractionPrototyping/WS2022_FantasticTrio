@@ -236,6 +236,10 @@ p{
 .follower {
   float: right;
 }
+.list{
+  --f7-list-item-title-text-color: #263A68;
+  --f7-list-item-title-font-size: 20px;
+}
 </style>
 // <script>
 import '../js/explore_data.js'

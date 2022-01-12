@@ -1,7 +1,7 @@
 <template>
   <f7-page name="interested-helper">
     <!-- Navbar area -->
-    <f7-navbar title="Interested Helper" back-link="Back"></f7-navbar>
+    <f7-navbar title="Interested Helper" back-link="Back" style="font-size: 20px"></f7-navbar>
     <!-- Helper's information -->
     <f7-list media-list>
       <f7-list-item
@@ -12,12 +12,12 @@
       >
         <f7-row>
           <f7-col>
-            <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
-            <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
-            <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
-            <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
-            <f7-icon f7="star_lefthalf_fill" size="20px" class="star"></f7-icon>
-            <span>&nbsp;4.6/5</span>
+            <f7-icon f7="star_fill" size="22px" class="star"></f7-icon>
+            <f7-icon f7="star_fill" size="22px" class="star"></f7-icon>
+            <f7-icon f7="star_fill" size="22px" class="star"></f7-icon>
+            <f7-icon f7="star_fill" size="22px" class="star"></f7-icon>
+            <f7-icon f7="star_lefthalf_fill" size="22px" class="star"></f7-icon>
+            <span style="font-size:18px">&nbsp;4.6/5</span>
           </f7-col>
           <f7-col>
           <!-- In data-sheet attribute we specify CSS selector of sheet we need to open-->
@@ -32,11 +32,11 @@
           />
         </template>
 
-        <f7-button fill style="margin-bottom: 5px" href="/chat/">
+        <f7-button fill style="margin-bottom: 5px; background-color: #6FAAE0" href="/chat/">
           <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>
           Chat
         </f7-button>
-        <f7-button fill>
+        <f7-button fill style="background-color: #6FAAE0">
           <f7-icon f7="phone" size="20px" class="call"></f7-icon>
           Call
         </f7-button>
@@ -44,12 +44,12 @@
       <f7-list-item title="Lisa Wright" after="05/12/2021" text="&#8982; 81550,Munich">
         <f7-row>
           <f7-col>
-            <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
-            <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
-            <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
-            <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
-            <f7-icon f7="star_fill" size="20px" class="star"></f7-icon>
-            <span>&nbsp;4.9/5</span>
+            <f7-icon f7="star_fill" size="22px" class="star"></f7-icon>
+            <f7-icon f7="star_fill" size="22px" class="star"></f7-icon>
+            <f7-icon f7="star_fill" size="22px" class="star"></f7-icon>
+            <f7-icon f7="star_fill" size="22px" class="star"></f7-icon>
+            <f7-icon f7="star_fill" size="22px" class="star"></f7-icon>
+            <span style="font-size:18px">&nbsp;4.9/5</span>
           </f7-col>
           <f7-col>
           <!-- In data-sheet attribute we specify CSS selector of sheet we need to open-->
@@ -91,11 +91,11 @@
           </div>
         </div>
 
-        <f7-button fill style="margin-bottom: 5px">
+        <f7-button fill style="margin-bottom: 5px; background-color: #6FAAE0" href="/chat/">
           <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>
           Chat
         </f7-button>
-        <f7-button fill>
+        <f7-button fill style="background-color: #6FAAE0">
           <f7-icon f7="phone" size="20px" class="call"></f7-icon>
           Call
         </f7-button>
@@ -103,6 +103,7 @@
     </f7-list>
   </f7-page>
 </template>
+
 <style scoped>
 .avatar{
   border-radius: 50%; 
@@ -111,5 +112,15 @@
    object-fit: cover; 
    object-position: center;
 }
+.media-list {
+  --f7-list-item-title-font-size: 25px;
+  --f7-list-item-after-font-size: 20px;
+  --f7-list-item-text-font-size: 20px;
+}
+.button{
+  --f7-button-font-size: 20px;
+  --f7-button-: 10px;
+}
+
 </style>
 

@@ -1,7 +1,7 @@
 <template>
   <f7-page name="chat">
     <!-- Navbar area -->
-    <f7-navbar back-link="Back">
+    <f7-navbar back-link="Back" style="font-size: 20px">
       <span class="change">Chat</span>
       <f7-icon
         fill
@@ -18,16 +18,16 @@
         class="avatar"
       />
       <f7-list media-list inset>
-        <f7-list-item
-          title="Jack.M"
-          after="Car repair"
-          style="margin-bottom: 20px"
-        >
+        <f7-list-item>
           <f7-row>
             <f7-col>
-              <div class="item-text .list">&#8982; 81548,Munich</div>
+              <div style="font-size: 25px; margin-bottom:5px">Jack Miller</div>
+              <span>
+              <div class="item-text .list" style="font-size: 18px">&#8982; 81548,Munich</div>
+              </span>
             </f7-col>
             <f7-col>
+              <f7-chip outline color="#263a68" text="#Car Repair" size: 30px style="margin-bottom:5px; text-size: 30px"></f7-chip> 
               <f7-button fill class="price">10&#8364;</f7-button>
             </f7-col>
           </f7-row>
@@ -148,6 +148,7 @@ img {
    object-fit: cover; 
    object-position: center;
 }
+
 </style>
 <script>
 import { f7, f7ready } from "framework7-vue";

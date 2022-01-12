@@ -1,6 +1,6 @@
 <template>
   <f7-page name="my_request">
-    <f7-navbar title="My Request" back-link="Back" back-link-url="/suitable-helper/"></f7-navbar>
+    <f7-navbar title="My Request" back-link="Back" style="font-size: 20px"></f7-navbar>
 
     <template #fixed>
       <!-- Extended FAB Center Bottom (Red) -->
@@ -9,31 +9,29 @@
       </f7-fab>
     </template>
     <!-- request list  -->
-    <f7-block-title style="text-align:center">
+    <f7-block-title style="text-align:center; font-size: 20px">
       Check your request status here
     </f7-block-title>
 
     <f7-list media-list>
       <!-- 1st request -->
       <f7-list-item
+        style="font-size:25px"
         title="Audi A6's front brake pads are broken and need repair"
-          after="To 31/12"
-          text="&#8982; 81548,Munich"
       >
-        <f7-row>
-          <!-- keyword chip -->
+        <f7-row style="padding-top: 5px">
           <f7-col>
-            <f7-chip outline color="#263a68" text="#Car repair"></f7-chip>
+            <div style="color:grey; font-size: 18px">Until 31/12</div>
           </f7-col>
           <!-- button to check price -->
           <f7-col>
             <f7-button fill>
-              <a href="/interested-helper/" style="color:white">
-                <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+              <a href="/interested-helper/" style="color:white; font-size:15px">
+                <f7-icon size="30px" class="material-icons status-icon" style="color:white;">
                   price_check
-                  <!-- <f7-badge color="green"></f7-badge> -->
+                  <!--<f7-badge color="green"></f7-badge> -->
                 </f7-icon>
-                (10&#8364)
+                (2)
               </a>
             </f7-button>
           </f7-col>
@@ -46,20 +44,18 @@
 
       <!-- 2nd request -->
       <f7-list-item
+        style="font-size:25px"
         title="Four walls of the bedroom need to be renovated and painted"
-        after="To 31/12"
-        text="&#8982; 81548,Munich"
       >
-        <f7-row>
-          <!-- keyword chip -->
+        <f7-row style="padding-top: 5px">
           <f7-col>
-            <f7-chip outline color="#263a68" text="#Paint wall"></f7-chip>
+            <div style="color:grey; font-size: 18px">Until 31/12</div>
           </f7-col>
           <!-- button to check price -->
           <f7-col>
             <f7-button fill>
-              <a href="/interested-helper/" style="color:white">
-                <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+              <a href="/interested-helper/" style="color:white; font-size:15px">
+                <f7-icon size= "30px" class="material-icons status-icon" style="color:white;">
                   price_check
                   <!-- <f7-badge color="green"></f7-badge> -->
                 </f7-icon>
@@ -76,20 +72,19 @@
 
       <!-- 3rd request -->
       <f7-list-item
+        style="font-size:25px"
         title="Newly purchased IKEA nightstand needs to be assembled"
-          after="To 31/12"
-          text="&#8982; 81548,Munich"
       >
-        <f7-row>
-          <!-- keyword chip -->
+        <f7-row style="padding-top: 5px">
           <f7-col>
-            <f7-chip outline color="#263a68" text="#Assembl furnitur"></f7-chip>
+            <!--<f7-chip outline color="#263a68" text="#Assembl furniture"></f7-chip> -->
+            <div style="color:grey; font-size: 18px">Until 31/12</div>
           </f7-col>
           <!-- button to check price -->
           <f7-col>
             <f7-button fill>
-              <a href="/interested-helper/" style="color:white">
-                <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+              <a href="/interested-helper/" style="color:white; font-size:15px">
+                <f7-icon size="30px" class="material-icons status-icon" style="color:white;">
                   price_check
                   <!-- <f7-badge color="green"></f7-badge> -->
                 </f7-icon>
@@ -106,36 +101,29 @@
     </f7-list>
 
 
-
-
-
-
-
     <!-- finished request -->
-    <f7-block-title style="text-align:center">
-      Finished request
+    <f7-block-title style="text-align:center; font-size: 20px">
+      Finished requests
     </f7-block-title>    
-    <f7-list media-list style="filter：gray; -moz-opacity:.3;opacity:0.3;paddinng;0px">
-      <!-- 1st request -->
+    <f7-list media-list style="filter：grey; -moz-opacity:.3;opacity:0.3;pading:0px">
+      <!-- 1st finished request -->
       <f7-list-item
+        style="font-size:25px"
         title="Audi A6's front brake pads are broken and need repair"
-          after="To 31/12"
-          text="&#8982; 81548,Munich"
       >
-        <f7-row>
-          <!-- keyword chip -->
+        <f7-row style="padding-top: 5px">
           <f7-col>
-            <f7-chip outline color="#263a68" text="#Car repair"></f7-chip>
+            <div style="color:grey; font-size: 18px">Until 31/12</div>
           </f7-col>
           <!-- button to check price -->
           <f7-col>
             <f7-button fill>
-              <a href="/interested-helper/" style="color:white">
-                <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+              <a href="/interested-helper/" style="color:white; font-size:15px">
+                <f7-icon size= "30px" class="material-icons status-icon" style="color:white;">
                   price_check
                   <!-- <f7-badge color="green"></f7-badge> -->
                 </f7-icon>
-                (10&#8364)
+                (5)
               </a>
             </f7-button>
           </f7-col>
