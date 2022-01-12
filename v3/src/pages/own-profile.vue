@@ -64,7 +64,7 @@
     <!--Media List for Profile Gallery-->
     <f7-list media-list>
       <f7-list-item      
-        title="PROFILE GALLERY"      
+        title="LIKED PROJECTS"      
       >
     <f7-block>
         <f7-row>
