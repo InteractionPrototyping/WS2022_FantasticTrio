@@ -22,7 +22,7 @@
       >
         <!-- img for request -->
         <template #media>
-          <img src="../img/request_img/Car_repair.png" width="80" />
+          <img src="../img/request_img/Car_repair.jpeg" width="80" />
         </template>
         <f7-swipeout-actions right>
           <f7-swipeout-button delete confirm-text="Are you sure you want to delete this item?">Delete</f7-swipeout-button>

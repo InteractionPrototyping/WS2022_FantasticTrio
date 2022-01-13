@@ -1,7 +1,7 @@
 <template>
   <f7-page name="instruction" no-toolbar style="padding:0px">
     
-    <f7-swiper pagination >
+    <f7-swiper pagination style="background-color:#263A68">
         <f7-swiper-slide >
             <f7-icon 
                 size="200px" 
@@ -103,5 +103,8 @@ import myBus from '../js/myBus.js';
         margin:0 40px;
         color:white;
         font-size:20px
+    }
+    .swiper-pagination-bullet {
+        background-color:white
     }
 </style>

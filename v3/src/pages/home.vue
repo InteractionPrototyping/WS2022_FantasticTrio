@@ -10,7 +10,7 @@
     </template>
 
 
-    <f7-block-title style="text-align:center">
+    <f7-block-title style="text-align:center;color:#263A68;font-weight:bold">
       Check your request status here
     </f7-block-title>
 
@@ -135,7 +135,7 @@
     </f7-list>
 
     <!-- finished request -->
-    <f7-block-title style="text-align:center">
+    <f7-block-title style="text-align:center;color:#263A68;font-weight:bold">
       Request you've already paid
     </f7-block-title> 
     
@@ -269,7 +269,7 @@ export default {
                 address: '81000, Munich',
                 date:'22/01/2022',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.',
-                img: "../img/request_img/Car_repair.png",
+                img: "../img/request_img/Car_repair.jpeg",
                 interested: '2'
               },
               { title:"Four walls of the bedroom need to be renovated and painted",
