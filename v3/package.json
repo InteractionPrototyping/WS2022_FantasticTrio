@@ -21,12 +21,14 @@
     "Samsung >= 5"
   ],
   "dependencies": {
+    "axios": "^0.24.0",
     "dom7": "^3.0.0",
     "esbuild": "^0.14.2",
     "framework7": "^6.3.9",
     "framework7-icons": "^5.0.5",
     "framework7-vue": "^6.3.9",
     "material-icons": "^1.10.4",
+    "mitt": "^3.0.0",
     "skeleton-elements": "^3.5.0",
     "swiper": "^6.8.4",
     "vue": "^3.2.23"

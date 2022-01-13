@@ -26,10 +26,18 @@ import ReviewPage from '../pages/review.vue';
 import ProfileHelperPage from '../pages/profile-helper.vue';
 import ProfileGalleryPage from '../pages/profile-gallery.vue';
 
+import InstructionPage from '../pages/Instruction.vue';
+
 var routes = [
   {
     path: '/',
     component: HomePage,
+  },
+  //set route for instruction page
+  {
+    path: '/instruction/',
+    component: InstructionPage,
+    name:'instruction',
   },
   // set route for add-request page
   {

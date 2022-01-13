@@ -3,7 +3,6 @@ import { createApp } from 'vue';
 
 
 
-
 // Import Framework7
 import Framework7 from 'framework7/lite-bundle';
 

@@ -1,5 +1,5 @@
 <template>
-  <f7-app v-bind="f7params" >
+  <f7-app v-bind="f7params">
     <!-- Left panel with cover effect-->
     <f7-panel left cover theme-dark>
       <f7-view>
@@ -27,13 +27,11 @@
         <f7-link
           tab-link="#view-home"
           tab-link-active
-          icon-ios="f7:house_fill"
-          icon-aurora="f7:house_fill"
-          icon-md="material:home"
-          text="Home"
+          icon-ios="f7:list_dash"
+          icon-aurora="f7:list_dash"
+          icon-md="material:list"
+          text="Request"
         ></f7-link>
-
-
 
 
         <f7-link
