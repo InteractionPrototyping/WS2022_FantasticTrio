@@ -27,7 +27,7 @@
               </span>
             </f7-col>
             <f7-col>
-              <f7-chip outline color="#263a68" text="#Car Repair" size: 30px style="margin-bottom:5px; text-size: 30px"></f7-chip> 
+              <f7-chip outline color="#263a68" text="#Car Repair" style="margin-bottom:5px; text-size: 30px"></f7-chip> 
               <f7-button fill class="price">10&#8364;</f7-button>
             </f7-col>
           </f7-row>
