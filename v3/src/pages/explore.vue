@@ -45,154 +45,31 @@
       <!-- Project list -->
       <f7-row>
         <!-- Make the first project clickbar -->
-        <f7-col
+        <f7-col width="50" v-for="item in activeList" v-bind:key="item"
           link="#view-project"
           @click="
             f7router.navigate('/project/', {
               reloadCurrent:true,
               animate: true,
-            })
+            }),
+            getId(item.id)
           "
         >
           <img
-            src="https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg"
+            v-bind:src="item.img"
             width="150"
+            height="100"
           />
-          <p>The fixing work is awesome!!!</p>
+          <p>{{item.title}}</p>
           <br />
           <br />
           <f7-icon f7="person-fill" size="25px" class="person"></f7-icon>
-          <span class="writer">Alice</span>
-          <span class="follower">7</span>
+          <span class="writer">{{item.writer}}</span>
+          <span class="follower">{{item.likes}}</span>
           <f7-icon
-            f7="suit_heart_fill"
             size="20px"
             class="black_heart"
-          ></f7-icon>
-        </f7-col>
-        <f7-col>
-          <img
-            src="https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg"
-            width="150"
-          />
-          <p>A tip to keep you garden clean</p>
-          <br />
-          <br />
-          <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
-          <span class="writer">Johan</span>
-          <span class="follower">14</span>
-          <f7-icon
-            f7="suit_heart_fill"
-            size="20px"
-            class="black_heart"
-          ></f7-icon>
-        </f7-col>
-      </f7-row>
-      <f7-row>
-        <f7-col>
-          <img
-            src="https://imgs.wantubizhi.com/upload/i_1/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/1965898469x2092364723_26_0.jpg"
-            width="150"
-            height="100"
-          />
-          <p>Gardening is wonderful</p>
-          <br />
-          <br />
-          <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
-          <span class="writer">Eric</span>
-          <span class="follower">10</span>
-          <f7-icon f7="suit_heart" size="20px" class="black_heart"></f7-icon>
-        </f7-col>
-        <f7-col>
-          <img
-            src="https://www.aumueller-gmbh.de/fileadmin/01_Images/10_Target_groups/elektriker_header%40.jpg"
-            width="150"
-            height="100"
-          />
-          <p>Eletronics is not difficult</p>
-          <br />
-          <br />
-          <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
-          <span class="writer">Jeson</span>
-          <span class="follower">2</span>
-          <f7-icon
-            f7="suit_heart_fill"
-            size="20px"
-            class="black_heart"
-          ></f7-icon>
-        </f7-col>
-      </f7-row>
-      <f7-row>
-        <f7-col>
-          <img
-            src="https://st.depositphotos.com/1037987/4830/i/950/depositphotos_48304873-stock-photo-man-putting-together-assembly-furniture.jpg"
-            width="150"
-            height="100"
-          />
-          <p>Assembling furniture</p>
-          <br />
-          <br />
-          <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
-          <span class="writer">Hans</span>
-          <span class="follower">28</span>
-          <f7-icon
-            f7="suit_heart_fill"
-            size="20px"
-            class="black_heart"
-          ></f7-icon>
-        </f7-col>
-        <f7-col>
-          <img
-            src="http://5b0988e595225.cdn.sohucs.com/images/20190610/249d26e235d7412183d572ddfa3b8944.jpeg"
-            width="150"
-            height="100"
-          />
-          <p>Teach you to replace the bulb</p>
-          <br />
-          <br />
-          <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
-          <span class="writer">Jessica</span>
-          <span class="follower">30</span>
-          <f7-icon
-            f7="suit_heart_fill"
-            size="20px"
-            class="black_heart"
-          ></f7-icon>
-        </f7-col>
-      </f7-row>
-      <f7-row>
-        <f7-col>
-          <img
-            src="https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg"
-            width="150"
-          />
-          <p>The fixing work is awesome!!!</p>
-          <br />
-          <br />
-          <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
-          <span class="writer">Alice</span>
-          <span class="follower">7</span>
-          <f7-icon
-            f7="suit_heart_fill"
-            size="20px"
-            class="black_heart"
-          ></f7-icon>
-        </f7-col>
-        <f7-col>
-          <img
-            src="https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg"
-            width="150"
-          />
-          <p>A tip to keep you garden clean</p>
-          <br />
-          <br />
-          <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
-          <span class="writer">Johnan</span>
-          <span class="follower">14</span>
-          <f7-icon
-            f7="suit_heart_fill"
-            size="20px"
-            class="black_heart"
+            v-bind:f7="item.like_type"
           ></f7-icon>
         </f7-col>
       </f7-row>
@@ -200,7 +77,7 @@
   </f7-page>
 </template>
 <style scoped>
-.col {
+.col-50{
   background: #fff;
   text-align: center;
   color: #000;
@@ -242,12 +119,89 @@ p{
   --f7-list-item-title-font-size: 20px;
 }
 </style>
-// <script>
-import '../js/explore_data.js'
+<script>
+import { f7Button,f7 } from 'framework7-vue';
+import myBus from '../js/myBus.js';
 export default {
   props: {
-    f7router: Object,
-    f7navbar: Object,
+      f7route: Object,
+      f7router: Object,
+    },
+  components: {
+    f7Button,
   },
-};
+data(){
+    return {
+      // initial requests data 
+      list:[
+              { title:"The fixing work is awesome!!!",
+                img: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
+                writer: 'Alice',
+                likes: 7,
+                like_type: "suit_heart_fill",
+                id:1,
+              },
+              { title:"A tip to keep you garden clean",
+                img: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
+                writer: 'Johan',
+                likes: 14,
+                like_type: "suit_heart_fill",
+                id:2,
+              },
+              { title:"Gardening is wonderful",
+                img: "https://imgs.wantubizhi.com/upload/i_1/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/1965898469x2092364723_26_0.jpg",
+                writer: 'Eric',
+                likes: 10,
+                like_type: "suit_heart",
+                id:3,
+              },
+              { title:"Eletronics is not difficult",
+                img: "https://www.aumueller-gmbh.de/fileadmin/01_Images/10_Target_groups/elektriker_header%40.jpg",
+                writer: 'Jeson',
+                likes: 2,
+                like_type: "suit_heart_fill",
+                id:4,
+              },
+              { title:"Assembling furniture",
+                img: "https://st.depositphotos.com/1037987/4830/i/950/depositphotos_48304873-stock-photo-man-putting-together-assembly-furniture.jpg",
+                writer: 'Hans',
+                likes: 28,
+                like_type: "suit_heart_fill",
+                id:5,
+              },
+              { title:"Teach you to replace the bulb",
+                img: "http://5b0988e595225.cdn.sohucs.com/images/20190610/249d26e235d7412183d572ddfa3b8944.jpeg",
+                writer: 'Jessica',
+                likes: 30,
+                like_type: "suit_heart_fill",
+                id:6,
+              },
+              { title:"The fixing work is awesome!!!",
+                img: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
+                writer: 'Alice',
+                likes: 7,
+                like_type: "black_heart",
+                id:7,
+              },
+              { title:"A tip to keep you garden clean",
+                img: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
+                writer: 'Johnan',
+                likes: 14,
+                like_type: "suit_heart_fill",
+                id:8,
+              }
+            ],
+    }
+},
+  computed: {
+    activeList() {
+      return this.list.filter((item) => item.id < 50)
+    }
+  },
+  methods: {
+    getId(id){
+      console.log(id);
+    }
+  },
+}
 </script>
