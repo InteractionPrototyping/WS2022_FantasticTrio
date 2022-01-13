@@ -1,6 +1,6 @@
 <template>
   <f7-page name="notification">
-    <f7-navbar title="Notifications"></f7-navbar>
+    <f7-navbar title="Notifications" style="font-size: 20px"></f7-navbar>
     <f7-block>
     <!-- Individual parts of the page are each structured as a media list-->
     <!-- Template from List View component: Media List -->
@@ -96,19 +96,25 @@
 .avatar{
   border-radius: 50%; 
   width: 20vmin;
-   height: 20vmin; 
-   object-fit: cover; 
-   object-position: center;
+  height: 20vmin; 
+  object-fit: cover; 
+  object-position: center;
 }
 .badgeToimg{
   display: flex;
-  height: 15px;
-  width:15px;
+  height: 20px;
+  width:20px;
   background-color: #4cd964;
   border-radius: 50%;
   position: absolute;
   left: 70px;
   top: 10px;
+}
+.media-list{
+  --f7-list-item-title-font-size: 23px;
+  --f7-list-item-after-font-size: 20px;
+  --f7-list-item-subtitle-font-size: 20px;
+  --f7-list-item-text-font-size: 17px;
 }
 
 </style>

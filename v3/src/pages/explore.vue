@@ -1,7 +1,7 @@
 <template>
   <f7-page name="explore">
     <!-- Navbar area -->
-    <f7-navbar back-link="Back" >
+    <f7-navbar back-link="Back">
       <!-- use smart select component to choose keywords -->
       <f7-list>
       <f7-list-item title="Keyword" smart-select :smart-select-params="{openIn: 'popup', searchbar: true, searchbarPlaceholder: 'Search keyword'}">
@@ -61,7 +61,7 @@
           <p>The fixing work is awesome!!!</p>
           <br />
           <br />
-          <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
+          <f7-icon f7="person-fill" size="25px" class="person"></f7-icon>
           <span class="writer">Alice</span>
           <span class="follower">7</span>
           <f7-icon
@@ -129,7 +129,7 @@
             width="150"
             height="100"
           />
-          <p>Tips for assembling furniture</p>
+          <p>Assembling furniture</p>
           <br />
           <br />
           <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
@@ -170,7 +170,7 @@
           <br />
           <br />
           <f7-icon f7="person-fill" size="20px" class="person"></f7-icon>
-          <span class="writer">Alice M.</span>
+          <span class="writer">Alice</span>
           <span class="follower">7</span>
           <f7-icon
             f7="suit_heart_fill"
@@ -208,33 +208,34 @@
   padding: 5px;
   margin-bottom: 16px;
   font-size: 12px;
-  height: 200px;
+  height: 210px;
   border-radius: 8px;
   box-shadow: 0 2px 5px  rgba(0, 0, 0, 0.4);
 }
 .person {
   display: inline;
   float: left;
-  bottom:1px;
+  padding: 3px;
 }
 .writer {
   float: left;
+  font-size: 20px;
 }
 p{
   margin: 0px;
   padding: 0px;
   height: 34px;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 20px;
   font-family: var(--f7-font-family);
 }
 .black_heart {
   display: inline;
   float: right;
-  bottom:1px;
+  padding: 3px;
 }
 .follower {
   float: right;
+  font-size: 20px;
 }
 .list{
   --f7-list-item-title-text-color: #263A68;

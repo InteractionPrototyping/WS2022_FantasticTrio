@@ -22,12 +22,13 @@
           <f7-row>
             <f7-col>
               <div style="font-size: 25px; margin-bottom:5px">Jack Miller</div>
-              <span>
-              <div class="item-text .list" style="font-size: 18px">&#8982; 81548,Munich</div>
+              <span
+               class="item-text .list" style="font-size: 19px">
+                &#8982; 81548,Munich 
               </span>
             </f7-col>
             <f7-col>
-              <f7-chip outline color="#263a68" text="#Car Repair" style="margin-bottom:5px; text-size: 30px"></f7-chip> 
+              <f7-chip outline color="#263a68" text="#Car Repair"></f7-chip> 
               <f7-button fill class="price">10&#8364;</f7-button>
             </f7-col>
           </f7-row>
@@ -141,12 +142,29 @@ img {
 .message_background {
   background-color: initial;
 }
+.message-sent{
+    --f7-message-sent-bg-color: #468DCE;
+    --f7-message-bubble-font-size: 20px;
+}
+.message-received{
+  --f7-message-received-bg-color: #879BAA;
+  --f7-message-received-text-color: white;
+  --f7-message-bubble-font-size: 20px;
+}
 .avatar{
   border-radius: 50%; 
   width: 35vmin;
    height: 35vmin; 
    object-fit: cover; 
    object-position: center;
+}
+.chip{
+  font-size: 18px;
+}
+.button{
+  font-size: 20px;
+  padding: 20px;
+  margin-top: 10px;
 }
 
 </style>
@@ -168,21 +186,21 @@ export default {
         },
         {
           type: "sent",
-          text: "I want to fix my, when could you go to my home?",
+          text: "I want to fix my, when are you free to come to my house?",
         },
         {
-          name: "Jack.M",
+          name: "Jack Miller",
           type: "received",
-          text: "Hi, i am free in tomorrow morning and afternoon",
+          text: "Hi, i am free tomorrow morning and in the afternoon",
           avatar:
             "https://images.pexels.com/photos/2691608/pexels-photo-2691608.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         },
         {
           type: "sent",
-          text: "Okay,you can directly go to my home tomorrow,see you next morning.",
+          text: "Okay,you can come tomorrow morning,see you.",
         },
         {
-          name: "Jack.M",
+          name: "Jack Miller",
           type: "received",
           text: "See you tomorrow",
           avatar:

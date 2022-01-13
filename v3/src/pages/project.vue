@@ -1,7 +1,9 @@
 <template>
   <f7-page name="project">
     <!-- Navbar area -->
-    <f7-navbar>
+    <f7-navbar back-link="Back" style="font-size: 20px">
+
+    <!--Second back-link??-->
       <f7-navbar-left>
         <a
           class="link"
@@ -52,9 +54,8 @@
     <hr />
     <!-- Article for project -->
     <f7-block>
-      <h2 style="text-align: center">Some tips for fixing car</h2>
-      <p class="Note">Notes:</p>
-      <p class="Content">
+      <h2 style="text-align: center; font-size: 30px">Some tips for fixing cars</h2>
+      <p class="Content" style="font-size: 20px">
         It’s just as important to keep the backup tire inflated as it is the
         four tires under your car. The last thing you want is to discover your
         spare is flat while you’re pulling the jack out of your trunk. That’s
@@ -63,15 +64,15 @@
         spare. That way you’re spared the cost of a tow.
       </p>
       <!-- Description of Writer -->
-      <h3 style="position: relative; top: 20px">Writer</h3>
-      <div style="position: absolute; bottom: 110px; right: 20px">
-        <f7-icon f7="suit_heart_fill" size="20px" class="black_heart"></f7-icon>
-        <span style="position: relative; left: 30px; top: 6px"> 7 </span>
+      <h3 style="position: relative; top: 10px; font-size: 25px">Author</h3>
+      <div style="position: absolute; bottom: 200px; right: 20px">
+        <f7-icon f7="suit_heart_fill" size="25px" class="black_heart"></f7-icon>
+        <span style="position: relative; top: 5px; font-size: 20px"> 7 </span>
       </div>
-      <f7-list inset media-list style="height: 100px">
+      <a class="link" href="/profile-helper/">
+      <f7-list inset media-list style="height: 100px; width: 350px">
         <f7-list-item title="Alice Johnson" text="Expert of car repair">
-          <br>
-        <f7-button fill raised href="/profile-helper/">SHOW USER PROFILE</f7-button>        
+          <br>       
           <template #media>
             <img
               src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
@@ -81,11 +82,12 @@
           </template>
         </f7-list-item>
       </f7-list>
+      </a>
     </f7-block>
     <hr />
     <!-- Comment area -->
     <f7-block>
-      <h3 style="padding: 0">Last comment</h3>
+      <h3 style="padding: 0px; font-size: 25px">Last comment</h3>
       <f7-list
         media-list
         style="height: 100px; position: relative; bottom: 20px" inset
@@ -182,6 +184,10 @@
    height: 15vmin; 
    object-fit: cover; 
    object-position: center;
+}
+.media-list{
+  --f7-list-item-title-font-size: 25px;
+  --f7-list-item-text-font-size: 20px;
 }
 
 </style>

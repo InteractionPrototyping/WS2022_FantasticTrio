@@ -1,19 +1,18 @@
 <template>
   <f7-page name="comment">
     <!-- Navbar area -->
-    <f7-navbar title="Comment" back-link="Back"></f7-navbar>
+    <f7-navbar title="Comment" back-link="Back" style="font-size: 20px"></f7-navbar>
     <f7-block>
       <!-- Comment content -->
       <f7-list media-list style="height: 150px">
         <f7-list-item
           title="Jessi Briem"
           after="05/12/2021"
-          text="I like the article very much, it helped me a lot."
+          subtitle="I like the article very much, it helped me a lot."
         >
           <template #media>
             <img
               src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              width="80"
               class="avatar"
             />
           </template>
@@ -21,12 +20,11 @@
         <f7-list-item
           title="Eric Bach"
           after="04/12/2021"
-          text="Thanks for sharing!"
+          subtitle="Thanks for sharing!"
         >
           <template #media>
             <img
               src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              width="80"
               class="avatar"
             />
           </template>
@@ -34,12 +32,11 @@
         <f7-list-item
           title="Christina Ruck"
           after="30/11/2021"
-          text="The tips are all useless for me."
+          subtitle="The tips are all useless for me."
         >
           <template #media>
             <img
               src="https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              width="80"
               class="avatar"
             />
           </template>
@@ -47,12 +44,11 @@
         <f7-list-item
           title="Jeson Smith"
           after="25/11/2021"
-          text="Cool idea! I will try it next time :)"
+          subtitle="Cool idea! I will try it next time :)"
         >
           <template #media>
             <img
               src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              width="80"
               class="avatar"
             />
           </template>
@@ -60,12 +56,11 @@
         <f7-list-item
           title="Alice Wilson"
           after="21/11/2021"
-          text="Thanks,I will try it on my father's car."
+          subtitle="Thanks,I will try it on my father's car."
         >
           <template #media>
             <img
               src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              width="80"
               class="avatar"
             />
           </template>
@@ -73,12 +68,11 @@
         <f7-list-item
           title="Hans Schmitt"
           after="15/11/2021"
-          text="At least I need one my own car"
+          subtitle="At least I need one my own car"
         >
           <template #media>
             <img
               src="https://images.pexels.com/photos/5486199/pexels-photo-5486199.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              width="80"
               class="avatar"
             />
           </template>
@@ -139,10 +133,15 @@
 <style scoped>
 .avatar{
   border-radius: 50%; 
-  width: 25vmin;
-   height: 25vmin; 
-   object-fit: cover; 
-   object-position: center;
+  width: 20vmin;
+  height: 20vmin; 
+  object-fit: cover; 
+  object-position: center;
+}
+.media-list{
+  --f7-list-item-title-font-size: 23px;
+  --f7-list-item-after-font-size: 20px;
+  --f7-list-item-subtitle-font-size: 20px;
 }
 </style>
 
