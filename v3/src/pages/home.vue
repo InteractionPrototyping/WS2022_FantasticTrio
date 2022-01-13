@@ -1,5 +1,5 @@
 <template>
-  <f7-page name="home">
+  <f7-page name="home" >
     <f7-navbar class="home_navbar" title="Craftive">
     </f7-navbar><br>
     <!-- Extended FAB Center Bottom  -->
@@ -8,6 +8,8 @@
         <f7-icon ios="f7:plus" aurora="f7:plus" md="material:add"></f7-icon>
       </f7-fab>
     </template>
+
+
     <f7-block-title style="text-align:center">
       Check your request status here
     </f7-block-title>
@@ -37,8 +39,8 @@
                 class="swipeout-delete">Delete</a>
             </div>
             <!-- button to check offered price -->
-            <a class="list-button" >
-              <a href="/interested-helper/" style="font-weight:bold">
+            <a class="list-button" style="border-bottom:0.5px">
+              <a href="/interested-helper/" style="font-weight:bold;">
                 <f7-icon size= "28px" class="material-icons status-icon" >
                   price_check
                 </f7-icon>
@@ -294,8 +296,8 @@ export default {
         address: '',
         date:'',
         text: "",
-        img: "../img/request_img/Car_repair.png",
-        interested:'0'
+        img: "",
+        interested:''
       },
     }
     

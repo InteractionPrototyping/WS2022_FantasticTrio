@@ -1,4 +1,4 @@
-<template>
+<template style="padding:0">
   <f7-app v-bind="f7params">
     <!-- Left panel with cover effect-->
     <f7-panel left cover theme-dark>
@@ -18,12 +18,21 @@
           <f7-block>Right panel content goes here</f7-block>
         </f7-page>
       </f7-view>
-    </f7-panel>
+    </f7-panel>      
+
+
 
     <!-- Views/Tabs container -->
-    <f7-views tabs class="safe-areas">
-      <!-- Tabbar for switching views-tabs -->
-      <f7-toolbar tabbar labels bottom>
+    <f7-views tabs class="safe-areas" >
+      <!-- welcome screen to show instruction about this app -->
+      <f7-view
+        id="view-instruction"
+        url='/instruction/'
+        main
+        v-show='!isShow'
+      ></f7-view>
+      <!-- Tabbar for switching views-tabs  :style="obj" -->
+      <f7-toolbar tabbar labels bottom v-show='isShow'>
         <f7-link
           tab-link="#view-home"
           tab-link-active
@@ -32,7 +41,6 @@
           icon-md="material:list"
           text="Request"
         ></f7-link>
-
 
         <f7-link
           tab-link="#view-explore"
@@ -60,7 +68,21 @@
       </f7-toolbar>
 
       <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
-      <f7-view id="view-home" main tab tab-active url="/"></f7-view>
+      <f7-view 
+        id="view-home"
+        tab 
+        tab-active
+        url="/"
+      ></f7-view>
+
+      <!-- Explore View -->
+      <f7-view 
+        id="view-explore" 
+        name="explore" 
+        tab 
+        url="/explore/"
+      ></f7-view>
+
 
       <!-- Notification View -->
       <f7-view
@@ -78,32 +100,7 @@
         url="/own-profile/"
       ></f7-view>
 
-      <!-- Add-request View -->
-      <f7-view
-        id="view-add-request"
-        name="add-request"
-        tab
-        url="/add-request/"
-      ></f7-view>
-
-      <!-- Suitable-helper View -->
-      <f7-view
-        id="view-suitable-helper"
-        name="suitable-helper"
-        tab
-        url="/suitable-helper/"
-      ></f7-view>
-
-      <!-- My-request View -->
-      <f7-view
-        id="view-my-request"
-        name="my-request"
-        tab
-        url="/my-request/"
-      ></f7-view>
-
-      <!-- Explore View -->
-      <f7-view id="view-explore" name="explore" tab url="/explore/"></f7-view>
+      
       <!-- Project View -->
       <f7-view id="view-project" name="project" tab url="/project/"></f7-view>
       <!-- Comment View -->
@@ -116,13 +113,29 @@
       ></f7-view>
       <!-- Chat View -->
       <f7-view id="view-chat" name="chat" tab url="/chat/"></f7-view>
-      <!--Review View-->
-      <f7-view id="view-review" name="review" tab url="/review/"></f7-view>
-      <!--Profile Helper View-->
-      <f7-view id="view-profile-helper" name="profile-helper" tab url="/profile-helper/"></f7-view>
+      <!-- Add-request View -->
+      <f7-view
+        id="view-add-request"
+        name="add-request"
+        url="/add-request/"
+      ></f7-view>
+            
       <!--Profile Gallery View-->
-      <f7-view id="view-profile-gallery" name="profile-gallery" tab url="/profile-gallery/"></f7-view>
+      <f7-view id="view-profile-gallery" name="profile-gallery" url="/profile-gallery/"></f7-view>
+
+      <!--Profile Helper View-->
+      <f7-view id="view-profile-helper" name="profile-helper" url="/profile-helper/"></f7-view>
+
+      <!--Review View-->
+      <f7-view id="view-review" name="review" url="/review/"></f7-view>
+
     </f7-views>
+
+
+
+    
+
+
 
     <!-- Popup -->
     <f7-popup
@@ -203,8 +216,21 @@ import cordovaApp from "../js/cordova-app.js";
 
 import routes from "../js/routes.js";
 import store from "../js/store";
+import myBus from '../js/myBus.js';
+
 
 export default {
+  data() {
+    return {
+      isShow:false
+    }
+  },
+  mounted() {
+    myBus.on("changeStatus", data => {
+      this.isShow = data;
+      // console.log(this.isShow);
+    });
+  },
   setup() {
     const device = getDevice();
     // Framework7 Parameters
@@ -266,3 +292,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+  * {
+    padding:0;
+    margin:0
+  }
+</style>

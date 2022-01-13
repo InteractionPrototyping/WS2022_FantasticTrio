@@ -3,6 +3,7 @@
     <!-- Navbar area -->
     <f7-navbar back-link="Back">
       <!-- use smart select component to choose keywords -->
+
       <f7-list>
       <f7-list-item title="Keyword" smart-select :smart-select-params="{openIn: 'popup', searchbar: true, searchbarPlaceholder: 'Search keyword'}">
       <select name="keyword">

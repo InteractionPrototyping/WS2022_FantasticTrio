@@ -2,6 +2,7 @@
   <f7-page name="notification">
     <f7-navbar title="Notifications" style="font-size: 20px"></f7-navbar>
     <f7-block>
+
     <!-- Individual parts of the page are each structured as a media list-->
     <!-- Template from List View component: Media List -->
     <f7-list media-list>

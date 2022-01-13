@@ -180,7 +180,7 @@ export default {
         address: '',
         date:'',
         text: '',
-        img: "../img/request_img/Car_repair.png",
+        img: "../img/request_img/default_img.jpg",
         interested: '0'
       },
       //address: ''
