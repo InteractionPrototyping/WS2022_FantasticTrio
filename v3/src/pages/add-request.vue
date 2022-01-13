@@ -58,7 +58,7 @@
       <f7-list-input
         label="Post code"
         type="text"
-        placeholder="Enter or get your post code here..."
+        placeholder="Click on the right icon to get location..."
         required
         validate
         v-model:value="inputValue.address"
@@ -180,7 +180,8 @@ export default {
         address: '',
         date:'',
         text: '',
-        img: "../img/request_img/Car_repair.png"
+        img: "../img/request_img/Car_repair.png",
+        interested: '0'
       },
       //address: ''
     }

@@ -12,20 +12,20 @@
       Check your request status here
     </f7-block-title>
 
-        <f7-button style="display:none" href='/instruction/'>instruction</f7-button>
+    <!-- <f7-button href='/instruction/'>instruction</f7-button> -->
 
     <!-- request list -->
     <div class="list media-list">
         <ul>
           <li class="swipeout" v-for="item in list" v-bind:key="item">
             <div class="item-content swipeout-content">
-              <div class="item-media"><img v-bind:src="item.img" width="80" height="80" />
+              <div class="item-media" ><img v-bind:src="item.img" width="90" height="90" />
               </div>
-              <div class="item-inner">
+              <div class="item-inner" >
                 <div class="item-title-row">
-                  <div class="item-title">{{item.title}}</div>
+                  <div class="item-title" style="font-size:25px">{{item.title}}</div>
                 </div>
-                <div class="item-subtitle" >To {{item.date}}</div>
+                <div class="item-subtitle" style="font-size:18px">Until {{item.date}}</div>
                 <div class="item-text">
                   {{item.text}}
                 </div>
@@ -38,11 +38,11 @@
             </div>
             <!-- button to check offered price -->
             <a class="list-button" >
-              <a href="/interested-helper/">
+              <a href="/interested-helper/" style="font-weight:bold">
                 <f7-icon size= "28px" class="material-icons status-icon" >
                   price_check
                 </f7-icon>
-                (2)
+                INTERESTED ({{item.interested}})
               </a>
             </a>
           </li>
@@ -268,6 +268,7 @@ export default {
                 date:'22/01/2022',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.',
                 img: "../img/request_img/Car_repair.png",
+                interested: '2'
               },
               { title:"Four walls of the bedroom need to be renovated and painted",
                 keyword: 'Paint wall',
@@ -275,6 +276,7 @@ export default {
                 date:'23/01/2022',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.',
                 img: "../img/request_img/Paint_wall.jpeg",
+                interested: '1'
               },
               { title:"Newly purchased IKEA nightstand needs to be assembled",
                 keyword: 'Assemble furniture',
@@ -282,6 +284,7 @@ export default {
                 date:'24/01/2022',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.',
                 img: "../img/request_img/Assemble_furniture.jpeg",
+                interested: '3'
               }
             ],
       // new added request data
@@ -292,6 +295,7 @@ export default {
         date:'',
         text: "",
         img: "../img/request_img/Car_repair.png",
+        interested:'0'
       },
     }
     
