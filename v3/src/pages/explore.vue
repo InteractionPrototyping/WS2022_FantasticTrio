@@ -53,7 +53,7 @@
               reloadCurrent:true,
               animate: true,
             }),
-            getId(item.id)
+            getId(item)
           "
         >
           <img
@@ -123,6 +123,7 @@ p{
 <script>
 import { f7Button,f7 } from 'framework7-vue';
 import myBus from '../js/myBus.js';
+const self =this;
 export default {
   props: {
       f7route: Object,
@@ -200,8 +201,8 @@ data(){
     }
   },
   methods: {
-    getId(id){
-      console.log(id);
+    getId(item){
+      myBus.emit("Id", item);
     }
   },
 }
