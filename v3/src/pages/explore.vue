@@ -1,63 +1,24 @@
 <template>
   <f7-page name="explore">
     <!-- Navbar area -->
-    <f7-navbar back-link="Back">
-      <!-- use smart select component to choose keywords -->
+    <f7-navbar title="Explore" style="font-size: 20px"></f7-navbar>
 
-      <f7-list>
-      <f7-list-item title="Keyword" smart-select :smart-select-params="{openIn: 'popup', searchbar: true, searchbarPlaceholder: 'Search keyword'}">
-      <select name="keyword">
-        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/car.svg'> Auto,Mobiles" >
-          <option value="Autoreparatur" selected>Autoreparatur</option>
-          <option value="Auto Tuning" >Auto Tuning</option>
-          <option value="Chauffeur">Chauffeur</option>
-          <option value="Fahrzeugbeschriftung">Fahrzeugbeschriftung</option>
-          <option value="Fahrzeugreinigung">Fahrzeugreinigung</option>
-          <option value="Sonstige Kfz-Service">Sonstige Kfz-Service</option>
-        </optgroup>
-        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/home.svg'> Haus,Aussenarbeiten ">
-          <option value="Abriss">Abriss</option>
-          <option value="Aussenkonstruktion">Aussenkonstruktion</option>
-          <option value="Baggerarbeiten">Baggerarbeiten</option>
-          <option value="Bautrockenlegung, Baut...">Bautrockenlegung, Baut...</option>
-          <option value="Dachdecker">Dachdecker</option>
-          <option value="Sonstige Aussenarbeit">Sonstige Aussenarbeit</option>
-
-        </optgroup>
-        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/painting.svg'>Haus,Innenarbeiten" >
-          <option value="Badsanierung">Badsanierung</option>
-          <option value="Bodenleger">Bodenleger</option>
-          <option value="Deckenarbeiten">Deckenarbeiten</option>
-          <option value="Entrümpelung">Entrümpelung</option>
-          <option value="Sonstige Aussenarbeit">Sonstige Innenarbeit</option>
-        </optgroup>
-        <optgroup label=" <img style='width:25px; height:25px;' src='../img/add_request_keyword/gardening.svg'> Gardenarbeiten">
-          <option value="Baumfällung">Baumfällung</option>
-          <option value="Gärtner">Gärtner</option>
-          <option value="Gartenteich">Gartenteich</option>
-          <option value="Grabpflege">Grabpflege</option>
-          <option value="Sonstige Gartenarbeit">Sonstige Gartenarbeit</option>
-        </optgroup>
-      </select>
-    </f7-list-item>
-    </f7-list>
-    </f7-navbar>
     <f7-block>
       <!-- Project list -->
       <f7-row>
         <!-- Make the first project clickbar -->
-        <f7-col width="50" v-for="item in activeList" v-bind:key="item"
+        <f7-col width="50" v-for="item in list" v-bind:key="item"
           link="#view-project"
           @click="
             f7router.navigate('/project/', {
               reloadCurrent:true,
               animate: true,
-            }),
+            });
             getId(item)
           "
         >
           <img
-            v-bind:src="item.img"
+            v-bind:src="item.img_first"
             width="150"
             height="100"
           />
@@ -75,10 +36,47 @@
         </f7-col>
       </f7-row>
     </f7-block>
+
+    <f7-row class="exploreCard">
+      <f7-col width='50' v-for="item in list" v-bind:key="item">
+        <f7-link href='/project/' @click="getId(item)">
+          <f7-card class="demo-card-header-pic">
+            <f7-card-header
+              class="no-border"
+              valign="bottom"
+              style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg)"
+            >#Car repair
+            </f7-card-header>
+            <f7-card-content>
+              <!-- <p class="date">January 21, 2015</p> -->
+              <strong>{{item.title}}</strong>
+            </f7-card-content>
+            <f7-card-footer>
+              <f7-link
+                href="/profile-helper/"
+                icon-ios="f7:person_fill"
+                icon-aurora="f7:person_fill"
+                icon-md="material:person"
+              >
+              Eric
+              </f7-link>
+              <f7-link
+                icon-ios="f7:suit_heart_fill"
+                icon-aurora="f7:suit_heart_fill"
+                icon-md="material:favorite"
+              >
+              10
+              </f7-link>
+            </f7-card-footer>
+          </f7-card>
+        </f7-link>
+      </f7-col>
+    </f7-row>
+
   </f7-page>
 </template>
 <style scoped>
-.col-50{
+/* .col-50{
   background: #fff;
   text-align: center;
   color: #000;
@@ -117,13 +115,40 @@ p{
 }
 .list{
   --f7-list-item-title-text-color: #263A68;
-  --f7-list-item-title-font-size: 20px;
-}
+  --f7-list-item-title-font-size: 20px; 
+} */
+.demo-card-header-pic {
+    margin:4px;
+  }
+  .demo-card-header-pic .card-header {
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  .demo-card-header-pic .card-content-padding .date{
+    color: #8e8e93;
+  }
+  
+  .theme-dark .demo-facebook-card .card-footer {
+    background-color: transparent;
+  }
+  .exploreCard {
+    justify-content: space-evenly;
+  }
+  .card-content-padding {
+    padding:8px
+  }
+  .card-footer {
+    padding: 8px
+  }
+  .no-border {
+    padding: 8px
+  }
 </style>
 <script>
 import { f7Button,f7 } from 'framework7-vue';
 import myBus from '../js/myBus.js';
-const self =this;
 export default {
   props: {
       f7route: Object,
@@ -132,78 +157,162 @@ export default {
   components: {
     f7Button,
   },
-data(){
+  data(){
     return {
+      msg:'adf',
       // initial requests data 
-      list:[
+      // list:[
+      //         { title:"The fixing work is awesome!!!",
+      //           img: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
+      //           writer: 'Alice',
+      //           likes: 7,
+      //           like_type: "suit_heart_fill",
+      //           id:1,
+      //         },
+      //         { title:"A tip to keep you garden clean",
+      //           img: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
+      //           writer: 'Johan',
+      //           likes: 14,
+      //           like_type: "suit_heart_fill",
+      //           id:2,
+      //         },
+      //         { title:"Gardening is wonderful",
+      //           img: "https://imgs.wantubizhi.com/upload/i_1/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/1965898469x2092364723_26_0.jpg",
+      //           writer: 'Eric',
+      //           likes: 10,
+      //           like_type: "suit_heart",
+      //           id:3,
+      //         },
+      //         { title:"Eletronics is not difficult",
+      //           img: "https://www.aumueller-gmbh.de/fileadmin/01_Images/10_Target_groups/elektriker_header%40.jpg",
+      //           writer: 'Jeson',
+      //           likes: 2,
+      //           like_type: "suit_heart_fill",
+      //           id:4,
+      //         },
+      //         { title:"Assembling furniture",
+      //           img: "https://st.depositphotos.com/1037987/4830/i/950/depositphotos_48304873-stock-photo-man-putting-together-assembly-furniture.jpg",
+      //           writer: 'Hans',
+      //           likes: 28,
+      //           like_type: "suit_heart_fill",
+      //           id:5,
+      //         },
+      //         { title:"Teach you to replace the bulb",
+      //           img: "http://5b0988e595225.cdn.sohucs.com/images/20190610/249d26e235d7412183d572ddfa3b8944.jpeg",
+      //           writer: 'Jessica',
+      //           likes: 30,
+      //           like_type: "suit_heart_fill",
+      //           id:6,
+      //         },
+      //         { title:"The fixing work is awesome!!!",
+      //           img: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
+      //           writer: 'Alice',
+      //           likes: 7,
+      //           like_type: "black_heart",
+      //           id:7,
+      //         },
+      //         { title:"A tip to keep you garden clean",
+      //           img: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
+      //           writer: 'Johnan',
+      //           likes: 14,
+      //           like_type: "suit_heart_fill",
+      //           id:8,
+      //         }
+      //       ],
+            list:[
               { title:"The fixing work is awesome!!!",
-                img: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
+                img_first: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
+                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
                 writer: 'Alice',
                 likes: 7,
                 like_type: "suit_heart_fill",
                 id:1,
               },
               { title:"A tip to keep you garden clean",
-                img: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
+                img_first: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
+                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
                 writer: 'Johan',
                 likes: 14,
                 like_type: "suit_heart_fill",
                 id:2,
               },
               { title:"Gardening is wonderful",
-                img: "https://imgs.wantubizhi.com/upload/i_1/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/1965898469x2092364723_26_0.jpg",
+                img_first: "https://imgs.wantubizhi.com/upload/i_1/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/1965898469x2092364723_26_0.jpg",
+                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
                 writer: 'Eric',
                 likes: 10,
                 like_type: "suit_heart",
                 id:3,
               },
               { title:"Eletronics is not difficult",
-                img: "https://www.aumueller-gmbh.de/fileadmin/01_Images/10_Target_groups/elektriker_header%40.jpg",
+                img_first: "https://www.aumueller-gmbh.de/fileadmin/01_Images/10_Target_groups/elektriker_header%40.jpg",
+                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
                 writer: 'Jeson',
                 likes: 2,
                 like_type: "suit_heart_fill",
                 id:4,
               },
-              { title:"Assembling furniture",
-                img: "https://st.depositphotos.com/1037987/4830/i/950/depositphotos_48304873-stock-photo-man-putting-together-assembly-furniture.jpg",
+              { title:"Assembling furnitures with equipment",
+                img_first: "https://st.depositphotos.com/1037987/4830/i/950/depositphotos_48304873-stock-photo-man-putting-together-assembly-furniture.jpg",
+                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
                 writer: 'Hans',
                 likes: 28,
                 like_type: "suit_heart_fill",
                 id:5,
               },
               { title:"Teach you to replace the bulb",
-                img: "http://5b0988e595225.cdn.sohucs.com/images/20190610/249d26e235d7412183d572ddfa3b8944.jpeg",
+                img_first: "http://5b0988e595225.cdn.sohucs.com/images/20190610/249d26e235d7412183d572ddfa3b8944.jpeg",
+                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
                 writer: 'Jessica',
                 likes: 30,
                 like_type: "suit_heart_fill",
                 id:6,
               },
               { title:"The fixing work is awesome!!!",
-                img: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
+                img_first: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
+                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
                 writer: 'Alice',
                 likes: 7,
                 like_type: "black_heart",
                 id:7,
               },
               { title:"A tip to keep you garden clean",
-                img: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
+                img_first: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
+                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
                 writer: 'Johnan',
                 likes: 14,
                 like_type: "suit_heart_fill",
                 id:8,
               }
             ],
-    }
-},
-  computed: {
-    activeList() {
-      return this.list.filter((item) => item.id < 50)
+
     }
   },
+  // computed: {
+  //   activeList() {
+  //     return this.list.filter((item) => item.id < 50)
+  //   }
+  // },
   methods: {
     getId(item){
       myBus.emit("Id", item);
-    }
+    },
   },
 }
 </script>

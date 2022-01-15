@@ -231,6 +231,9 @@ export default {
       // console.log(this.isShow);
     });
   },
+  onUnmounted() {
+  myBus.off('changeStatus');
+  },
   setup() {
     const device = getDevice();
     // Framework7 Parameters

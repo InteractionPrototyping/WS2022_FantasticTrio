@@ -1,33 +1,15 @@
 <template>
   <f7-page name="project">
     <!-- Navbar area -->
-    <f7-navbar back-link="Back" style="font-size: 20px">
+    <f7-navbar title="Project" back-link="Back" style="font-size: 20px"></f7-navbar>
 
-    <!--Second back-link??-->
-      <f7-navbar-left>
-        <a
-          class="link"
-          @click="
-            f7router.navigate('/explore/', {
-              reloadCurrent: true,
-              animate: true,
-            })
-          "
-          ><i class="icon icon-back"> </i
-          ><span class=""
-            >Back
-            <!----></span
-          ></a
-        >
-      </f7-navbar-left>
-      <span class="title" style="position: absolute; left: 160px">Project</span>
-    </f7-navbar>
-    <f7-block style="text-align: center" v-for="item in activeList" v-bind:key="item">
+
+    <f7-block style="text-align: center" >
       <!-- Swiper for pictures -->
       <f7-swiper pagination>
         <f7-swiper-slide>
           <img
-            v-bind:src="item.img_first"
+            v-bind:src="getItem.img_first"
             width="350"
             height="200"
             class="picture"
@@ -35,7 +17,7 @@
         </f7-swiper-slide>
         <f7-swiper-slide>
           <img
-            v-bind:src="item.img_second"
+            v-bind:src="getItem.img_second"
             width="350"
             height="200"
             class="picture"
@@ -43,7 +25,7 @@
         </f7-swiper-slide>
         <f7-swiper-slide>
           <img
-            v-bind:src="item.img_third"
+            v-bind:src="getItem.img_third"
             width="350"
             height="200"
             class="picture"
@@ -53,18 +35,18 @@
     </f7-block>
     <hr />
     <!-- Article for project -->
-    <f7-block v-for="item in activeList" v-bind:key="item">
-      <h2 style="text-align: center; font-size: 30px">{{getItem.title}}</h2>
-      <p class="Content" style="font-size: 20px">{{item.text}}</p>
+    <f7-block >
+      <h2 style="text-align: center; font-size: 30px" >{{getItem.title}}</h2>
+      <p class="Content" style="font-size: 20px">{{getItem.text}}</p>
       <!-- Description of Writer -->
       <h3 style="position: relative; top: 10px; font-size: 25px">Author</h3>
       <div style="position: absolute; bottom: 200px; right: 20px">
-        <f7-icon v-bind:f7="item.like_type" size="25px" class="black_heart"></f7-icon>
-        <span style="position: relative; top: 5px; font-size: 20px"> {{item.likes}} </span>
+        <f7-icon v-bind:f7="getItem.like_type" size="25px" class="black_heart"></f7-icon>
+        <span style="position: relative; top: 5px; font-size: 20px"> {{getItem.likes}} </span>
       </div>
       <a class="link" href="/profile-helper/">
       <f7-list inset media-list style="height: 100px; width: 350px">
-        <f7-list-item v-bind:title="item.writer" text="Expert of car repair">
+        <f7-list-item v-bind:title="getItem.writer" text="Expert of car repair">
           <br>       
           <template #media>
             <img
@@ -195,126 +177,45 @@ export default {
     },
   components: {
     f7Button,
+    f7
   },
-data(){
-    return {
-      // initial requests data 
-      list:[
-              { title:"The fixing work is awesome!!!",
-                img_first: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
-                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
-                writer: 'Alice',
-                likes: 7,
-                like_type: "suit_heart_fill",
-                id:1,
-              },
-              { title:"A tip to keep you garden clean",
-                img_first: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
-                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
-                writer: 'Johan',
-                likes: 14,
-                like_type: "suit_heart_fill",
-                id:2,
-              },
-              { title:"Gardening is wonderful",
-                img_first: "https://imgs.wantubizhi.com/upload/i_1/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/1965898469x2092364723_26_0.jpg",
-                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
-                writer: 'Eric',
-                likes: 10,
-                like_type: "suit_heart",
-                id:3,
-              },
-              { title:"Eletronics is not difficult",
-                img_first: "https://www.aumueller-gmbh.de/fileadmin/01_Images/10_Target_groups/elektriker_header%40.jpg",
-                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
-                writer: 'Jeson',
-                likes: 2,
-                like_type: "suit_heart_fill",
-                id:4,
-              },
-              { title:"Assembling furniture",
-                img_first: "https://st.depositphotos.com/1037987/4830/i/950/depositphotos_48304873-stock-photo-man-putting-together-assembly-furniture.jpg",
-                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
-                writer: 'Hans',
-                likes: 28,
-                like_type: "suit_heart_fill",
-                id:5,
-              },
-              { title:"Teach you to replace the bulb",
-                img_first: "http://5b0988e595225.cdn.sohucs.com/images/20190610/249d26e235d7412183d572ddfa3b8944.jpeg",
-                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
-                writer: 'Jessica',
-                likes: 30,
-                like_type: "suit_heart_fill",
-                id:6,
-              },
-              { title:"The fixing work is awesome!!!",
-                img_first: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
-                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
-                writer: 'Alice',
-                likes: 7,
-                like_type: "black_heart",
-                id:7,
-              },
-              { title:"A tip to keep you garden clean",
-                img_first: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
-                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
-                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
-                writer: 'Johnan',
-                likes: 14,
-                like_type: "suit_heart_fill",
-                id:8,
-              }
-            ],
-      getItem:{ title:"test",
-                img: "",
-                writer: '',
-                likes: '',
-                like_type: "",
-                id:'',
-              }   
-
-    }
-},
-  mounted() {
-      let vm= this;
-      myBus.on("Id",data=> {
-      console.log(this.getItem.title) 
-      this.$forceUpdate();
-    });
+  data(){
+      return {
+        getItem:{ title:"1",
+                  img_first: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
+                  img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                  img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                  text:"2",
+                  writer: '3',
+                  likes: '4',
+                  like_type: "",
+                  id:2,
+                },
+        title: ''
+      }
   },
-  computed: {
-    activeList() {
-      // problem here
-      myBus.on("Id",data=> {
-      Object.assign(this.getItem,{
-        id: data.id
-      })
-       })
-       //get data of the id of project we choose in previous page
-       let i= this.getItem.id;
-       i = parseInt(i);
-       //we can see it works
-       return this.list.filter((item) => item.id==1)
-       // when item== i , it not works, i don't know why, i is numeric and item.id is also numeric.
+  // computed: {
+  //   activeList() {
+  //     // problem here
+  //     myBus.on("Id",data=> {
+  //     this.getItem=data; 
+  //      })
+  //      //get data of the id of project we choose in previous page
+  //      var i= this.getItem.id;
+  //      i = parseInt(i);
+  //      console.log(this.getItem.title);
+  //      //we can see it works
+  //      return this.list.filter((item) => item.id == 2)
+  //      // when item== i , it not works, i don't know why, i is numeric and item.id is also numeric.
       
-    }
-  },
+  //   }
+  // },
+  mounted() {
+    myBus.on("Id",data => {
+      this.getItem = data
+      console.log(this.getItem)
+           })
+  }
 }
 </script>
 

@@ -9,19 +9,16 @@
       </f7-fab>
     </template>
 
-
     <f7-block-title style="text-align:center;color:#263A68;font-weight:bold">
       Check your request status here
     </f7-block-title>
-
-    <!-- <f7-button href='/instruction/'>instruction</f7-button> -->
 
     <!-- request list -->
     <div class="list media-list">
         <ul>
           <li class="swipeout" v-for="item in list" v-bind:key="item">
             <div class="item-content swipeout-content">
-              <div class="item-media" ><img v-bind:src="item.img" width="90" height="90" />
+              <div class="item-media" ><img v-bind:src="item.img" width="90" height="90" style="padding-top:10px" />
               </div>
               <div class="item-inner" >
                 <div class="item-title-row">
@@ -39,14 +36,27 @@
                 class="swipeout-delete">Delete</a>
             </div>
             <!-- button to check offered price -->
-            <a class="list-button" style="border-bottom:0.5px">
+            <!-- <a class="list-button" style="border-bottom:0.5px">
               <a href="/interested-helper/" style="font-weight:bold;">
                 <f7-icon size= "28px" class="material-icons status-icon" >
                   price_check
                 </f7-icon>
                 INTERESTED ({{item.interested}})
               </a>
-            </a>
+            </a> -->
+            <ul style="padding:0px">
+              <li>
+                <f7-button fill style="margin:8px 16px">
+          <a href="/interested-helper/" style="color:white">
+            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+              price_check
+              <!-- <f7-badge color="green"></f7-badge> -->
+            </f7-icon>
+            INTERESTED ({{item.interested}})
+          </a>
+        </f7-button>
+              </li>
+            </ul>
           </li>
         </ul>
     </div>
@@ -289,24 +299,12 @@ export default {
                 interested: '3'
               }
             ],
-      // new added request data
-      inputValue:{
-        title:"",
-        keyword: '',
-        address: '',
-        date:'',
-        text: "",
-        img: "",
-        interested:''
-      },
     }
     
   },
   mounted() {
     myBus.on("newRequest", data => {
-      // this.inputValue = data;
       this.list.unshift(data);
-      console.log(data);
     });
   },
   // onUnmounted() {
@@ -314,6 +312,9 @@ export default {
   // },
 
   methods: {
+    status() {
+      console.log(this.list[0])
+    },
 
     add: function() {
       this.list.push(this.inputValue);
@@ -348,3 +349,4 @@ export default {
   },
 };
 </script>
+
