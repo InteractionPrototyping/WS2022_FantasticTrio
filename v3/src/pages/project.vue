@@ -292,12 +292,9 @@ data(){
     }
 },
   mounted() {
+      let vm= this;
       myBus.on("Id",data=> {
-      Object.assign(this.getItem,{
-        id: data.id,
-        title:data.title,
-      })
-      console.log(this.getItem.title)
+      console.log(this.getItem.title) 
       this.$forceUpdate();
     });
   },
