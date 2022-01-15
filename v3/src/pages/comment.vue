@@ -1,7 +1,7 @@
 <template>
   <f7-page name="comment">
     <!-- Navbar area -->
-    <f7-navbar title="Comment" back-link="Back" style="font-size: 20px"></f7-navbar>
+    <f7-navbar title="Comment" back-link="Back" style="font-size: 20px" @click=test()></f7-navbar>
     <f7-block>
       <!-- Comment content -->
       <f7-list media-list style="height: 150px">
@@ -149,6 +149,14 @@ data(){
       return this.list.filter((item) => item.id < 50)
     }
   },
+  mounted() {
+    myBus.on("ToComment",data => {
+      this.newComment = data
+      console.log(this.newComment)
+      this.list.unshift(data)
+           })
+      
+  },
   methods: {
     addComment(){
               var nowDate = new Date();
@@ -157,11 +165,13 @@ data(){
                   month: nowDate.getMonth() + 1,
                    date: nowDate.getDate(),
                }
-              console.log(date);
               let systemDate = date.date + '/' + 0 + date.month + '/'  + date.year;
       this.newComment.date= systemDate;
       this.newComment.text= this.messageText;
       this.list.unshift(this.newComment)
+    },
+    test(){
+      console.log(this.newComment)
     }
   },
 }

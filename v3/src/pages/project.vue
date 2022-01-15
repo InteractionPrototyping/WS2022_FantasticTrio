@@ -68,13 +68,13 @@
         style="height: 100px; position: relative; bottom: 20px" inset
       >
         <f7-list-item
-          title="Jessi Briem"
-          text="I like the article very much,  that help me a lot."
-          after="05/12/2021"
+          v-bind:title="latestComment.name"
+          v-bind:text="latestComment.text"
+          v-bind:after="latestComment.date"
         >
           <template #media>
             <img
-              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              v-bind:src="latestComment.avatar"
               width="28"
               class="avatar"
             />
@@ -113,7 +113,7 @@
               icon-ios="f7:arrow_up_circle_fill"
               icon-aurora="f7:arrow_up_circle_fill"
               icon-md="material:send"
-              @click="sendMessage"
+               @click="addComment"
             />
           </template>
           <f7-messagebar-attachments>
@@ -170,6 +170,7 @@
 <script>
 import { f7Button,f7 } from 'framework7-vue';
 import myBus from '../js/myBus.js';
+import routes from "../js/routes.js";
 export default {
   props: {
       f7route: Object,
@@ -181,6 +182,7 @@ export default {
   },
   data(){
       return {
+        messageText: "",
         getItem:{ title:"1",
                   img_first: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
                   img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
@@ -191,7 +193,14 @@ export default {
                   like_type: "",
                   id:2,
                 },
-        title: ''
+        title: '',
+        latestComment:{
+                name:"Jessi Briem",
+                avatar: "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                date: "05/12/2021",
+                text: "I like the article very much, it helped me a lot.",
+                id:1,
+        }
       }
   },
   // computed: {
@@ -215,7 +224,22 @@ export default {
       this.getItem = data
       console.log(this.getItem)
            })
-  }
+  },
+  methods:{
+      addComment(){
+              var nowDate = new Date();
+              let date = {
+                  year: nowDate.getFullYear(),
+                  month: nowDate.getMonth() + 1,
+                   date: nowDate.getDate(),
+               }
+              console.log(date);
+              let systemDate = date.date + '/' + 0 + date.month + '/'  + date.year;
+      this.latestComment.date= systemDate;
+      this.latestComment.text= this.messageText;
+      myBus.emit("ToComment",this.latestComment)
+    }
+  },
 }
 </script>
 

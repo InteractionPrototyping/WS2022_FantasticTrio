@@ -3,40 +3,6 @@
     <!-- Navbar area -->
     <f7-navbar title="Explore" style="font-size: 20px"></f7-navbar>
 
-    <f7-block>
-      <!-- Project list -->
-      <f7-row>
-        <!-- Make the first project clickbar -->
-        <f7-col width="50" v-for="item in list" v-bind:key="item"
-          link="#view-project"
-          @click="
-            f7router.navigate('/project/', {
-              reloadCurrent:true,
-              animate: true,
-            });
-            getId(item)
-          "
-        >
-          <img
-            v-bind:src="item.img_first"
-            width="150"
-            height="100"
-          />
-          <p>{{item.title}}</p>
-          <br />
-          <br />
-          <f7-icon f7="person-fill" size="25px" class="person"></f7-icon>
-          <span class="writer">{{item.writer}}</span>
-          <span class="follower">{{item.likes}}</span>
-          <f7-icon
-            size="20px"
-            class="black_heart"
-            v-bind:f7="item.like_type"
-          ></f7-icon>
-        </f7-col>
-      </f7-row>
-    </f7-block>
-
     <f7-row class="exploreCard">
       <f7-col width='50' v-for="item in list" v-bind:key="item">
         <f7-link href='/project/' @click="getId(item)">
@@ -44,8 +10,8 @@
             <f7-card-header
               class="no-border"
               valign="bottom"
-              style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg)"
-            >#Car repair
+              v-bind:style="item.img_header"
+            >
             </f7-card-header>
             <f7-card-content>
               <!-- <p class="date">January 21, 2015</p> -->
@@ -58,14 +24,16 @@
                 icon-aurora="f7:person_fill"
                 icon-md="material:person"
               >
-              Eric
+              {{item.writer}}
               </f7-link>
               <f7-link
-                icon-ios="f7:suit_heart_fill"
-                icon-aurora="f7:suit_heart_fill"
-                icon-md="material:favorite"
               >
-              10
+            <f7-icon
+            size="20px"
+            class="black_heart"
+            v-bind:f7="item.like_type"
+            ></f7-icon>
+              {{item.likes}}
               </f7-link>
             </f7-card-footer>
           </f7-card>
@@ -221,6 +189,7 @@ export default {
       //       ],
             list:[
               { title:"The fixing work is awesome!!!",
+                img_header: "background-image:url(https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg)",
                 img_first: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
                 img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
                 img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
@@ -231,6 +200,7 @@ export default {
                 id:1,
               },
               { title:"A tip to keep you garden clean",
+                img_header: "background-image:url(https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg)",
                 img_first: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
                 img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
                 img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
@@ -240,7 +210,8 @@ export default {
                 like_type: "suit_heart_fill",
                 id:2,
               },
-              { title:"Gardening is wonderful",
+              { title:"Gardening is wonderful!!",
+                img_header: "background-image:url(https://imgs.wantubizhi.com/upload/i_1/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/1965898469x2092364723_26_0.jpg)",
                 img_first: "https://imgs.wantubizhi.com/upload/i_1/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/1965898469x2092364723_26_0.jpg",
                 img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
                 img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
@@ -250,7 +221,8 @@ export default {
                 like_type: "suit_heart",
                 id:3,
               },
-              { title:"Eletronics is not difficult",
+              { title:"Eletronics is not difficult！！",
+                img_header: "background-image:url(https://www.aumueller-gmbh.de/fileadmin/01_Images/10_Target_groups/elektriker_header%40.jpg)",
                 img_first: "https://www.aumueller-gmbh.de/fileadmin/01_Images/10_Target_groups/elektriker_header%40.jpg",
                 img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
                 img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
@@ -261,6 +233,7 @@ export default {
                 id:4,
               },
               { title:"Assembling furnitures with equipment",
+                img_header: "background-image:url(https://st.depositphotos.com/1037987/4830/i/950/depositphotos_48304873-stock-photo-man-putting-together-assembly-furniture.jpg)",
                 img_first: "https://st.depositphotos.com/1037987/4830/i/950/depositphotos_48304873-stock-photo-man-putting-together-assembly-furniture.jpg",
                 img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
                 img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
@@ -271,6 +244,7 @@ export default {
                 id:5,
               },
               { title:"Teach you to replace the bulb",
+                img_header: "background-image:url(http://5b0988e595225.cdn.sohucs.com/images/20190610/249d26e235d7412183d572ddfa3b8944.jpeg)",
                 img_first: "http://5b0988e595225.cdn.sohucs.com/images/20190610/249d26e235d7412183d572ddfa3b8944.jpeg",
                 img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
                 img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
@@ -281,6 +255,7 @@ export default {
                 id:6,
               },
               { title:"The fixing work is awesome!!!",
+                img_header: "background-image:url(https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg)",
                 img_first: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
                 img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
                 img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
@@ -291,6 +266,7 @@ export default {
                 id:7,
               },
               { title:"A tip to keep you garden clean",
+                img_header: "background-image:url(https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg)",
                 img_first: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
                 img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
                 img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
