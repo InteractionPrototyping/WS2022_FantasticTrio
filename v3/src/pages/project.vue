@@ -54,7 +54,7 @@
     <hr />
     <!-- Article for project -->
     <f7-block v-for="item in activeList" v-bind:key="item">
-      <h2 style="text-align: center; font-size: 30px">{{item.title}}</h2>
+      <h2 style="text-align: center; font-size: 30px">{{getItem.title}}</h2>
       <p class="Content" style="font-size: 20px">{{item.text}}</p>
       <!-- Description of Writer -->
       <h3 style="position: relative; top: 10px; font-size: 25px">Author</h3>
@@ -281,35 +281,41 @@ data(){
                 id:8,
               }
             ],
-      getItem:{ title:"",
+      getItem:{ title:"test",
                 img: "",
                 writer: '',
                 likes: '',
                 like_type: "",
                 id:'',
-              }
+              }   
 
     }
 },
+  mounted() {
+      myBus.on("Id",data=> {
+      Object.assign(this.getItem,{
+        id: data.id,
+        title:data.title,
+      })
+      console.log(this.getItem.title)
+      this.$forceUpdate();
+    });
+  },
   computed: {
     activeList() {
       // problem here
       myBus.on("Id",data=> {
-      this.getItem.id=data.id; 
+      Object.assign(this.getItem,{
+        id: data.id
+      })
        })
        //get data of the id of project we choose in previous page
-       var i= this.getItem.id;
+       let i= this.getItem.id;
        i = parseInt(i);
-       console.log(i);
        //we can see it works
-       return this.list.filter((item) => item.id == 2)
+       return this.list.filter((item) => item.id==1)
        // when item== i , it not works, i don't know why, i is numeric and item.id is also numeric.
       
-    }
-  },
-  methods: {
-    getId(id){
-      console.log(id);
     }
   },
 }
