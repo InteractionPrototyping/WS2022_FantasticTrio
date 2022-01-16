@@ -92,6 +92,8 @@
       <f7-list-input
         label="Description"
         type="textarea"
+        required
+        validated
         placeholder="Insert your description here..."
         v-model:value="inputValue.text"
       >
@@ -110,25 +112,6 @@
                 </li>
               </ul>
       </div>
-    
-      <!-- input Photos -->
-      <!-- <f7-list-input
-        label="Photo"
-        type="file"
-        placeholder="Click here to upload photos..."
-      >
-      <template #content-end>
-        <label for="iconOfUpload">
-          <f7-icon style="position:relative; right:16px" class="material-icons status-icon">
-            file_upload
-          </f7-icon>
-        </label>
-      </template>
-      </f7-list-input> -->
-
-          <!-- <input  id='iconOfUpload' type="file" @change="upload" style="position:absolute; "><br> -->
-
-
     </f7-list>
 
     <!-- submit button -->
@@ -181,7 +164,8 @@ export default {
         date:'',
         text: '',
         img: "../img/request_img/default_img.jpg",
-        interested: '0'
+        interested: '0',
+        link:''
       },
       //address: ''
     }

@@ -2,7 +2,7 @@
   <f7-page name="instruction" no-toolbar style="padding:0px">
     
     <f7-swiper pagination style="background-color:#263A68">
-        <f7-swiper-slide >
+        <f7-swiper-slide class="instruction">
             <f7-icon 
                 size="200px" 
                 ios="f7:list_dash" 
@@ -83,7 +83,7 @@ import myBus from '../js/myBus.js';
         margin: 0;
         padding: 0;
     }
-    .swiper-slide {
+    .instruction.swiper-slide {
         background: #263A68;
         text-align: center;
         font-size: 18px;

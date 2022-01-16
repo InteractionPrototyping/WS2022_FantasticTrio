@@ -46,15 +46,15 @@
             </a> -->
             <ul style="padding:0px">
               <li>
-                <f7-button fill style="margin:8px 16px">
-          <a href="/interested-helper/" style="color:white">
-            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
-              price_check
-              <!-- <f7-badge color="green"></f7-badge> -->
-            </f7-icon>
-            INTERESTED ({{item.interested}})
-          </a>
-        </f7-button>
+                <f7-button fill style="margin:8px 16px" @click="checkHelper(item)">
+                  <a v-bind:href="item.link" style="color:white">
+                    <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
+                      price_check
+                      <!-- <f7-badge color="green"></f7-badge> -->
+                    </f7-icon>
+                    INTERESTED ({{item.interested}})
+                  </a>
+                </f7-button>
               </li>
             </ul>
           </li>
@@ -72,7 +72,7 @@
       >
         <!-- img for request -->
         <template #media>
-          <img src="../img/request_img/Car_repair.png" width="80" />
+          <img src="../img/request_img/Car_repair.jpeg" width="80" />
         </template>
         <f7-swipeout-actions right>
           <f7-swipeout-button delete confirm-text="Are you sure you want to delete this item?">Delete</f7-swipeout-button>
@@ -259,7 +259,7 @@
 </style>
 
 <script>
-import { f7Button,f7 } from 'framework7-vue';
+import { f7Navbar, f7Page, f7BlockTitle, f7Block, f7Button, f7Row,f7 } from 'framework7-vue';
 import myBus from '../js/myBus.js';
 export default {
   props: {
@@ -267,7 +267,13 @@ export default {
       f7router: Object,
     },
   components: {
-    f7Button,
+      f7Navbar,
+      f7Page,
+      f7BlockTitle,
+      f7Block,
+      f7Button,
+      f7Row,
+      f7,
   },
 
   data(){
@@ -280,7 +286,8 @@ export default {
                 date:'22/01/2022',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.',
                 img: "../img/request_img/Car_repair.jpeg",
-                interested: '2'
+                interested: '2',
+                link:'/interested-helper/'
               },
               { title:"Four walls of the bedroom need to be renovated and painted",
                 keyword: 'Paint wall',
@@ -288,7 +295,8 @@ export default {
                 date:'23/01/2022',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.',
                 img: "../img/request_img/Paint_wall.jpeg",
-                interested: '1'
+                interested: '1',
+                link:'/interested-helper/'
               },
               { title:"Newly purchased IKEA nightstand needs to be assembled",
                 keyword: 'Assemble furniture',
@@ -296,14 +304,15 @@ export default {
                 date:'24/01/2022',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.',
                 img: "../img/request_img/Assemble_furniture.jpeg",
-                interested: '3'
+                interested: '3',
+                link:'/interested-helper/'
               }
             ],
     }
-    
   },
   mounted() {
     myBus.on("newRequest", data => {
+      console.log(data.date)
       this.list.unshift(data);
     });
   },
@@ -312,10 +321,17 @@ export default {
   // },
 
   methods: {
-    status() {
-      console.log(this.list[0])
-    },
 
+    // send number of helpers to "interested helper" page 
+    checkHelper(item) {
+      if (item.interested > 0) {
+        myBus.emit("helpers", item.interested);
+      } else {
+        // open Alert when no one offers price
+        f7.dialog.alert('No one has offered you a price.');
+
+      }
+    },
     add: function() {
       this.list.push(this.inputValue);
     },

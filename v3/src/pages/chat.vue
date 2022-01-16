@@ -310,25 +310,25 @@ export default {
     },
     // Make a phone call
     //starting an outgoing call
-      let uuid = UUID()
-      let handle = CXHandle(type: .emailAddress, value: "jappleseed@apple.com")
+      // let uuid = UUID()
+      // let handle = CXHandle(type: .emailAddress, value: "jappleseed@apple.com")
   
-      let startCallAction = CXStartCallAction(call: uuid)
-      startCallAction.destination = handle
+      // let startCallAction = CXStartCallAction(call: uuid)
+      // startCallAction.destination = handle
   
-      let transaction = CXTransaction(action: startCallAction)
-      callController.request(transaction) { error in
-      if let error = error {
-          print("Error requesting transaction: \(error)")
-      } else {
-          print("Requested transaction successfully")
-      }
-      }
-      // Initiating the call
-      func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
-      // configure audio session
-      action.fulfill()
-      }
+      // let transaction = CXTransaction(action: startCallAction)
+      // callController.request(transaction) { error in
+      // if let error = error {
+      //     print("Error requesting transaction: \(error)")
+      // } else {
+      //     print("Requested transaction successfully")
+      // }
+      // }
+      // / Initiating the call
+      // func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
+      // / configure audio session
+      // action.fulfill()
+      // }
   },
 };
 </script>
