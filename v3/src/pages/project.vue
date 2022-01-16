@@ -6,7 +6,7 @@
 
     <f7-block style="text-align: center" >
       <!-- Swiper for pictures -->
-      <f7-swiper pagination>
+      <f7-swiper pagination >
         <f7-swiper-slide>
           <img
             v-bind:src="getItem.img_first"

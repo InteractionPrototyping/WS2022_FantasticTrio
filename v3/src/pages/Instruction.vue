@@ -16,7 +16,7 @@
                 Add request easily and find other Craftsmen to solve your problem with reasonable price.
             </p>
         </f7-swiper-slide>
-        <f7-swiper-slide >
+        <f7-swiper-slide class="instruction">
             <f7-icon 
                 size="200px" 
                 ios="f7:lightbulb_fill" 
@@ -30,7 +30,7 @@
                 Get inspiration and explore some good ideas from other Craftsmen's work. 
             </p>
         </f7-swiper-slide>
-        <f7-swiper-slide >
+        <f7-swiper-slide class="instruction">
             <f7-icon 
                 size="200px" 
                 ios="f7:chat_bubble_2_fill" 

@@ -53,7 +53,7 @@
 
         <f7-link tab-link='#view-notification'>
           <f7-icon ios="f7:bell_fill" aurora="f7:bell_fill" md="material:notifications">
-            <f7-badge color="green">2</f7-badge>
+            <f7-badge color="green" id='badgeOnTab'>2</f7-badge>
           </f7-icon>
           <span class="tabbar-label">Notification</span>
         </f7-link>

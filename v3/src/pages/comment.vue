@@ -1,17 +1,22 @@
 <template>
   <f7-page name="comment">
     <!-- Navbar area -->
-    <f7-navbar title="Comment" back-link="Back" style="font-size: 20px" @click=test()></f7-navbar>
+    <f7-navbar title="Comment" back-link="Back" style="font-size: 20px" @click='deleteBadge()'></f7-navbar>
     <f7-block>
       <!-- Comment content -->
       <f7-list media-list style="height: 150px">
-        <f7-list-item v-for="item in list" v-bind:key="item" v-bind:title="item.name" v-bind:after="item.date" v-bind:subtitle="item.text"
+        <f7-list-item 
+          v-for="item in list" v-bind:key="item" 
+          v-bind:title="item.name" 
+          v-bind:after="item.date" 
+          v-bind:subtitle="item.text"
         >
           <template #media>
             <img
               v-bind:src="item.avatar"
               class="avatar"
             />
+            <i class="badgeToimg" v-show='item.badge'></i>
           </template>
         </f7-list-item>
         <br />
@@ -68,6 +73,16 @@
   </f7-page>
 </template>
 <style scoped>
+.badgeToimg{
+  display: flex;
+  height: 20px;
+  width:20px;
+  background-color: #4cd964;
+  border-radius: 50%;
+  position: absolute;
+  left: 70px;
+  top: 10px;
+}
 .avatar{
   border-radius: 50%; 
   width: 20vmin;
@@ -98,41 +113,47 @@ data(){
       messageText: "",
       // initial comment data
       list:[
-              { name:"Jessi Briem",
-                avatar: "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                date: "05/12/2021",
+              { name:"Michael Wenzel",
+                avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                date: "12:01",
                 text: "I like the article very much, it helped me a lot.",
                 id:1,
+                badge: true,
               },
               { name:"Eric Bach",
                 avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 date: "04/12/2021",
                 text: "Thanks for sharing!",
                 id:2,
+                badge: false,
               },
               { name:"Christina Ruck",
                 avatar: "https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 date: "30/11/2021",
                 text: "The tips are all useless for me.",
                 id:3,
+                badge: false,
               },
               { name:"Jeson Smith",
-                avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                avatar: "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 date: "25/11/2021",
                 text: "Cool idea! I will try it next time :)",
                 id:4,
+                badge: false,
               },
               { name:"Alice Wilson",
                 avatar: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 date: "21/11/2021",
                 text: "Thanks,I will try it on my father's car.",
                 id:5,
+                badge: false,
               },
               { name:"Hans Schmitt",
                 avatar: "https://images.pexels.com/photos/5486199/pexels-photo-5486199.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 date: "15/11/2021",
                 text: "At least I need one my own car",
                 id:6,
+                badge: false,
               },
             ],
       newComment:{
@@ -159,6 +180,14 @@ data(){
      this.list.unshift(myBus.newComment);
   },
   methods: {
+    //delete badge
+    deleteBadge() {
+      let self = this
+      self.list[1].badge = false;
+      myBus.emit('deleteBadge',self.list[1].badge)
+      document.getElementById('badgeOnTab').style.display='none';
+      document.getElementsByClassName('badgeToimg').style.display='none';  
+      },
     addComment(){
               var nowDate = new Date();
               let date = {

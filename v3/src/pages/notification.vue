@@ -6,8 +6,25 @@
     <!-- Individual parts of the page are each structured as a media list-->
     <!-- Template from List View component: Media List -->
     <f7-list media-list>
+      
       <f7-list-item
-        link="#" 
+        link="/comment/" 
+        title="Michael Wenzel"
+        after="12:01"
+        subtitle="...made a comment"
+      >
+        <!--Profile picture-->
+        <template #media>
+            <img
+              src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              width="40"
+              class="avatar"
+            />
+            <i class="badgeToimg" v-show="statusOfBadge"></i>
+          </template>
+      </f7-list-item>
+      <f7-list-item
+        link="/interested-helper/" 
         title="Eric Hofmeister"
         after="16:43"
         subtitle="...offered you a price"
@@ -18,31 +35,15 @@
               src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               width="40"
               class="avatar"
-            >
-            <i class="badgeToimg"></i>
-          </template>
-      </f7-list-item>
-      <f7-list-item
-        link="#" 
-        title="Michael Wenzel"
-        after="12:01"
-        subtitle="...sent you a message"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
-      >
-        <!--Profile picture-->
-        <template #media>
-            <img
-              src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              width="40"
-              class="avatar"
-            />
+            >            
+            <i class="badgeToimg" v-show="statusOfHelperBadge"></i>
           </template>
       </f7-list-item>
       <f7-list-item
         link="#" 
         title="Laura Briem"
-        after="7:21"
-        subtitle="...offered you a price"
+        after="17:21"
+        subtitle="...sent you a message"
       >
         <!--Profile picture-->
         <template #media>
@@ -51,15 +52,14 @@
               width="40"
               class="avatar"
             />
-            <i class="badgeToimg"></i>
-          </template>
+            <!-- <i class="badgeToimg"></i> -->
+        </template>
       </f7-list-item>
       <f7-list-item
         link="#" 
         title="Helena See"
         after="Yesterday"
-        subtitle="...sent you a message"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
+        subtitle="...made a comment"
       >
       <!--Badge to indicate unread message-->
       <!--ToDo: Correct positioning of the badge-->
@@ -73,11 +73,10 @@
           </template>
       </f7-list-item>
       <f7-list-item
-        link="#" 
-        title="Sarah Müller"
-        after="19/09/2020"
-        subtitle="...sent you a message"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
+        link="/comment/" 
+        title="Alice Wilson"
+        after="21/11/2021"
+        subtitle="...made a comment"
       >
         <!--Profile picture-->
         <template #media>
@@ -93,7 +92,7 @@
 
   </f7-page>
 </template>
-<style scoped>
+<style>
 .avatar{
   border-radius: 50%; 
   width: 20vmin;
@@ -117,7 +116,31 @@
   --f7-list-item-subtitle-font-size: 20px;
   --f7-list-item-text-font-size: 17px;
 }
+/* .color-green {
+  display:none;
+} */
 
 </style>
+<script>
+import myBus from '../js/myBus.js';
+
+export default {
+  data() {
+    return {
+      statusOfBadge: true,
+      statusOfHelperBadge: true,
+    }
+  },
+  mounted() {
+    myBus.on('deleteBadge', data => {
+      this.statusOfBadge = data
+    });
+    myBus.on('deleteHelperBadge', data => {
+      this.statusOfHelperBadge = data
+    })
+  }
+}
+</script>
+
 
 

@@ -36,114 +36,18 @@
                 class="swipeout-delete">Delete</a>
             </div>
             <!-- button to check offered price -->
-            <!-- <a class="list-button" style="border-bottom:0.5px">
-              <a href="/interested-helper/" style="font-weight:bold;">
+            <a class="list-button" style="border-bottom:0.5px" @click="checkHelper(item); requestInfo(item)">
+              <a v-bind:href="item.link" style="font-weight:bold;">
                 <f7-icon size= "28px" class="material-icons status-icon" >
                   price_check
                 </f7-icon>
                 INTERESTED ({{item.interested}})
               </a>
-            </a> -->
-            <ul style="padding:0px">
-              <li>
-                <f7-button fill style="margin:8px 16px" @click="checkHelper(item)">
-                  <a v-bind:href="item.link" style="color:white">
-                    <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
-                      price_check
-                      <!-- <f7-badge color="green"></f7-badge> -->
-                    </f7-icon>
-                    INTERESTED ({{item.interested}})
-                  </a>
-                </f7-button>
-              </li>
-            </ul>
+            </a>
           </li>
         </ul>
     </div>
     
-    <!-- old version of request list -->
-    <f7-list media-list style="display:none">
-      <!-- 1st request -->
-      <f7-list-item 
-        title={{msg}}
-        subtitle="To 22/01/2022"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
-        swipeout
-      >
-        <!-- img for request -->
-        <template #media>
-          <img src="../img/request_img/Car_repair.jpeg" width="80" />
-        </template>
-        <f7-swipeout-actions right>
-          <f7-swipeout-button delete confirm-text="Are you sure you want to delete this item?">Delete</f7-swipeout-button>
-        </f7-swipeout-actions>
-      </f7-list-item>
-      <!-- check price button -->
-      <f7-list-item>
-        <f7-button fill>
-          <a href="/interested-helper/" style="color:white">
-            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
-              price_check
-              <!-- <f7-badge color="green"></f7-badge> -->
-            </f7-icon>
-            (2)
-          </a>
-        </f7-button>
-      </f7-list-item>
-      <!-- 2nd request -->
-      <f7-list-item swipeout
-        title="Four walls of the bedroom need to be renovated and painted"
-        subtitle="To 31/01/2022"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
-      >
-        <!-- img for request -->
-        <template #media>
-          <img src="../img/request_img/Paint_wall.jpeg" width="80" />
-        </template>
-        <f7-swipeout-actions right>
-          <f7-swipeout-button delete confirm-text="Are you sure you want to delete this item?">Delete</f7-swipeout-button>
-        </f7-swipeout-actions>
-      </f7-list-item>
-      <!-- check price button -->
-      <f7-list-item>
-        <f7-button fill>
-          <a href="/interested-helper/" style="color:white">
-            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
-              price_check
-              <!-- <f7-badge color="green"></f7-badge> -->
-            </f7-icon>
-            (2)
-          </a>
-        </f7-button>
-      </f7-list-item>
-      <!-- 3rd request -->
-      <f7-list-item swipeout
-        title="Newly purchased IKEA nightstand needs to be assembled"
-        subtitle="To 20/02/2022"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus."
-      >
-        <!-- img for request -->
-        <template #media>
-          <img src="../img/request_img/Assemble_furniture.jpeg" width="80" height="80" />
-        </template>
-        <f7-swipeout-actions right>
-          <f7-swipeout-button delete confirm-text="Are you sure you want to delete this item?">Delete</f7-swipeout-button>
-        </f7-swipeout-actions>
-      </f7-list-item>
-      <!-- check price button -->
-      <f7-list-item>
-        <f7-button fill>
-          <a href="/interested-helper/" style="color:white">
-            <f7-icon size= "28px" class="material-icons status-icon" style="color:white;">
-              price_check
-              <!-- <f7-badge color="green"></f7-badge> -->
-            </f7-icon>
-            (2)
-          </a>
-        </f7-button>
-      </f7-list-item>
-    </f7-list>
-
     <!-- finished request -->
     <f7-block-title style="text-align:center;color:#263A68;font-weight:bold">
       Request you've already paid
@@ -151,32 +55,27 @@
     
     <div class="list media-list">
         <ul style="filter：gray; -moz-opacity:.3;opacity:0.3;paddinng;0px">
-          <li class="swipeout" v-for="item in list" v-bind:key="item">
+          <li class="swipeout" v-for="item in finishedList" v-bind:key="item">
             <div class="item-content swipeout-content">
-              <div class="item-media"><img v-bind:src="item.img" width="80" />
+              <div class="item-media" ><img v-bind:src="item.img" width="90" height="90" style="padding-top:10px" />
               </div>
-              <div class="item-inner">
+              <div class="item-inner" >
                 <div class="item-title-row">
-                  <div class="item-title">{{item.title}}</div>
+                  <div class="item-title" style="font-size:25px">{{item.title}}</div>
                 </div>
-                <div class="item-subtitle" >{{item.date}}</div>
+                <div class="item-subtitle" style="font-size:18px">Until {{item.date}}</div>
                 <div class="item-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.
+                  {{item.text}}
                 </div>
               </div>
-            </div>
-            <!-- swipeout function -->
-            <div class="swipeout-actions-right">
-              <a href="#" data-confirm="Are you sure you want to delete this request?"
-                class="swipeout-delete">Delete</a>
             </div>
             <!-- button to check offered price -->
-            <a class="list-button" >
-              <a href="/interested-helper/">
+            <a class="list-button" style="border-bottom:0.5px" @click="checkHelper(item)">
+              <a v-bind:href="item.link" style="font-weight:bold;">
                 <f7-icon size= "28px" class="material-icons status-icon" >
                   price_check
                 </f7-icon>
-                (2)
+                INTERESTED ({{item.interested}})
               </a>
             </a>
           </li>
@@ -286,7 +185,7 @@ export default {
                 date:'22/01/2022',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.',
                 img: "../img/request_img/Car_repair.jpeg",
-                interested: '2',
+                interested: '3',
                 link:'/interested-helper/'
               },
               { title:"Four walls of the bedroom need to be renovated and painted",
@@ -304,10 +203,39 @@ export default {
                 date:'24/01/2022',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.',
                 img: "../img/request_img/Assemble_furniture.jpeg",
-                interested: '3',
+                interested: '2',
                 link:'/interested-helper/'
               }
             ],
+      finishedList:[
+              { title:"Four walls of the bedroom need to be renovated and painted",
+                keyword: 'Paint wall',
+                address: '81010, Munich',
+                date:'23/01/2022',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.',
+                img: "../img/request_img/Paint_wall.jpeg",
+                interested: '1',
+                link:'/interested-helper/'
+              },
+              { title:"Four walls of the bedroom need to be renovated and painted",
+                keyword: 'Paint wall',
+                address: '81010, Munich',
+                date:'23/01/2022',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.',
+                img: "../img/request_img/Paint_wall.jpeg",
+                interested: '1',
+                link:'/interested-helper/'
+              },
+              { title:"Four walls of the bedroom need to be renovated and painted",
+                keyword: 'Paint wall',
+                address: '81010, Munich',
+                date:'23/01/2022',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.',
+                img: "../img/request_img/Paint_wall.jpeg",
+                interested: '1',
+                link:'/interested-helper/'
+              },
+      ]
     }
   },
   mounted() {
@@ -321,7 +249,10 @@ export default {
   // },
 
   methods: {
-
+    requestInfo(item) {
+      myBus.emit('requestInfo', item);
+      console.log(item)
+    },
     // send number of helpers to "interested helper" page 
     checkHelper(item) {
       if (item.interested > 0) {
