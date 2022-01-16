@@ -122,9 +122,9 @@
     </f7-list>
 
 
-    <!-- finished request -->
+    <!-- Requests you´ve already paid -->
     <f7-block-title style="text-align:center; font-size: 20px">
-      Finished requests
+      Requests you´ve already paid
     </f7-block-title>    
     <f7-list media-list style="filter：gray; -moz-opacity:.3;opacity:0.3;paddinng;0px">
       <!-- 1st request -->
@@ -218,6 +218,7 @@
   }
 </style>
 
+ <!-- delete those alters? -->
 <script>
   import { f7Navbar, f7Page, f7BlockTitle, f7Block, f7Button, f7Row, f7 } from 'framework7-vue';
 export default {
