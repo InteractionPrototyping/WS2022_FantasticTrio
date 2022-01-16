@@ -149,13 +149,14 @@ data(){
       return this.list.filter((item) => item.id < 50)
     }
   },
-  mounted() {
+  beforeCreate(){
     myBus.on("ToComment",data => {
-      this.newComment = data
-      console.log(this.newComment)
-      this.list.unshift(data)
-           })
-      
+      myBus.newComment = data;
+      console.log(myBus.newComment);
+    })
+  },
+  mounted() { 
+     this.list.unshift(myBus.newComment);
   },
   methods: {
     addComment(){
@@ -169,6 +170,7 @@ data(){
       this.newComment.date= systemDate;
       this.newComment.text= this.messageText;
       this.list.unshift(this.newComment)
+      myBus.emit("ToProject",this.newComment)
     },
     test(){
       console.log(this.newComment)

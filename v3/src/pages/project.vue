@@ -224,6 +224,9 @@ export default {
       this.getItem = data
       console.log(this.getItem)
            })
+    myBus.on("ToProject",data => {
+      this.latestComment = data
+           })    
   },
   methods:{
       addComment(){
