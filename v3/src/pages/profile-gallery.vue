@@ -1,12 +1,12 @@
 <template>
   <f7-page name="profile-gallery">
-    <f7-navbar title="Profile Gallery" back-link="Back"></f7-navbar>
+    <f7-navbar title="Profile Gallery" back-link="Back" style="font-size: 20px"></f7-navbar>
 
     <!-- Individual parts of the page are each structured as a media list-->
     <!-- Template from List View component: Media List -->
-    <f7-list media-list>
+    <f7-list media-list class="profile">
       <f7-list-item        
-        title="Alice Manz &#9792;"
+        title="Alice Manz"
         subtitle="&#8982; 86378, Munich"
         text="&#9733; 4.6(10)" 
       >
@@ -29,7 +29,7 @@
           <br>
           <span class="date">03/12/2021</span>
           <span class="follower">7</span>
-          <f7-icon f7="suit_heart_fill" size=20px class="black_heart"></f7-icon>
+          <f7-icon f7="suit_heart_fill" size=20 class="black_heart"></f7-icon>
       </f7-col>
       <f7-col>
           <img src="https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg" width="150"/>
@@ -122,9 +122,15 @@
 
 <!--Style-->
 <style scoped>
+.profile{
+  --f7-list-item-title-font-size: 30px;
+  --f7-list-item-subtitle-font-size: 20px;
+  --f7-list-item-text-font-size: 20px;
+  --f7-list-item-title-text-color: #2D4066;
+}
 .date{
   float: left;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 .avatar{
@@ -158,8 +164,7 @@ p{
   margin: 0px;
   padding: 0px;
   height: 34px;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 18px;
   font-family: var(--f7-font-family);
 }
 .black_heart {
@@ -169,6 +174,7 @@ p{
 }
 .follower {
   float: right;
+  font-size: 15px;
 }
 
 </style>
