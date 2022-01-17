@@ -13,7 +13,7 @@
     <!-- Helper's information -->
     <f7-block>
       <img
-        src="https://images.pexels.com/photos/2691608/pexels-photo-2691608.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        v-bind:src="helpersInfo.img"
         width="120"
         class="avatar"
       />
@@ -21,15 +21,15 @@
         <f7-list-item>
           <f7-row>
             <f7-col>
-              <div style="font-size: 25px; margin-bottom:5px">Jack Miller</div>
+              <div style="font-size: 25px; margin-bottom:5px">{{helpersInfo.name}}</div>
               <span
                class="item-text .list" style="font-size: 19px">
-                &#8982; 81548,Munich 
+                &#8982;{{helpersInfo.location}} 
               </span>
             </f7-col>
             <f7-col>
               <f7-chip outline color="#263a68" text="#Car Repair"></f7-chip> 
-              <f7-button fill class="price">10&#8364;</f7-button>
+              <f7-button fill class="price">{{helpersInfo.price}}</f7-button>
             </f7-col>
           </f7-row>
         </f7-list-item>
@@ -171,10 +171,25 @@ img {
 <script>
 import { f7, f7ready } from "framework7-vue";
 import $ from "dom7";
+import myBus from '../js/myBus.js';
 
 export default {
   data() {
     return {
+        helpersInfo: {
+                  name: '',
+                  img: '',
+                  date: '',
+                  location: '',
+                  star_1: '',
+                  star_2: '',
+                  star_3: '',
+                  star_4: '',
+                  star_5: '',
+                  grade: '',
+                  price: '',
+                  badge: '',
+      },
       attachments: [],
       sheetVisible: false,
       typingMessage: null,
@@ -224,6 +239,9 @@ export default {
     f7ready(() => {
       self.messagebar = f7.messagebar.get(self.$refs.messagebar.$el);
     });
+    myBus.on('changeChatInfo', data => {
+      this.helpersInfo = data;
+    })
   },
   methods: {
     isFirstMessage(message, index) {
@@ -308,27 +326,6 @@ export default {
       // Send message
       self.messagesData.push(...messagesToSend);
     },
-    // Make a phone call
-    //starting an outgoing call
-      // let uuid = UUID()
-      // let handle = CXHandle(type: .emailAddress, value: "jappleseed@apple.com")
-  
-      // let startCallAction = CXStartCallAction(call: uuid)
-      // startCallAction.destination = handle
-  
-      // let transaction = CXTransaction(action: startCallAction)
-      // callController.request(transaction) { error in
-      // if let error = error {
-      //     print("Error requesting transaction: \(error)")
-      // } else {
-      //     print("Requested transaction successfully")
-      // }
-      // }
-      // / Initiating the call
-      // func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
-      // / configure audio session
-      // action.fulfill()
-      // }
   },
 };
 </script>

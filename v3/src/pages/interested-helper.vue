@@ -42,7 +42,10 @@
           <f7-col>
           <!-- In data-sheet attribute we specify CSS selector of sheet we need to open-->
           <!-- <p><a class="button button-fill sheet-open" href="#" data-sheet=".my-sheet">{{item.price}}</a></p> -->
-          <p><f7-button fill sheet-open=".demo-sheet-swipe-to-close" @click='getPrice(item)'>{{item.price}}</f7-button></p>
+          <p><f7-button fill sheet-open=".demo-sheet-swipe-to-close" @click='getPrice(item)'>
+            {{item.price}}
+            </f7-button>
+          </p>
           </f7-col>
         </f7-row>
         <template #media>
@@ -90,7 +93,7 @@
 </f7-row> -->
         <f7-row>
           <f7-col>
-            <f7-button fill style="margin-bottom: 5px; background-color: #6FAAE0" href="/chat/" @click="deleteHelperBadge(item)">
+            <f7-button fill style="margin-bottom: 5px; background-color: #6FAAE0" href="/chat/" @click="deleteHelperBadge(item);changeChatInfo(item)">
               <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>
               Chat
             </f7-button>
@@ -155,7 +158,7 @@ export default {
                   name: 'Lisa Wright',
                   img: 'https://images.pexels.com/photos/1918246/pexels-photo-1918246.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
                   date: '10/12/2021',
-                  location: '&#8982; 81549 Munich',
+                  location: '81549 Munich',
                   star_1: 'star_fill',
                   star_2: 'star_fill',
                   star_3: 'star_fill',
@@ -256,15 +259,17 @@ export default {
   mounted() {
     myBus.on("helpers", data => {
       let num = parseInt(data);
-      console.log(num);
       this.helpers.splice(num,7 - num);
     });
     myBus.on('requestInfo',data => {
       this.requestInfo = data;
-      console.log(this.requestInfo)
     });
   },
   methods: {
+    //click chat button to send helper info to chat page
+    changeChatInfo(item) {
+      myBus.emit('changeChatInfo', item)
+    },
     //delete helper's badge
     deleteHelperBadge(item) {
       item.badge = false;
