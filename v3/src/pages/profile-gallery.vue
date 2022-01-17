@@ -7,7 +7,7 @@
 
     <!--Gallery projects overview-->
         <f7-row class="exploreCard">
-      <f7-col width='50' v-for="item in list" v-bind:key="item">
+      <f7-col width='50' v-for="item in activeList" v-bind:key="item">
         <f7-link href='/project/' @click="getId(item)">
           <f7-card class="demo-card-header-pic">
             <f7-card-header
@@ -117,6 +117,14 @@ p{
   .no-border {
     padding: 8px
   }
+  .row{
+    display: flex;
+    justify-content: flex-start;
+  }
+  .col-50{
+    position: relative;
+    left: 8px;
+  }
 </style>
 
 <script>
@@ -156,6 +164,17 @@ export default {
                 like_type: "suit_heart_fill",
                 id:2,
               },
+              { title:"Gardening is wonderful!!",
+                img_header: "background-image:url(https://images.pexels.com/photos/803975/pexels-photo-803975.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)",
+                img_first: "https://imgs.wantubizhi.com/upload/i_1/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/1965898469x2092364723_26_0.jpg",
+                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
+                writer: 'Eric',
+                likes: 10,
+                like_type: "suit_heart",
+                id:3,
+              },
               { title:"Eletronics is not difficult！！",
                 img_header: "background-image:url(https://www.aumueller-gmbh.de/fileadmin/01_Images/10_Target_groups/elektriker_header%40.jpg)",
                 img_first: "https://www.aumueller-gmbh.de/fileadmin/01_Images/10_Target_groups/elektriker_header%40.jpg",
@@ -189,6 +208,17 @@ export default {
                 like_type: "suit_heart_fill",
                 id:6,
               },
+              { title:"The fixing work is awesome!!!",
+                img_header: "background-image:url(https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)",
+                img_first: "https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg",
+                img_second: "https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                img_third:"https://media.istockphoto.com/photos/mechanic-using-a-ratchet-wrench-picture-id1165311626?k=20&m=1165311626&s=612x612&w=0&h=2bA0oO8I6mNN7QlZHeCRTs9tRbMae9JNSsvdq-zD1Wg=",
+                text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
+                writer: 'Alice',
+                likes: 7,
+                like_type: "suit_heart",
+                id:7,
+              },
               { title:"A tip to keep you garden clean",
                 img_header: "background-image:url(https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg)",
                 img_first: "https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg",
@@ -204,11 +234,28 @@ export default {
 
     }
   },
-  // computed: {
-  //   activeList() {
-  //     return this.list.filter((item) => item.id < 50)
-  //   }
-  // },
+  computed: {
+    activeList() {
+      return this.list.filter((item) => item.like_type == "suit_heart_fill")
+    }
+  },
+    beforeCreate(){
+    myBus.on("ChangeLike",data => {
+      myBus.project = data;
+    })
+    },
+    mounted() {
+    var self =this;
+    if(typeof myBus.project !== "undefined"){
+      for(var i=0;i<self.list.length;i++){
+        if(self.list[i].id==myBus.project.id)
+        {
+          self.list[i].likes=myBus.project.likes;
+          self.list[i].like_type=myBus.project.like_type;
+        }
+    }
+    }
+  },
   methods: {
     getId(item){
       myBus.emit("Id", item);

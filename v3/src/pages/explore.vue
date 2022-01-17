@@ -117,6 +117,7 @@ p{
 <script>
 import { f7Button,f7 } from 'framework7-vue';
 import myBus from '../js/myBus.js';
+import { data } from 'dom7';
 export default {
   props: {
       f7route: Object,
@@ -262,7 +263,7 @@ export default {
                 text:"It’s just as important to keep the backup tire inflated as it is the four tires under your car. The last thing you want is to discover your spare is flat while you’re pulling the jack out of your trunk. That’s when you’ll need to call a tow truck—which can run you hundreds of dollars. It’s better to spend a dollar on an air pump to inflate your spare. That way you’re spared the cost of a tow.",
                 writer: 'Alice',
                 likes: 7,
-                like_type: "black_heart",
+                like_type: "suit_heart",
                 id:7,
               },
               { title:"A tip to keep you garden clean",
@@ -280,11 +281,18 @@ export default {
 
     }
   },
-  // computed: {
-  //   activeList() {
-  //     return this.list.filter((item) => item.id < 50)
-  //   }
-  // },
+  mounted() {
+    var self =this;
+    myBus.on("ChangeLike",data=> {
+      for(var i=0;i<self.list.length;i++){
+        if(self.list[i].id==data.id)
+        {
+          self.list[i].likes=data.likes;
+          self.list[i].like_type=data.like_type;
+        }
+      }
+    })
+  },
   methods: {
     getId(item){
       myBus.emit("Id", item);

@@ -41,7 +41,7 @@
       <!-- Description of Writer -->
       <h3 style="position: relative; top: 10px; font-size: 25px">Author</h3>
       <div style="position: absolute; bottom: 200px; right: 20px">
-        <f7-icon v-bind:f7="getItem.like_type" size="25px" class="black_heart"></f7-icon>
+        <f7-icon v-bind:f7="getItem.like_type" size="25px" class="black_heart" @click="ChangeLike()"></f7-icon>
         <span style="position: relative; top: 5px; font-size: 20px"> {{getItem.likes}} </span>
       </div>
       <a class="link" href="/profile-helper/">
@@ -199,22 +199,6 @@ export default {
         }
       }
   },
-  // computed: {
-  //   activeList() {
-  //     // problem here
-  //     myBus.on("Id",data=> {
-  //     this.getItem=data; 
-  //      })
-  //      //get data of the id of project we choose in previous page
-  //      var i= this.getItem.id;
-  //      i = parseInt(i);
-  //      console.log(this.getItem.title);
-  //      //we can see it works
-  //      return this.list.filter((item) => item.id == 2)
-  //      // when item== i , it not works, i don't know why, i is numeric and item.id is also numeric.
-      
-  //   }
-  // },
   mounted() {
     myBus.on("Id",data => {
       this.getItem = data
@@ -238,6 +222,18 @@ export default {
       this.latestComment.text= this.messageText;
       myBus.emit("ToComment",this.latestComment)
       this.messageText = "";
+    },
+    ChangeLike(){
+      if(this.getItem.like_type=="suit_heart")
+      {
+        this.getItem.like_type="suit_heart_fill";
+        this.getItem.likes++;
+      }
+      else{
+        this.getItem.like_type="suit_heart";
+        this.getItem.likes--;
+      }
+      myBus.emit("ChangeLike",this.getItem)
     }
   },
 }
