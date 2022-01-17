@@ -84,7 +84,7 @@
       <f7-button
         fill
         href="/comment/"
-        style="position: relative; bottom: 50px"
+        style="position: relative; bottom: 40px"
         >Show all comments</f7-button
       >
       <br />
@@ -100,14 +100,6 @@
           class="bar"
           style="position: fixed; bottom: 50px"
         >
-          <template #inner-start>
-            <f7-link
-              icon-ios="f7:camera_fill"
-              icon-aurora="f7:camera_fill"
-              icon-md="material:camera_alt"
-              @click="sheetVisible = !sheetVisible"
-            />
-          </template>
           <template #inner-end>
             <f7-link
               icon-ios="f7:arrow_up_circle_fill"
@@ -163,6 +155,10 @@
 .media-list{
   --f7-list-item-title-font-size: 25px;
   --f7-list-item-text-font-size: 20px;
+}
+.button{
+  --f7-button-bg-color: #468DCE;
+  --f7-button-font-size: 15px;
 }
 
 </style>
@@ -241,6 +237,7 @@ export default {
       this.latestComment.date= systemDate;
       this.latestComment.text= this.messageText;
       myBus.emit("ToComment",this.latestComment)
+      this.messageText = "";
     }
   },
 }

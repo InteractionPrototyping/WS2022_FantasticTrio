@@ -35,14 +35,6 @@
         class="bar"
         style="position: fixed; bottom: 50px"
       >
-        <template #inner-start>
-          <f7-link
-            icon-ios="f7:camera_fill"
-            icon-aurora="f7:camera_fill"
-            icon-md="material:camera_alt"
-            @click="sheetVisible = !sheetVisible"
-          />
-        </template>
         <template #inner-end>
           <f7-link
             icon-ios="f7:arrow_up_circle_fill"
@@ -173,10 +165,10 @@ data(){
   beforeCreate(){
     myBus.on("ToComment",data => {
       myBus.newComment = data;
-      console.log(myBus.newComment);
     })
   },
   mounted() { 
+    if(typeof myBus.newComment !== "undefined")
      this.list.unshift(myBus.newComment);
   },
   methods: {
@@ -200,6 +192,7 @@ data(){
       this.newComment.text= this.messageText;
       this.list.unshift(this.newComment)
       myBus.emit("ToProject",this.newComment)
+      this.messageText = "";
     },
     test(){
       console.log(this.newComment)
