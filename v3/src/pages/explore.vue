@@ -1,11 +1,14 @@
 <template>
   <f7-page name="explore">
     <!-- Navbar area -->
-    <f7-navbar title="Explore" style="font-size: 20px"></f7-navbar>
-    <f7-searchbar
-  placeholder="Search in items"
-  :clear-button="true"
-></f7-searchbar>
+    <f7-navbar title="Explore" style="font-size: 20px" >
+      <f7-icon
+        fill
+        f7="search"
+        size="30px"
+        class="right"
+      ></f7-icon>
+    </f7-navbar>
 
 
     <f7-row class="exploreCard">
