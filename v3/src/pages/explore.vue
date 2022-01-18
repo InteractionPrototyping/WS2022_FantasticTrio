@@ -2,6 +2,11 @@
   <f7-page name="explore">
     <!-- Navbar area -->
     <f7-navbar title="Explore" style="font-size: 20px"></f7-navbar>
+    <f7-searchbar
+  placeholder="Search in items"
+  :clear-button="true"
+></f7-searchbar>
+
 
     <f7-row class="exploreCard">
       <f7-col width='50' v-for="item in list" v-bind:key="item">
@@ -112,6 +117,10 @@ p{
   }
   .no-border {
     padding: 8px
+  }
+  .searchbar{
+    position:relative !important;
+    top: 39px !important;
   }
 </style>
 <script>

@@ -239,7 +239,7 @@ export default {
     f7ready(() => {
       self.messagebar = f7.messagebar.get(self.$refs.messagebar.$el);
     });
-    myBus.on('changeChatInfo', data => {
+     myBus.on('changeChatInfo', data => {
       this.helpersInfo = data;
     })
   },
