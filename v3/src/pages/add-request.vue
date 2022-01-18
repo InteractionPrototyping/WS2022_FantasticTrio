@@ -20,36 +20,36 @@
       <!-- use smart select component to choose keywords -->
       <f7-list-item title="Keyword" smart-select :smart-select-params="{openIn: 'popup', searchbar: true, searchbarPlaceholder: 'Search keyword'}">
       <select name="keyword">
-        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/car.svg'> Auto,Mobiles" >
-          <option value="Autoreparatur" selected>Autoreparatur</option>
-          <option value="Auto Tuning" >Auto Tuning</option>
-          <option value="Chauffeur">Chauffeur</option>
-          <option value="Fahrzeugbeschriftung">Fahrzeugbeschriftung</option>
-          <option value="Fahrzeugreinigung">Fahrzeugreinigung</option>
-          <option value="Sonstige Kfz-Service">Sonstige Kfz-Service</option>
+        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/car.svg'>Cars, Vehicles" >
+          <option value="Car Repair" selected>Car Repair</option>
+          <option value="Car Tuning" >Car Tuning</option>
+          <option value="Vehicle lettering">Vehicle lettering</option>
+          <option value="Vehicle cleaning">Vehicle cleaning</option>
+          <option value="Other car services">Other car services</option>
         </optgroup>
-        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/home.svg'> Haus,Aussenarbeiten ">
-          <option value="Abriss">Abriss</option>
-          <option value="Aussenkonstruktion">Aussenkonstruktion</option>
-          <option value="Baggerarbeiten">Baggerarbeiten</option>
-          <option value="Bautrockenlegung, Baut...">Bautrockenlegung, Baut...</option>
-          <option value="Dachdecker">Dachdecker</option>
-          <option value="Sonstige Aussenarbeit">Sonstige Aussenarbeit</option>
+        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/home.svg'>House, Exterior work">
+          <option value="Demolition">Demolition</option>
+          <option value="Exterior construction">Exterior construction</option>
+          <option value="Excavation work">Excavation work</option>
+          <option value="Building drying">Building drying</option>
+          <option value="Roofing">Roofing</option>
+          <option value="Other exterior work">Other exterior work</option>
 
         </optgroup>
-        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/painting.svg'>Haus,Innenarbeiten" >
-          <option value="Badsanierung">Badsanierung</option>
-          <option value="Bodenleger">Bodenleger</option>
-          <option value="Deckenarbeiten">Deckenarbeiten</option>
-          <option value="Entrümpelung">Entrümpelung</option>
-          <option value="Sonstige Aussenarbeit">Sonstige Innenarbeit</option>
+        <optgroup label="<img style='width:25px; height:25px;' src='../img/add_request_keyword/painting.svg'>House, Interior work" >
+          <option value="Bathroom renovation">Bathroom renovation</option>
+          <option value="Floor laying">Floor laying</option>
+          <option value="Ceiling work">Ceiling work</option>
+          <option value="Clearing out">Clearing out</option>
+          <option value="Painting works">Painting works</option>
+          <option value="Other interior work">Other interior work</option>
         </optgroup>
-        <optgroup label=" <img style='width:25px; height:25px;' src='../img/add_request_keyword/gardening.svg'> Gardenarbeiten">
-          <option value="Baumfällung">Baumfällung</option>
-          <option value="Gärtner">Gärtner</option>
-          <option value="Gartenteich">Gartenteich</option>
-          <option value="Grabpflege">Grabpflege</option>
-          <option value="Sonstige Gartenarbeit">Sonstige Gartenarbeit</option>
+        <optgroup label=" <img style='width:25px; height:25px;' src='../img/add_request_keyword/gardening.svg'>Gardening">
+          <option value="Tree felling">Tree felling</option>
+          <option value="Hedge trimming">Hedge trimming</option>
+          <option value="Garden pond">Garden pond</option>
+          <option value="Lawn mowing">Lawn mowing</option>
+          <option value="Other gardening">Other gardening</option>
         </optgroup>
       </select>
     </f7-list-item>
