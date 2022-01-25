@@ -16,7 +16,7 @@
 
     <f7-row class="exploreCard">
       <f7-col width='50' v-for="item in activeList" v-bind:key="item">
-        <f7-link href='/project/' @click="getId(item);f7.searchbar.disable()">
+        <f7-link href='/project/' @click="getId(item);f7.searchbar.disable();this.searchText=''">
           <f7-card class="demo-card-header-pic">
             <f7-card-header
               class="no-border"
