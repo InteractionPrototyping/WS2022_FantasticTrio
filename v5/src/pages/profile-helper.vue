@@ -20,7 +20,7 @@
       </a>
       <br>
       <!--Button "Ask for price"-->
-      <f7-button fill raised @click="showToastIcon" >Contact</f7-button>
+      <f7-button fill raised>Contact</f7-button>
         <!--Profile picture-->
          <template #media>
             <img  class="avatar" src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
@@ -118,7 +118,7 @@
                 icon-aurora="f7:person_fill"
                 icon-md="material:person"
               >
-              Johan
+              Alice
               </f7-link>
               <f7-link
               >

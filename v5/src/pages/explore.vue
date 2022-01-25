@@ -2,18 +2,21 @@
   <f7-page name="explore">
     <!-- Navbar area -->
     <f7-navbar title="Explore" style="font-size: 20px" >
-      <f7-icon
-        fill
-        f7="search"
-        size="30px"
-        class="right"
-      ></f7-icon>
+    <f7-nav-right>
+      <f7-link class="searchbar-enable" data-searchbar=".searchbar-demo" icon-ios="f7:search" icon-aurora="f7:search" icon-md="material:search"></f7-link>
+    </f7-nav-right>
+    <f7-searchbar
+      class="searchbar-demo"
+      expandable
+      :disable-button="!theme.aurora"
+      v-model:value="searchText"
+    ></f7-searchbar>
     </f7-navbar>
 
 
     <f7-row class="exploreCard">
-      <f7-col width='50' v-for="item in list" v-bind:key="item">
-        <f7-link href='/project/' @click="getId(item)">
+      <f7-col width='50' v-for="item in activeList" v-bind:key="item">
+        <f7-link href='/project/' @click="getId(item);f7.searchbar.disable()">
           <f7-card class="demo-card-header-pic">
             <f7-card-header
               class="no-border"
@@ -21,9 +24,9 @@
               v-bind:style="item.img_header"
             >
             </f7-card-header>
-            <f7-card-content>
+            <f7-card-content class="search-item searchbar-found" v-bind:title="item.title">
               <!-- <p class="date">January 21, 2015</p> -->
-              <strong>{{item.title}}</strong>
+              <strong class="title">{{item.title}}</strong>
             </f7-card-content>
             <f7-card-footer>
               <f7-link
@@ -121,14 +124,19 @@ p{
   .no-border {
     padding: 8px
   }
-  .searchbar{
-    position:relative !important;
-    top: 39px !important;
+    .row{
+    display: flex;
+    justify-content: flex-start;
+  }
+  .col-50{
+    position: relative;
+    left: 6px;
   }
 </style>
 <script>
 import { f7Button,f7 } from 'framework7-vue';
 import myBus from '../js/myBus.js';
+import { theme } from 'framework7-vue';
 import { data } from 'dom7';
 export default {
   props: {
@@ -141,6 +149,7 @@ export default {
   data(){
     return {
       msg:'adf',
+      searchText:"",
       // initial requests data 
       // list:[
       //         { title:"The fixing work is awesome!!!",
@@ -200,6 +209,8 @@ export default {
       //           id:8,
       //         }
       //       ],
+            theme,
+            f7,
             list:[
               { title:"The fixing work is awesome!!!",
                 img_header: "background-image:url(https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)",
@@ -291,6 +302,11 @@ export default {
               }
             ],
 
+    }
+  },
+    computed: {
+    activeList() {
+      return this.list.filter((item) => item.title.toLowerCase().indexOf(this.searchText.toLowerCase())!=-1)
     }
   },
   mounted() {
