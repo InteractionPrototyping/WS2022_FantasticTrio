@@ -1,9 +1,6 @@
 
 import HomePage from '../pages/home.vue';
-import AboutPage from '../pages/about.vue';
-import FormPage from '../pages/form.vue';
 import NotificationPage from '../pages/notification.vue';
-import ProductPage from '../pages/product.vue';
 import OwnProfilePage from '../pages/own-profile.vue';
 import ExplorePage from '../pages/explore.vue';
 import ProjectPage from '../pages/project.vue';
@@ -18,9 +15,7 @@ import ToastPage from '../pages/components from f7/toast.vue';
 import ChooseRequestFunctionPage from '../pages/choose-request-function.vue';
 import AutocompletePage from '../pages/components from f7/autocomplete.vue';
 
-import DynamicRoutePage from '../pages/dynamic-route.vue';
 import RequestAndLoad from '../pages/request-and-load.vue';
-import NotFoundPage from '../pages/404.vue';
 
 import ReviewPage from '../pages/review.vue';
 import ProfileHelperPage from '../pages/profile-helper.vue';
@@ -73,29 +68,12 @@ var routes = [
     component: AutocompletePage,
   },
   {
-    path: '/about/',
-    component: AboutPage,
-  },
-  {
-    path: '/form/',
-    component: FormPage,
-  },
-  {
     path: '/notification/',
     component: NotificationPage,
   },
   {
-    path: '/product/:id/',
-    component: ProductPage,
-  },
-  {
     path: '/own-profile/',
     component: OwnProfilePage,
-  },
-
-  {
-    path: '/dynamic-route/blog/:blogId/post/:postId/',
-    component: DynamicRoutePage,
   },
   {
     path: '/explore/',
@@ -176,10 +154,6 @@ var routes = [
         );
       }, 1000);
     },
-  },
-  {
-    path: '(.*)',
-    component: NotFoundPage,
   },
 ];
 
