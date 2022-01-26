@@ -27,7 +27,7 @@
             {{item.price}}
             </f7-button>
           </p> -->
-          <f7-chip outline color="#263a68" style="padding:10px 40px;">{{item.price}}</f7-chip> 
+          <f7-chip outline color="#263a68" style="padding:10px 40px; font-size: 20px">{{item.price}}</f7-chip> 
           </f7-col>
         </f7-row>
         <template #media>
@@ -88,13 +88,13 @@
         </f7-row>
         <f7-row>
           <f7-col>
-            <f7-button fill style="margin-bottom: 5px; background-color: #6FAAE0" sheet-open=".demo-sheet-swipe-to-close" @click='getPrice(item);declineOthers(item)' v-show='item.isShow'>
+            <f7-button fill style="margin-bottom: 5px; background-color: #42E374" sheet-open=".demo-sheet-swipe-to-close" @click='getPrice(item);declineOthers(item)' v-show='item.isShow'>
               <f7-icon f7="checkmark" size="20px" class="chat" ></f7-icon>
               Accept
             </f7-button>
           </f7-col>
           <f7-col>
-            <f7-button fill style="background-color: #6FAAE0" v-show='item.isShow' @click='declineThisHelper(item)'>
+            <f7-button fill style="background-color: #DC4722" v-show='item.isShow' @click='declineThisHelper(item)'>
               <f7-icon f7="xmark" size="20px" class="call"></f7-icon>
               Decline
             </f7-button>
@@ -120,8 +120,9 @@
 }
 .button{
   --f7-button-font-size: 20px;
-  --f7-button-: 10px;
+  --f7-button-height: 30px;
 }
+
 
 </style>
 
