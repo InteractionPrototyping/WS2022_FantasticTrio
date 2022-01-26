@@ -3,7 +3,7 @@
     <!-- Navbar area -->
     <f7-navbar title="Interested Helper" back-link="Back" style="font-size: 20px"></f7-navbar>
     <f7-block-title style="text-align:center;color:#263A68;font-weight:bold">
-      Swipe right on list to accept offer
+      Swipe to decline or accept the offer
     </f7-block-title>
     <div class="list media-list">
         <ul>
