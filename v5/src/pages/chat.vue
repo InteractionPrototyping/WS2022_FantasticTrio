@@ -3,33 +3,29 @@
     <!-- Navbar area -->
     <f7-navbar back-link="Back" style="font-size: 20px">
       <span class="change">Chat</span>
-      <f7-icon
-        fill
-        f7="phone_fill"
-        size="30px"
-        class="right"
-      ></f7-icon>
+      <f7-icon fill f7="phone_fill" size="30px" class="right"></f7-icon>
     </f7-navbar>
     <!-- Helper's information -->
     <f7-block>
-      <img
-        v-bind:src="helpersInfo.img"
-        width="120"
-        class="avatar"
-      />
+      <img v-bind:src="helpersInfo.img" width="120" class="avatar" />
       <f7-list media-list inset>
         <f7-list-item>
           <f7-row>
             <f7-col>
-              <div style="font-size: 25px; margin-bottom:5px">{{helpersInfo.name}}</div>
-              <span
-               class="item-text .list" style="font-size: 19px">
-                &#8982;{{helpersInfo.location}} 
+              <!--Name-->
+              <div style="font-size: 25px; margin-bottom: 5px">
+                {{ helpersInfo.name }}
+              </div>
+              <!--Location-->
+              <span class="item-text .list" style="font-size: 19px">
+                &#8982;{{ helpersInfo.location }}
               </span>
             </f7-col>
             <f7-col>
-              <f7-chip outline color="#263a68" text="#Car Repair"></f7-chip> 
-              <f7-button fill class="price">{{helpersInfo.price}}</f7-button>
+              <!--Category Chip-->
+              <f7-chip outline color="#263a68" text="#Car Repair"></f7-chip>
+              <!--Price-->
+              <f7-button fill class="price">{{ helpersInfo.price }}</f7-button>
             </f7-col>
           </f7-row>
         </f7-list-item>
@@ -112,6 +108,7 @@
   </f7-page>
 </template>
 <style scoped>
+/* Style in this page */
 .change {
   position: absolute;
   left: 170px;
@@ -142,151 +139,152 @@ img {
 .message_background {
   background-color: initial;
 }
-.message-sent{
-    --f7-message-sent-bg-color: #468DCE;
-    --f7-message-bubble-font-size: 20px;
+.message-sent {
+  --f7-message-sent-bg-color: #468dce;
+  --f7-message-bubble-font-size: 20px;
 }
-.message-received{
-  --f7-message-received-bg-color: #879BAA;
+.message-received {
+  --f7-message-received-bg-color: #879baa;
   --f7-message-received-text-color: white;
   --f7-message-bubble-font-size: 20px;
 }
-.avatar{
-  border-radius: 50%; 
+.avatar {
+  border-radius: 50%;
   width: 35vmin;
-   height: 35vmin; 
-   object-fit: cover; 
-   object-position: center;
+  height: 35vmin;
+  object-fit: cover;
+  object-position: center;
 }
-.chip{
+.chip {
   font-size: 18px;
 }
-.button{
+.button {
   font-size: 20px;
   padding: 20px;
   margin-top: 10px;
 }
-
 </style>
+
 <script>
 import { f7, f7ready } from "framework7-vue";
 import $ from "dom7";
-import myBus from '../js/myBus.js';
+import myBus from "../js/myBus.js";
 
 export default {
   data() {
     return {
-        //  helpers data
-        helpers: [
-                  {
-                    name: 'Lisa Wright',
-                    img: 'https://images.pexels.com/photos/1918246/pexels-photo-1918246.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                    date: '10/12/2021',
-                    location: '81549 Munich',
-                    star_1: 'star_fill',
-                    star_2: 'star_fill',
-                    star_3: 'star_fill',
-                    star_4: 'star_fill',
-                    star_5: 'star',
-                    grade: '4.1/5',
-                    price: '12€',
-                    badge: false,
-                    request: "Audi A6's front brake pads are broken and need repair",
-                  },
-                  {
-                    name: 'Jack Miller',
-                    img: 'https://images.pexels.com/photos/2691608/pexels-photo-2691608.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                    date: '13/12/2021',
-                    location: '81548 Munich',
-                    star_1: 'star_fill',
-                    star_2: 'star_fill',
-                    star_3: 'star_fill',
-                    star_4: 'star_fill',
-                    star_5: 'star_lefthalf_fill',
-                    grade: '4.6/5',
-                    price: '10€',
-                    badge: false,
-                    request: "Audi A6's front brake pads are broken and need repair",
-                  },
-                  {
-                    name: 'Eric Hofmeister',
-                    img: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                    date: '11/12/2021',
-                    location: '81550 Munich',
-                    star_1: 'star_fill',
-                    star_2: 'star_fill',
-                    star_3: 'star_fill',
-                    star_4: 'star_fill',
-                    star_5: 'star_fill',
-                    grade: '4.9/5',
-                    price: '15€',
-                    badge: false,
-                    request:"Audi A6's front brake pads are broken and need repair",
-                  },
-                  {
-                    name: 'Michael Wenzel',
-                    img: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                    date: '14/12/2021',
-                    location: '81551 Munich',
-                    star_1: 'star_fill',
-                    star_2: 'star_fill',
-                    star_3: 'star_fill',
-                    star_4: 'star_fill',
-                    star_5: 'star_lefthalf_fill',
-                    grade: '4.6/5',
-                    price: '10€',
-                    badge: true,
-                    request:"Four walls of the bedroom need to be renovated and painted",
-                  },
-                  {
-                    name: 'Laura Briem',
-                    img: 'https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                    date: '14/12/2021',
-                    location: '81551 Munich',
-                    star_1: 'star_fill',
-                    star_2: 'star_fill',
-                    star_3: 'star_fill',
-                    star_4: 'star_fill',
-                    star_5: 'star_lefthalf_fill',
-                    grade: '4.6/5',
-                    price: '10€',
-                    badge: false,
-                    request:"Newly purchased IKEA nightstand needs to be assembled",
-                  },
-                  {
-                    name: 'Helena See',
-                    img: 'https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                    date: '14/12/2021',
-                    location: '81551 Munich',
-                    star_1: 'star_fill',
-                    star_2: 'star_fill',
-                    star_3: 'star_fill',
-                    star_4: 'star_fill',
-                    star_5: 'star_lefthalf_fill',
-                    grade: '4.6/5',
-                    price: '10€',
-                    badge: false,
-                    request:"Newly purchased IKEA nightstand needs to be assembled",
-                  },
-        ],
-        helpersInfo: {
-                  name: '',
-                  img: '',
-                  date: '',
-                  location: '',
-                  star_1: '',
-                  star_2: '',
-                  star_3: '',
-                  star_4: '',
-                  star_5: '',
-                  grade: '',
-                  price: '',
-                  badge: '',
+      //  helpers data
+      helpers: [
+        {
+          name: "Lisa Wright",
+          img: "https://images.pexels.com/photos/1918246/pexels-photo-1918246.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          date: "10/12/2021",
+          location: "81549 Munich",
+          star_1: "star_fill",
+          star_2: "star_fill",
+          star_3: "star_fill",
+          star_4: "star_fill",
+          star_5: "star",
+          grade: "4.1/5",
+          price: "12€",
+          badge: false,
+          request: "Audi A6's front brake pads are broken and need repair",
+        },
+        {
+          name: "Jack Miller",
+          img: "https://images.pexels.com/photos/2691608/pexels-photo-2691608.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          date: "13/12/2021",
+          location: "81548 Munich",
+          star_1: "star_fill",
+          star_2: "star_fill",
+          star_3: "star_fill",
+          star_4: "star_fill",
+          star_5: "star_lefthalf_fill",
+          grade: "4.6/5",
+          price: "10€",
+          badge: false,
+          request: "Audi A6's front brake pads are broken and need repair",
+        },
+        {
+          name: "Eric Hofmeister",
+          img: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          date: "11/12/2021",
+          location: "81550 Munich",
+          star_1: "star_fill",
+          star_2: "star_fill",
+          star_3: "star_fill",
+          star_4: "star_fill",
+          star_5: "star_fill",
+          grade: "4.9/5",
+          price: "15€",
+          badge: false,
+          request: "Audi A6's front brake pads are broken and need repair",
+        },
+        {
+          name: "Michael Wenzel",
+          img: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          date: "14/12/2021",
+          location: "81551 Munich",
+          star_1: "star_fill",
+          star_2: "star_fill",
+          star_3: "star_fill",
+          star_4: "star_fill",
+          star_5: "star_lefthalf_fill",
+          grade: "4.6/5",
+          price: "10€",
+          badge: true,
+          request: "Four walls of the bedroom need to be renovated and painted",
+        },
+        {
+          name: "Laura Briem",
+          img: "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          date: "14/12/2021",
+          location: "81551 Munich",
+          star_1: "star_fill",
+          star_2: "star_fill",
+          star_3: "star_fill",
+          star_4: "star_fill",
+          star_5: "star_lefthalf_fill",
+          grade: "4.6/5",
+          price: "10€",
+          badge: false,
+          request: "Newly purchased IKEA nightstand needs to be assembled",
+        },
+        {
+          name: "Helena See",
+          img: "https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          date: "14/12/2021",
+          location: "81551 Munich",
+          star_1: "star_fill",
+          star_2: "star_fill",
+          star_3: "star_fill",
+          star_4: "star_fill",
+          star_5: "star_lefthalf_fill",
+          grade: "4.6/5",
+          price: "10€",
+          badge: false,
+          request: "Newly purchased IKEA nightstand needs to be assembled",
+        },
+      ],
+      helpersInfo: {
+        name: "",
+        img: "",
+        date: "",
+        location: "",
+        star_1: "",
+        star_2: "",
+        star_3: "",
+        star_4: "",
+        star_5: "",
+        grade: "",
+        price: "",
+        badge: "",
       },
       attachments: [],
       sheetVisible: false,
       typingMessage: null,
       messageText: "",
+      //  messages data
       messagesData: [
         {
           type: "sent",
@@ -332,35 +330,33 @@ export default {
     f7ready(() => {
       self.messagebar = f7.messagebar.get(self.$refs.messagebar.$el);
     });
-    //get info from interested helper page
-     myBus.on('changeChatInfo', data => {
+    //get information from interested helper page
+    myBus.on("changeChatInfo", (data) => {
       this.helpersInfo = data;
-      for(var i=0;i<self.messagesData.length;i++){
-        if(self.messagesData[i].type == 'received')
-        {
+      for (var i = 0; i < self.messagesData.length; i++) {
+        if (self.messagesData[i].type == "received") {
           self.messagesData[i].avatar = data.img;
           self.messagesData[i].name = data.name;
         }
       }
-    })
-    // get info from notification page
-    myBus.on('sendInfo',data => {
-      for(var i=0;i<self.helpers.length;i++){
-        if(self.helpers[i].name == data.name)
-        {
-          self.helpersInfo =self.helpers[i];
+    });
+    // get information from notification page
+    myBus.on("sendInfo", (data) => {
+      for (var i = 0; i < self.helpers.length; i++) {
+        if (self.helpers[i].name == data.name) {
+          self.helpersInfo = self.helpers[i];
         }
       }
-      for(var i=0;i<self.messagesData.length;i++){
-        if(self.messagesData[i].type == 'received')
-        {
+      for (var i = 0; i < self.messagesData.length; i++) {
+        if (self.messagesData[i].type == "received") {
           self.messagesData[i].avatar = self.helpersInfo.img;
           self.messagesData[i].name = self.helpersInfo.name;
         }
       }
-    })
+    });
   },
   methods: {
+    // First message
     isFirstMessage(message, index) {
       const self = this;
       const previousMessage = self.messagesData[index - 1];
@@ -373,6 +369,7 @@ export default {
         return true;
       return false;
     },
+    // Last message
     isLastMessage(message, index) {
       const self = this;
       const nextMessage = self.messagesData[index + 1];
@@ -385,6 +382,7 @@ export default {
         return true;
       return false;
     },
+    // Tail message
     isTailMessage(message, index) {
       const self = this;
       const nextMessage = self.messagesData[index + 1];
@@ -414,6 +412,7 @@ export default {
         self.attachments.splice(self.attachments.indexOf(image), 1);
       }
     },
+    // send message
     sendMessage() {
       const self = this;
       const text = self.messageText.replace(/\n/g, "<br>").trim();

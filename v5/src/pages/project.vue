@@ -203,7 +203,7 @@ export default {
         like_type: "",
         id: 2,
       },
-      // Content of lastest comment
+      // Content of latest comment
       latestComment: {
         name: "Jessi Briem",
         avatar:
