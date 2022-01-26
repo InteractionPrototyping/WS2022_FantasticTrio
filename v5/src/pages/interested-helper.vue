@@ -3,96 +3,66 @@
     <!-- Navbar area -->
     <f7-navbar title="Interested Helper" back-link="Back" style="font-size: 20px"></f7-navbar>
     <f7-block-title style="text-align:center;color:#263A68;font-weight:bold">
-      Get in touch with users through swipe lists
+      Swipe right on list to accept offer
     </f7-block-title>
-    <f7-list media-list>
-      <f7-list-item 
-        swipeout
-        v-for = "(item,index) in activeList"
-        v-bind:key="(item,index)"
-        v-bind:title='item.name'
-        v-bind:after="item.price" 
-        v-bind:subtitle="item.location"
-        v-bind:style="item.decline"
-        v-bind:text='item.grade'>
-        <!-- <f7-row>
-          <f7-col>
-            <f7-icon v-bind:f7="item.star_1" size="22px" class="star"></f7-icon>
-            <f7-icon v-bind:f7="item.star_2" size="22px" class="star"></f7-icon>
-            <f7-icon v-bind:f7="item.star_3" size="22px" class="star"></f7-icon>
-            <f7-icon v-bind:f7="item.star_4" size="22px" class="star"></f7-icon>
-            <f7-icon v-bind:f7="item.star_5" size="22px" class="star"></f7-icon>
-            <span style="font-size:18px">{{item.grade}}</span>
-          </f7-col>
-          <f7-col>
-          <f7-chip outline color="#263a68" style="padding:10px 40px; font-size: 20px">{{item.price}}</f7-chip> 
-          </f7-col>
-        </f7-row> -->
-        <template #media>
-          <img
-            v-bind:src="item.img"
-            width="80"
-            class="avatar"
-          />
-          <i class="badgeToimg" v-show="item.badge"></i>
-        </template>
-
-      <f7-swipeout-actions left>
-        <!-- accept button -->
-        <f7-swipeout-button
-          color="blue" 
-          sheet-open=".demo-sheet-swipe-to-close"
-          @click='getPrice(item);declineOthers(item)' 
-          v-show='item.isShow'
-        >
-          Accept
-        </f7-swipeout-button>
-        <!-- chat button -->
-        <f7-swipeout-button 
-          color="green" 
-          href='/chat/' 
-          @click="changeChatInfo(item)"
-        >
-          Chat
-        </f7-swipeout-button>
-      </f7-swipeout-actions>
-      <f7-swipeout-actions right>
-        <f7-swipeout-button 
-          color='red'
-          v-show='item.isShow' 
-          @click='declineThisHelper(item)'
-        >
-          Decline
-        </f7-swipeout-button>
-
-        <!-- <f7-swipeout-button 
-          delete 
-          overswipe 
-          confirm-text="Are you sure you want to delete this item?"
-        >
-          Decline
-        </f7-swipeout-button> -->
-      </f7-swipeout-actions>
-
-        <f7-sheet
-          class="demo-sheet-swipe-to-close"
-          style="height:auto; --f7-sheet-bg-color: #fff;"
-          swipe-to-close
-          backdrop
-        >
-          <f7-page-content>
-            <div class="display-flex padding justify-content-space-between align-items-center">
-              <div style="font-size: 18px"><b>Total:</b></div>
-              <div style="font-size: 22px"><b>{{price}}</b></div>
+    <div class="list media-list">
+        <ul>
+          <li class="swipeout" v-for="(item,index) in activeList" v-bind:key="(item,index)" v-bind:style="item.decline">
+            <!-- list content -->
+            <div class="item-content swipeout-content">
+              <div class="item-media" ><img v-bind:src="item.img" width="80" class="avatar" />
+              </div>
+              <div class="item-inner" >
+                <div class="item-title-row">
+                  <div class="item-title" style="font-size:25px">{{item.name}}</div>                
+                  <div class="item-after" style='font-size:20px;'>{{item.price}}</div>
+                </div>
+                <div class="item-subtitle" style="font-size:18px">{{item.location}}</div>
+                <div class="item-text">
+                  &#9733; {{item.grade}}
+                </div>
+              </div>
             </div>
-            <div class="padding-horizontal padding-bottom">
-              <f7-button large fill href="/explore/" >Make Payment</f7-button>
-            </div>
-          </f7-page-content>
-        </f7-sheet>
-
-      </f7-list-item>
-    </f7-list>
+            <!-- chat and call button list -->
+            <f7-row style="margin:10px 15px"> 
+              <f7-col>
+                <f7-button fill @click="changeChatInfo(item)" href='/chat/'>
+                    <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>
+                    CHAT
+                </f7-button>
+              </f7-col>
+              <f7-col>
+                <f7-button fill >
+                    <f7-icon f7="phone" size="20px" class="chat"></f7-icon>
+                    PHONE
+                </f7-button>
+              </f7-col>
+            </f7-row>
+            <!-- swipeout function -->
+            <f7-swipeout-actions left>
+              <!-- accept button -->
+              <f7-swipeout-button
+                color="blue" 
+                sheet-open=".demo-sheet-swipe-to-close"
+                @click='getPrice(item);declineOthers(item)' 
+                v-show='item.isShow'
+              >
+                Accept
+              </f7-swipeout-button>
+            </f7-swipeout-actions>
+            <!-- decline button -->
+            <f7-swipeout-actions right>
+              <f7-swipeout-button 
+                color='red'
+                v-show='item.isShow' 
+                @click='declineThisHelper(item)'
+              >
+                Decline
+              </f7-swipeout-button>
+            </f7-swipeout-actions>
+          </li>
+        </ul>
+    </div>
 
     <f7-list media-list>
       <f7-list-item 
@@ -196,6 +166,13 @@
   --f7-button-font-size: 25px;
   --f7-button-height: 50px;
 }
+.item-after{
+  font-size:20px;
+  color:#263A68;
+  border: 1px solid #263A68;
+  padding: 0px 30px;
+  border-radius: 20px;
+}
 </style>
 
 <script>
@@ -224,7 +201,7 @@ export default {
                   star_4: 'star_fill',
                   star_5: 'star',
                   grade: '4.1/5',
-                  price: '12€',
+                  price: '12 €',
                   badge: false,
                   request: "Audi A6's front brake pads are broken and need repair",
                   decline: '',
@@ -242,7 +219,7 @@ export default {
                   star_4: 'star_fill',
                   star_5: 'star_lefthalf_fill',
                   grade: '4.6/5',
-                  price: '10€',
+                  price: '10 €',
                   badge: false,
                   request: "Audi A6's front brake pads are broken and need repair",                  
                   decline: '',
@@ -260,7 +237,7 @@ export default {
                   star_4: 'star_fill',
                   star_5: 'star_fill',
                   grade: '4.9/5',
-                  price: '15€',
+                  price: '15 €',
                   badge: false,
                   request:"Audi A6's front brake pads are broken and need repair",
                   decline: '',
@@ -278,7 +255,7 @@ export default {
                   star_4: 'star_fill',
                   star_5: 'star_lefthalf_fill',
                   grade: '4.6/5',
-                  price: '10€',
+                  price: '10 €',
                   badge: false,
                   request:"Four walls of the bedroom need to be renovated and painted",
                   decline: '',
@@ -296,7 +273,7 @@ export default {
                   star_4: 'star_fill',
                   star_5: 'star_lefthalf_fill',
                   grade: '4.6/5',
-                  price: '10€',
+                  price: '18 €',
                   badge: false,
                   request:"Newly purchased IKEA nightstand needs to be assembled",
                   decline: '',
@@ -314,7 +291,7 @@ export default {
                   star_4: 'star_fill',
                   star_5: 'star_lefthalf_fill',
                   grade: '4.6/5',
-                  price: '10€',
+                  price: '20 €',
                   badge: false,
                   request:"Newly purchased IKEA nightstand needs to be assembled",
                   decline: '',
