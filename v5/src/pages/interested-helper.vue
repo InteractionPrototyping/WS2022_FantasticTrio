@@ -21,12 +21,6 @@
             <span style="font-size:18px">{{item.grade}}</span>
           </f7-col>
           <f7-col>
-          <!-- In data-sheet attribute we specify CSS selector of sheet we need to open-->
-          <!-- <p><a class="button button-fill sheet-open" href="#" data-sheet=".my-sheet">{{item.price}}</a></p> -->
-          <!-- <p><f7-button fill sheet-open=".demo-sheet-swipe-to-close" @click='getPrice(item)'>
-            {{item.price}}
-            </f7-button>
-          </p> -->
           <f7-chip outline color="#263a68" style="padding:10px 40px; font-size: 20px">{{item.price}}</f7-chip> 
           </f7-col>
         </f7-row>
@@ -39,8 +33,6 @@
           <i class="badgeToimg" v-show="item.badge"></i>
         </template>
 
-
-
       <f7-sheet
           class="demo-sheet-swipe-to-close"
           style="height:auto; --f7-sheet-bg-color: #fff;"
@@ -49,29 +41,15 @@
         >
           <f7-page-content>
             <div class="display-flex padding justify-content-space-between align-items-center">
-              <div style="font-size: 18px"><b>Total:</b></div>
-              <div style="font-size: 22px"><b>{{price}}</b></div>
+              <div style="font-size: 30px"><b>Total:</b></div>
+              <div style="font-size: 35px"><b>{{price}}</b></div>
             </div>
             <div class="padding-horizontal padding-bottom">
-              <f7-button large fill href="/explore/" >Make Payment</f7-button>
+              <f7-button large fill href="/explore/" class="payment-button">Make Payment</f7-button>
             </div>
           </f7-page-content>
         </f7-sheet>
 
-<!-- <f7-row>
-  <f7-col>
-    <f7-list-button >
-      <f7-icon f7="chat_bubble_fill" size="20px" class="chat"></f7-icon>
-      CHAT
-    </f7-list-button>
-  </f7-col>
-  <f7-col>
-    <f7-list-button >
-      <f7-icon f7="phone_fill" size="20px" class="call"></f7-icon>
-      CALL
-    </f7-list-button>
-  </f7-col>
-</f7-row> -->
         <f7-row>
           <f7-col>
             <f7-button fill style="margin-bottom: 5px; background-color: #6FAAE0" href="/chat/" @click="deleteHelperBadge(item);changeChatInfo(item)">
@@ -105,6 +83,7 @@
   </f7-page>
 </template>
 
+<!--Style-->
 <style scoped>
 .avatar{
   border-radius: 50%; 
@@ -122,8 +101,10 @@
   --f7-button-font-size: 20px;
   --f7-button-height: 30px;
 }
-
-
+.payment-button{
+  --f7-button-font-size: 25px;
+  --f7-button-height: 50px;
+}
 </style>
 
 <script>

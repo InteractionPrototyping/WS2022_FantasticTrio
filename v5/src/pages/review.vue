@@ -23,8 +23,7 @@
     </f7-block>
 
   <!--Drop down menu for filtering the reviews-->
-  <!-- ToDo: Adjusting the color-->
-  <!-- Menu item with dropdown -->
+  <!-- Menu item with dropdown option-->
      <div class="menu">
       <div class="menu-inner">
         <div class="menu-item menu-item-dropdown" style="background-color: #468DCE;">
@@ -42,10 +41,10 @@
       </div>
      </div>
 
-
     <!--Individual reviews arranged in block-form as a media-list-->
     <f7-block>
     <f7-list media-list>
+      <!--first comment-->
       <f7-list-item
         link="#" 
         title="Jason Miller"
@@ -59,6 +58,7 @@
           </template>
       </f7-list-item>
 
+      <!--second comment-->
       <f7-list-item
         link="#" 
         title="Hans Wenzel"
@@ -72,6 +72,7 @@
           </template>
       </f7-list-item>
 
+      <!--third comment-->
       <f7-list-item
         link="#" 
         title="Jessi Briem"
@@ -85,6 +86,7 @@
           </template>
       </f7-list-item>
 
+      <!--fourth comment-->
       <f7-list-item
         link="#" 
         title="Christina Seefelder"
@@ -98,6 +100,7 @@
           </template>
       </f7-list-item>
 
+      <!--fifth comment-->
       <f7-list-item
         link="#" 
         title="Eric Hofmeister"
@@ -112,11 +115,11 @@
       </f7-list-item>
     </f7-list>
     </f7-block>
-
   </f7-page>
 </template>
-<style scoped>
 
+<!--Style-->
+<style scoped>
 .overall-score{
   font-size: 35px;
   margin: 0px;
@@ -124,8 +127,8 @@
 }
 .avatar{
   border-radius: 50%; 
-  width: 15vmin;
-   height: 15vmin; 
+  width: 20vmin;
+   height: 20vmin; 
    object-fit: cover; 
    object-position: center;
 }
@@ -143,7 +146,6 @@ div{
   --f7-list-item-subtitle-font-size: 25px;
   --f7-list-item-text-font-size: 18px;
 }
-
 </style>
 
 
