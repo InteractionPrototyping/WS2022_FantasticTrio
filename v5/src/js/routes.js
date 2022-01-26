@@ -9,7 +9,6 @@ import InterestedHelper from '../pages/interested-helper.vue';
 import Chat from '../pages/chat.vue';
 // import all vue documents for new pages to this document
 import AddRequestPage from '../pages/add-request.vue';
-import SuitableHelperPage from '../pages/suitable-helper.vue';
 import MyRequestPage from '../pages/my-request.vue';
 import ToastPage from '../pages/components from f7/toast.vue';
 import ChooseRequestFunctionPage from '../pages/choose-request-function.vue';
@@ -39,12 +38,6 @@ var routes = [
     path: '/add-request/',
     component: AddRequestPage,
     name: 'add-request',
-  },
-  // set route for suitable-helper page
-  {
-    path: '/suitable-helper/',
-    component: SuitableHelperPage,
-    name:'suitable-helper',
   },
   // set route for my-request page
   {
