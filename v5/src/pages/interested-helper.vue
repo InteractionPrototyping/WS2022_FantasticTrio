@@ -296,7 +296,7 @@ export default {
           }
         }
       }
-      f7.dialog.alert("Do you want to pay for it?");
+      f7.dialog.confirm("Do you want to pay it right now?");
     },
     // decline an offer
     declineThisHelper(item) {
