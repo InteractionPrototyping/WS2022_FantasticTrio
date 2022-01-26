@@ -255,6 +255,7 @@ export default {
     getPrice(item) {
       this.price = item.price;
     },
+    // click accept button to decline other helpers
     declineOthers(item) {
       var self = this;
 
@@ -268,6 +269,7 @@ export default {
       };
       f7.dialog.alert('Do you want to pay for it?');
     },
+    //click decline button to decline this helper
     declineThisHelper(item) {
       var self = this;
       for(var i=0;i<self.helpers.length;i++){
