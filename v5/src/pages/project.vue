@@ -36,14 +36,14 @@
     <f7-block >
       <h2 style="text-align: center; font-size: 30px" >{{getItem.title}}</h2>
       <p class="Content" style="font-size: 20px">{{getItem.text}}</p>
-      <!-- Description of Writer -->
+      <!-- Description of Author -->
       <h3 style="position: relative; top: 10px; font-size: 25px">Author</h3>
       <div style="position: absolute; bottom: 200px; right: 20px">
         <f7-icon v-bind:f7="getItem.like_type" size="25px" class="black_heart" @click="ChangeLike()"></f7-icon>
         <span style="position: relative; top: 5px; font-size: 20px"> {{getItem.likes}} </span>
       </div>
       <a class="link" href="/profile-helper/">
-      <f7-list inset media-list style="height: 100px; width: 350px">
+      <f7-list inset media-list style="height: 100px; position: relative; width: 325px">
         <f7-list-item v-bind:title="getItem.writer" text="Expert of car repair">
           <br>       
           <template #media>

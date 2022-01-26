@@ -27,9 +27,10 @@
       </f7-list-item>
     </f7-list>
   </f7-block>
-
   </f7-page>
 </template>
+
+<!--Style-->
 <style>
 .avatar{
   border-radius: 50%; 
@@ -54,8 +55,9 @@
   --f7-list-item-subtitle-font-size: 20px;
   --f7-list-item-text-font-size: 17px;
 }
-
 </style>
+
+<!--Dynamic functionalities-->
 <script>
 import myBus from '../js/myBus.js';
 

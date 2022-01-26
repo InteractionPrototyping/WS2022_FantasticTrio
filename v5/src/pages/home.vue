@@ -31,20 +31,22 @@
                 </div>
               </div>
             </div>
+            <!-- button to check offered price -->
+            <f7-row style="margin:10px 15px">
+              <f7-col>
+                <f7-button fill @click="checkHelper(item)" v-bind:href="item.link">
+                  <f7-icon size= "28px" class="material-icons status-icon" >
+                    price_check
+                  </f7-icon>
+                  INTERESTED ({{item.interested}})
+                </f7-button>
+              </f7-col>
+            </f7-row>
             <!-- swipeout function -->
             <div class="swipeout-actions-right">
               <a href="#" data-confirm="Are you sure you want to delete this request?"
                 class="swipeout-delete">Delete</a>
             </div>
-            <!-- button to check offered price -->
-            <a class="list-button" style="border-bottom:0.5px" @click="checkHelper(item)">
-              <a v-bind:href="item.link" style="font-weight:bold;">
-                <f7-icon size= "28px" class="material-icons status-icon" >
-                  price_check
-                </f7-icon>
-                INTERESTED ({{item.interested}})
-              </a>
-            </a>
           </li>
         </ul>
     </div>
@@ -105,6 +107,9 @@
   .navbar {
     font-size: 30px;
     height: 80px;
+  }
+  .button{
+  --f7-button-bg-color: #468DCE;
   }
 </style>
 

@@ -5,6 +5,7 @@
   <!-- Individual parts of the page are each structured as a media list-->
   <!-- Template from List View component: Media List -->
     <f7-list media-list class="person">
+      <!--Profile information-->
       <f7-list-item        
         title="Alice Manz"
         subtitle="&#8982; 86378, Munich" 
@@ -19,8 +20,8 @@
       <span style="font-size: 20px">&nbsp;4.6/5</span>
       </a>
       <br>
-      <!--Button "Ask for price"-->
-      <f7-button fill raised>Contact</f7-button>
+      <!--Button "Get in contact"-->
+      <f7-button fill raised href="/chat/" @click="changeChatInfo(item)">Contact</f7-button>
         <!--Profile picture-->
          <template #media>
             <img  class="avatar" src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
@@ -42,6 +43,7 @@
       >  
       <!-- show more button -->
       <br>
+      <f7-button fill raised>Show more</f7-button>
       </f7-list-item>
     </f7-list>
 
@@ -62,20 +64,22 @@
       <f7-list-item      
         title="PROFILE GALLERY"      
       >
-       <f7-row class="exploreCard">
+      <f7-row class="exploreCard">
       <f7-col width='50'>
         <f7-link>
           <f7-card class="demo-card-header-pic">
+            <!--Gallery header-->
             <f7-card-header
               class="no-border"
               valign="bottom"
               style="background-image:url(https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg)"
             >
             </f7-card-header>
+            <!--Gallery content-->
             <f7-card-content>
-              <!-- <p class="date">January 21, 2015</p> -->
               <strong>The fixing work is awesome!!!</strong>
             </f7-card-content>
+            <!--Gallery footer-->
             <f7-card-footer>
               <f7-link
                 href="/profile-helper/"
@@ -101,16 +105,18 @@
             <f7-col width='50'>
         <f7-link>
           <f7-card class="demo-card-header-pic">
+            <!--Gallery header-->
             <f7-card-header
               class="no-border"
               valign="bottom"
               style="background-image:url(https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg)"
             >
             </f7-card-header>
+            <!--Gallery content-->
             <f7-card-content>
-              <!-- <p class="date">January 21, 2015</p> -->
               <strong>Tip to keep you garden clean</strong>
             </f7-card-content>
+            <!--Gallery footer-->
             <f7-card-footer>
               <f7-link
                 href="/profile-helper/"
@@ -235,19 +241,23 @@ p{
   }
 </style>
 
+<!--Dynamic functionalities-->
 <script>
 import { f7Navbar, f7Page, f7Block, f7Button, f7, theme } from 'framework7-vue';
+import myBus from '../js/myBus.js'; 
 export default {
   components: {
     f7Navbar,
     f7Page,
     f7Block,
     f7Button,
+    f7, 
+    myBus, 
   },
   props: {
       f7route: Object,
       f7router: Object,
-    },
+  },
   methods: {  
     showToastIcon() {
       const self = this;
@@ -274,7 +284,11 @@ export default {
       // Destroy toasts when page removed
       if (self.toastIcon) self.toastIcon.destroy();
     },
-  },
-};
+    //click chat button to send helper info to chat page
+    changeChatInfo(item) {
+      myBus.emit('changeChatInfo', item)
+    },
+  }
+}
 </script>
 

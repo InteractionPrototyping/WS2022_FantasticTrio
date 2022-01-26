@@ -9,6 +9,7 @@
         <f7-row class="exploreCard">
       <f7-col width='50' v-for="item in activeList" v-bind:key="item">
         <f7-link href='/project/' @click="getId(item)">
+          <!--list consisting of several cards-->
           <f7-card class="demo-card-header-pic">
             <f7-card-header
               class="no-border"
@@ -17,9 +18,10 @@
             >
             </f7-card-header>
             <f7-card-content>
-              <!-- <p class="date">January 21, 2015</p> -->
+              <!--card content-->
               <strong>{{item.title}}</strong>
             </f7-card-content>
+            <!--card footer-->
             <f7-card-footer>
               <f7-link
                 href="/profile-helper/"
@@ -48,47 +50,6 @@
 
 <!--Style-->
 <style scoped>
-/* .col-50{
-  background: #fff;
-  text-align: center;
-  color: #000;
-  border: 1px solid #ddd;
-  padding: 5px;
-  margin-bottom: 16px;
-  font-size: 12px;
-  height: 210px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px  rgba(0, 0, 0, 0.4);
-}
-.person {
-  display: inline;
-  float: left;
-  padding: 3px;
-}
-.writer {
-  float: left;
-  font-size: 20px;
-}
-p{
-  margin: 0px;
-  padding: 0px;
-  height: 34px;
-  font-size: 20px;
-  font-family: var(--f7-font-family);
-}
-.black_heart {
-  display: inline;
-  float: right;
-  padding: 3px;
-}
-.follower {
-  float: right;
-  font-size: 20px;
-}
-.list{
-  --f7-list-item-title-text-color: #263A68;
-  --f7-list-item-title-font-size: 20px; 
-} */
 .demo-card-header-pic {
     margin:4px;
   }
@@ -127,6 +88,7 @@ p{
   }
 </style>
 
+<!--Dynamic functionalities-->
 <script>
 import { f7Button,f7 } from 'framework7-vue';
 import myBus from '../js/myBus.js';
