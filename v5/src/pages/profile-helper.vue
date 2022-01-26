@@ -20,7 +20,7 @@
       </a>
       <br>
       <!--Button "Ask for price"-->
-      <f7-button fill raised href="/chat/">Contact</f7-button>
+      <f7-button fill raised href="/chat/" @click="changeChatInfo(item)">Contact</f7-button>
         <!--Profile picture-->
          <template #media>
             <img  class="avatar" src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
@@ -237,17 +237,20 @@ p{
 
 <script>
 import { f7Navbar, f7Page, f7Block, f7Button, f7, theme } from 'framework7-vue';
+import myBus from '../js/myBus.js'; 
 export default {
   components: {
     f7Navbar,
     f7Page,
     f7Block,
     f7Button,
+    f7, //new
+    myBus, //new
   },
   props: {
       f7route: Object,
       f7router: Object,
-    },
+  },
   methods: {  
     showToastIcon() {
       const self = this;
@@ -274,7 +277,11 @@ export default {
       // Destroy toasts when page removed
       if (self.toastIcon) self.toastIcon.destroy();
     },
-  },
-};
+    //click chat button to send helper info to chat page
+    changeChatInfo(item) {
+      myBus.emit('changeChatInfo', item)
+    },
+  }
+}
 </script>
 
