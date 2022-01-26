@@ -15,19 +15,17 @@
         subtitle="&#8982; 86378, Munich"
         style="margin-bottom: 10px"
       >
-        <a class="link" href="/review/">
-          <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
-          <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
-          <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
-          <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
-          <f7-icon f7="star_lefthalf_fill" size="25px" class="star"></f7-icon>
-          <span style="font-size: 20px">&nbsp;4.6/5</span>
-        </a>
-        <br />
-        <!--Button "Get in contact"-->
-        <f7-button fill raised href="/chat/" @click="changeChatInfo(item)"
-          >Contact</f7-button
-        >
+      <a class="link" href="/review/">
+      <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
+      <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
+      <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
+      <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
+      <f7-icon f7="star_lefthalf_fill" size="25px" class="star"></f7-icon>
+      <span style="font-size: 20px">&nbsp;4.6/5</span>
+      </a>
+      <br>
+      <!--Button "Get in contact"-->
+      <f7-button fill raised href="/chat/" @click="changeChatInfo()">Contact</f7-button>
         <!--Profile picture-->
         <template #media>
           <img
@@ -260,6 +258,29 @@ export default {
     f7,
     myBus,
   },
+  data() {
+    return {
+      info:
+            {
+              name: 'Alice Manz',
+              img: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+              date: '10/12/2021',
+              location: '86378 Munich',
+              star_1: 'star_fill',
+              star_2: 'star_fill',
+              star_3: 'star_fill',
+              star_4: 'star_fill',
+              star_5: 'star_lefthalf_fill',
+              grade: '4.6/5',
+              price: '12 €',
+              badge: false,
+              request: "Audi A6's front brake pads are broken and need repair",
+              decline: '',
+              isShow:true,
+              keyword: 'Car repair',
+            },
+    }
+  },
   props: {
     f7route: Object,
     f7router: Object,
@@ -291,8 +312,8 @@ export default {
       if (self.toastIcon) self.toastIcon.destroy();
     },
     //click chat button to send helper info to chat page
-    changeChatInfo(item) {
-      myBus.emit("changeChatInfo", item);
+    changeChatInfo() {
+      myBus.emit('changeChatInfo', this.info)
     },
   },
 };
