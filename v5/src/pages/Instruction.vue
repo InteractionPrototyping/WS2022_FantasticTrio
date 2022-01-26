@@ -29,7 +29,7 @@
             >
             </f7-icon><br>
             <p class='instructionText'>
-                Get inspiration and explore some good ideas from other Craftsmen's work. 
+                Get inspired by finished projects of other users and get some good ideas.
             </p>
         </f7-swiper-slide>
         <f7-swiper-slide class="instruction">
@@ -44,7 +44,7 @@
             >
             </f7-icon><br>
             <p class='instructionText'>
-                Make contact with other users and craftsmen freely and exchange your ideas.
+                Get in touch with other users and craftsmen easily to exchange your ideas.
             </p>
         </f7-swiper-slide>
         <f7-swiper-slide class="instruction">
@@ -73,7 +73,7 @@
                         top:200px;
                         "
                 >
-                    Start your trip now
+                    Get help for your craft problem now.
                 </f7-link> 
         </f7-swiper-slide>
     </f7-swiper>
