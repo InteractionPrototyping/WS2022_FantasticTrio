@@ -2,8 +2,6 @@
   <f7-page name="project">
     <!-- Navbar area -->
     <f7-navbar title="Project" back-link="Back" style="font-size: 20px"></f7-navbar>
-
-
     <f7-block style="text-align: center" >
       <!-- Swiper for pictures -->
       <f7-swiper pagination >
@@ -208,6 +206,7 @@ export default {
       this.latestComment = data
            })    
   },
+
   methods:{
       addComment(){
               var nowDate = new Date();

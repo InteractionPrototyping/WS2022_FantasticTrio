@@ -1,3 +1,4 @@
 mitt.js
 import mitt from 'mitt'
-export default mitt()
+var getItem={};
+export default mitt();getItem;
