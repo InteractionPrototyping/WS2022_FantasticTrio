@@ -2,9 +2,12 @@
   <f7-page name="interested-helper">
     <!-- Navbar area -->
     <f7-navbar title="Interested Helper" back-link="Back" style="font-size: 20px"></f7-navbar>
+    
     <f7-block-title style="text-align:center;color:#263A68;font-weight:bold">
       Swipe to decline or accept the offer
     </f7-block-title>
+
+
     <div class="list media-list">
         <ul>
           <li class="swipeout" v-for="(item,index) in activeList" v-bind:key="(item,index)" v-bind:style="item.decline">
@@ -42,7 +45,7 @@
             <f7-swipeout-actions left>
               <!-- accept button -->
               <f7-swipeout-button
-                color="blue" 
+                color="green" 
                 sheet-open=".demo-sheet-swipe-to-close"
                 @click='getPrice(item);declineOthers(item)' 
                 v-show='item.isShow'
@@ -63,84 +66,6 @@
           </li>
         </ul>
     </div>
-
-    <f7-list media-list>
-      <f7-list-item 
-        v-for = "(item,index) in activeList"
-        v-bind:key="(item,index)"
-        v-bind:title='item.name'
-        v-bind:after="item.date" 
-        v-bind:text="item.location"
-        v-bind:style="item.decline">
-        <f7-row>
-          <f7-col>
-            <f7-icon v-bind:f7="item.star_1" size="22px" class="star"></f7-icon>
-            <f7-icon v-bind:f7="item.star_2" size="22px" class="star"></f7-icon>
-            <f7-icon v-bind:f7="item.star_3" size="22px" class="star"></f7-icon>
-            <f7-icon v-bind:f7="item.star_4" size="22px" class="star"></f7-icon>
-            <f7-icon v-bind:f7="item.star_5" size="22px" class="star"></f7-icon>
-            <span style="font-size:18px">{{item.grade}}</span>
-          </f7-col>
-          <f7-col>
-          <f7-chip outline color="#263a68" style="padding:10px 40px; font-size: 20px">{{item.price}}</f7-chip> 
-          </f7-col>
-        </f7-row>
-        <template #media>
-          <img
-            v-bind:src="item.img"
-            width="80"
-            class="avatar"
-          />
-          <i class="badgeToimg" v-show="item.badge"></i>
-        </template>
-
-      <f7-sheet
-          class="demo-sheet-swipe-to-close"
-          style="height:auto; --f7-sheet-bg-color: #fff;"
-          swipe-to-close
-          backdrop
-        >
-          <f7-page-content>
-            <div class="display-flex padding justify-content-space-between align-items-center">
-              <div style="font-size: 30px"><b>Total:</b></div>
-              <div style="font-size: 35px"><b>{{price}}</b></div>
-            </div>
-            <div class="padding-horizontal padding-bottom">
-              <f7-button large fill href="/explore/" class="payment-button">Make Payment</f7-button>
-            </div>
-          </f7-page-content>
-        </f7-sheet>
-
-        <f7-row>
-          <f7-col>
-            <f7-button fill style="margin-bottom: 5px; background-color: #6FAAE0" href="/chat/" @click="deleteHelperBadge(item);changeChatInfo(item)">
-              <f7-icon f7="chat_bubble" size="20px" class="chat"></f7-icon>
-              Chat
-            </f7-button>
-          </f7-col>
-          <f7-col>
-            <f7-button fill style="background-color: #6FAAE0">
-              <f7-icon f7="phone" size="20px" class="call"></f7-icon>
-              Call
-            </f7-button>
-          </f7-col>
-        </f7-row>
-        <f7-row>
-          <f7-col>
-            <f7-button fill style="margin-bottom: 5px; background-color: #42E374" sheet-open=".demo-sheet-swipe-to-close" @click='getPrice(item);declineOthers(item)' v-show='item.isShow'>
-              <f7-icon f7="checkmark" size="20px" class="chat" ></f7-icon>
-              Accept
-            </f7-button>
-          </f7-col>
-          <f7-col>
-            <f7-button fill style="background-color: #DC4722" v-show='item.isShow' @click='declineThisHelper(item)'>
-              <f7-icon f7="xmark" size="20px" class="call"></f7-icon>
-              Decline
-            </f7-button>
-          </f7-col>
-        </f7-row>
-      </f7-list-item>
-    </f7-list>
   </f7-page>
 </template>
 
@@ -161,7 +86,6 @@
 .button{
   --f7-button-font-size: 20px;
   --f7-button-height: 30px;
-  --f7-button-bg-color: #468DCE;
 }
 .payment-button{
   --f7-button-font-size: 25px;
@@ -326,14 +250,6 @@ export default {
     //click chat button to send helper info to chat page
     changeChatInfo(item) {
       myBus.emit('changeChatInfo', item)
-    },
-    //delete helper's badge
-    deleteHelperBadge(item) {
-      if (item.badge == true){      
-        item.badge = false;
-        myBus.emit('deleteHelperBadge',item.badge)
-        document.getElementById('badgeOnTab').innerHTML= "1"    
-      }
     },
     // get price info from helper list
     getPrice(item) {

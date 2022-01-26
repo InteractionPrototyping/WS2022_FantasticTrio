@@ -73,14 +73,16 @@
               </div>
             </div>
             <!-- button to check offered price -->
-            <a class="list-button" style="border-bottom:0.5px" @click="checkHelper(item)">
-              <a v-bind:href="item.link" style="font-weight:bold;">
-                <f7-icon size= "28px" class="material-icons status-icon" >
-                  price_check
-                </f7-icon>
-                INTERESTED ({{item.interested}})
-              </a>
-            </a>
+            <f7-row style="margin:10px 15px">
+              <f7-col>
+                <f7-button fill @click="checkHelper(item)" v-bind:href="item.link">
+                  <f7-icon size= "28px" class="material-icons status-icon" >
+                    price_check
+                  </f7-icon>
+                  INTERESTED ({{item.interested}})
+                </f7-button>
+              </f7-col>
+            </f7-row>
           </li>
         </ul>
     </div>

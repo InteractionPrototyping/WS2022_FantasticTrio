@@ -3,9 +3,8 @@
     <f7-navbar title="Notifications" style="font-size: 20px"></f7-navbar>
     <f7-block>
 
-    <!-- Individual parts of the page are each structured as a media list-->
-    <f7-list media-list >
-      
+    <!-- notification list -->
+    <f7-list media-list >  
       <f7-list-item
         v-for = "item in list"
         v-bind:key="item"
@@ -23,14 +22,13 @@
               class="avatar"
             >            
             <i class="badgeToimg" v-show="item.badge"></i>
-          </template>
+        </template>
       </f7-list-item>
     </f7-list>
   </f7-block>
   </f7-page>
 </template>
 
-<!--Style-->
 <style>
 .avatar{
   border-radius: 50%; 
@@ -117,7 +115,6 @@ export default {
       }
       //send info to another page in order to show correspondent infomation
       myBus.emit('sendInfo',item);
-      console.log(item)
     }
   }
 }
