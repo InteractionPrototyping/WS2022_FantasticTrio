@@ -9,15 +9,7 @@
         title="Jessi Briem"
         subtitle="&#8982; 86378, Munich" 
         style="margin-bottom: 10px"     
-      >
-      <a class="link" href="/review/">
-        <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
-        <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
-        <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
-        <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
-        <f7-icon f7="star_lefthalf_fill" size="25px" class="star"></f7-icon>
-        <span style="font-size: 20px">&nbsp;4.6/5</span>
-      </a>   
+      > 
       <br>
       <!--Button "Edit my profile"-->
       <f7-button fill raised>Edit profile

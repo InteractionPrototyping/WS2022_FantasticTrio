@@ -105,12 +105,12 @@ data(){
       messageText: "",
       // initial comment data
       list:[
-              { name:"Michael Wenzel",
-                avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                date: "12:01",
-                text: "I like the article very much, it helped me a lot.",
-                id:1,
-                badge: true,
+              { name:"Alice Wilson",
+                avatar: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                date: "02/02/2022",
+                text: "Thanks,I will try it on my father's car.",
+                id:5,
+                badge: false,
               },
               { name:"Eric Bach",
                 avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -131,13 +131,6 @@ data(){
                 date: "25/11/2021",
                 text: "Cool idea! I will try it next time :)",
                 id:4,
-                badge: false,
-              },
-              { name:"Alice Wilson",
-                avatar: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                date: "21/11/2021",
-                text: "Thanks,I will try it on my father's car.",
-                id:5,
                 badge: false,
               },
               { name:"Hans Schmitt",
@@ -172,14 +165,6 @@ data(){
      this.list.unshift(myBus.newComment);
   },
   methods: {
-    //delete badge
-    deleteBadge() {
-      let self = this
-      self.list[1].badge = false;
-      myBus.emit('deleteBadge',self.list[1].badge)
-      document.getElementById('badgeOnTab').style.display='none';
-      document.getElementsByClassName('badgeToimg').style.display='none';  
-      },
     addComment(){
               var nowDate = new Date();
               let date = {

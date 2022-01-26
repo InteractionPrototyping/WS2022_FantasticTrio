@@ -9,6 +9,7 @@
       </f7-fab>
     </template>
 
+    <!-- request list title -->
     <f7-block-title style="text-align:center;color:#263A68;font-weight:bold">
       Check your request status here
     </f7-block-title>
@@ -36,7 +37,7 @@
                 class="swipeout-delete">Delete</a>
             </div>
             <!-- button to check offered price -->
-            <a class="list-button" style="border-bottom:0.5px" @click="checkHelper(item); requestInfo(item)">
+            <a class="list-button" style="border-bottom:0.5px" @click="checkHelper(item)">
               <a v-bind:href="item.link" style="font-weight:bold;">
                 <f7-icon size= "28px" class="material-icons status-icon" >
                   price_check
@@ -81,57 +82,7 @@
           </li>
         </ul>
     </div>
-   
-
-    
-    <!-- Hide initial content from template, change display property from "none" to "block" to show it -->
-    <f7-block style="display:none">
-      <f7-block-title>Navigation</f7-block-title>
-      <f7-list>
-        <f7-list-item link="/about/" title="About"></f7-list-item>
-        <f7-list-item link="/form/" title="Form"></f7-list-item>
-      </f7-list>
-
-      <f7-block-title>Modals</f7-block-title>
-      <f7-block strong>
-        <f7-row>
-          <f7-col width="50">
-            <f7-button fill popup-open="#my-popup">Popup</f7-button>
-          </f7-col>
-          <f7-col width="50">
-            <f7-button fill login-screen-open="#my-login-screen">Login Screen</f7-button>
-          </f7-col>
-        </f7-row>
-      </f7-block>
-
-      <f7-block-title>Panels</f7-block-title>
-      <f7-block strong>
-        <f7-row>
-          <f7-col width="50">
-            <f7-button class="request" fill panel-open="left">Left Panel</f7-button>
-          </f7-col>
-          <f7-col width="50">
-            <f7-button fill panel-open="right">Right Panel</f7-button>
-          </f7-col>
-        </f7-row>
-      </f7-block>
-
-      <f7-list>
-        <f7-list-item
-          title="Dynamic (Component) Route"
-          link="/dynamic-route/blog/45/post/125/?foo=bar#about"
-        ></f7-list-item>
-        <f7-list-item
-          title="Default Route (404)"
-          link="/load-something-that-doesnt-exist/"
-        ></f7-list-item>
-        <f7-list-item
-          title="Request Data & Load"
-          link="/request-and-load/user/123456/"
-        ></f7-list-item>
-      </f7-list>
-    </f7-block>
-    
+       
   </f7-page>
 </template>
 
@@ -240,58 +191,20 @@ export default {
   },
   mounted() {
     myBus.on("newRequest", data => {
-      console.log(data.date)
       this.list.unshift(data);
     });
   },
-  // onUnmounted() {
-  //   myBus.off('aMsg');
-  // },
 
   methods: {
-    requestInfo(item) {
-      myBus.emit('requestInfo', item);
-      console.log(item)
-    },
     // send number of helpers to "interested helper" page 
     checkHelper(item) {
       if (item.interested > 0) {
-        myBus.emit("helpers", item.interested);
+        myBus.emit("helpers", item.keyword);
       } else {
         // open Alert when no one offers price
         f7.dialog.alert('No one has offered you a price.');
 
       }
-    },
-    add: function() {
-      this.list.push(this.inputValue);
-    },
-    openVerticalButtons() {
-      f7.dialog
-        .create({
-          title: 'Choose one function',
-          buttons: [
-            {
-              text: 'Add a request',
-              bold: true,
-              close: true,
-              onClick: () => {
-                this.f7router.navigate({name:'add-request'})
-              }
-            },
-            {
-              text: 'View my requests',
-              bold: true,
-              close: true,
-              onClick: () => {
-                  this.f7router.navigate({name:'my-request'})
-                  }
-              
-            },
-          ],
-          verticalButtons: true,
-        })
-        .open();
     },
   },
 };

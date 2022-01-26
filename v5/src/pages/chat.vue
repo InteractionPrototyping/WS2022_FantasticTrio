@@ -176,6 +176,99 @@ import myBus from '../js/myBus.js';
 export default {
   data() {
     return {
+        //  helpers data
+        helpers: [
+                  {
+                    name: 'Lisa Wright',
+                    img: 'https://images.pexels.com/photos/1918246/pexels-photo-1918246.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                    date: '10/12/2021',
+                    location: '81549 Munich',
+                    star_1: 'star_fill',
+                    star_2: 'star_fill',
+                    star_3: 'star_fill',
+                    star_4: 'star_fill',
+                    star_5: 'star',
+                    grade: '4.1/5',
+                    price: '12€',
+                    badge: false,
+                    request: "Audi A6's front brake pads are broken and need repair",
+                  },
+                  {
+                    name: 'Jack Miller',
+                    img: 'https://images.pexels.com/photos/2691608/pexels-photo-2691608.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                    date: '13/12/2021',
+                    location: '81548 Munich',
+                    star_1: 'star_fill',
+                    star_2: 'star_fill',
+                    star_3: 'star_fill',
+                    star_4: 'star_fill',
+                    star_5: 'star_lefthalf_fill',
+                    grade: '4.6/5',
+                    price: '10€',
+                    badge: false,
+                    request: "Audi A6's front brake pads are broken and need repair",
+                  },
+                  {
+                    name: 'Eric Hofmeister',
+                    img: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                    date: '11/12/2021',
+                    location: '81550 Munich',
+                    star_1: 'star_fill',
+                    star_2: 'star_fill',
+                    star_3: 'star_fill',
+                    star_4: 'star_fill',
+                    star_5: 'star_fill',
+                    grade: '4.9/5',
+                    price: '15€',
+                    badge: false,
+                    request:"Audi A6's front brake pads are broken and need repair",
+                  },
+                  {
+                    name: 'Michael Wenzel',
+                    img: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                    date: '14/12/2021',
+                    location: '81551 Munich',
+                    star_1: 'star_fill',
+                    star_2: 'star_fill',
+                    star_3: 'star_fill',
+                    star_4: 'star_fill',
+                    star_5: 'star_lefthalf_fill',
+                    grade: '4.6/5',
+                    price: '10€',
+                    badge: true,
+                    request:"Four walls of the bedroom need to be renovated and painted",
+                  },
+                  {
+                    name: 'Laura Briem',
+                    img: 'https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                    date: '14/12/2021',
+                    location: '81551 Munich',
+                    star_1: 'star_fill',
+                    star_2: 'star_fill',
+                    star_3: 'star_fill',
+                    star_4: 'star_fill',
+                    star_5: 'star_lefthalf_fill',
+                    grade: '4.6/5',
+                    price: '10€',
+                    badge: false,
+                    request:"Newly purchased IKEA nightstand needs to be assembled",
+                  },
+                  {
+                    name: 'Helena See',
+                    img: 'https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                    date: '14/12/2021',
+                    location: '81551 Munich',
+                    star_1: 'star_fill',
+                    star_2: 'star_fill',
+                    star_3: 'star_fill',
+                    star_4: 'star_fill',
+                    star_5: 'star_lefthalf_fill',
+                    grade: '4.6/5',
+                    price: '10€',
+                    badge: false,
+                    request:"Newly purchased IKEA nightstand needs to be assembled",
+                  },
+        ],
         helpersInfo: {
                   name: '',
                   img: '',
@@ -239,8 +332,32 @@ export default {
     f7ready(() => {
       self.messagebar = f7.messagebar.get(self.$refs.messagebar.$el);
     });
+    //get info from interested helper page
      myBus.on('changeChatInfo', data => {
       this.helpersInfo = data;
+      for(var i=0;i<self.messagesData.length;i++){
+        if(self.messagesData[i].type == 'received')
+        {
+          self.messagesData[i].avatar = data.img;
+          self.messagesData[i].name = data.name;
+        }
+      }
+    })
+    // get info from notification page
+    myBus.on('sendInfo',data => {
+      for(var i=0;i<self.helpers.length;i++){
+        if(self.helpers[i].name == data.name)
+        {
+          self.helpersInfo =self.helpers[i];
+        }
+      }
+      for(var i=0;i<self.messagesData.length;i++){
+        if(self.messagesData[i].type == 'received')
+        {
+          self.messagesData[i].avatar = self.helpersInfo.img;
+          self.messagesData[i].name = self.helpersInfo.name;
+        }
+      }
     })
   },
   methods: {

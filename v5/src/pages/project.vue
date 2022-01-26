@@ -191,11 +191,11 @@ export default {
                 },
         title: '',
         latestComment:{
-                name:"Jessi Briem",
-                avatar: "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                date: "05/12/2021",
-                text: "I like the article very much, it helped me a lot.",
-                id:1,
+                name:"Alice Wilson",
+                avatar: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                date: "02/02/2022",
+                text: "Thanks,I will try it on my father's car.",
+                id:5,
         }
       }
   },

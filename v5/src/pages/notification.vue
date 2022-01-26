@@ -4,87 +4,25 @@
     <f7-block>
 
     <!-- Individual parts of the page are each structured as a media list-->
-    <!-- Template from List View component: Media List -->
-    <f7-list media-list>
+    <f7-list media-list >
       
       <f7-list-item
-        link="/comment/" 
-        title="Michael Wenzel"
-        after="12:01"
-        subtitle="...made a comment"
+        v-for = "item in list"
+        v-bind:key="item"
+        v-bind:link="item.link" 
+        v-bind:title="item.name"
+        v-bind:after="item.time"
+        v-bind:subtitle="item.info"
+        @click = 'sendInfo(item)'
       >
         <!--Profile picture-->
         <template #media>
             <img
-              src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              width="40"
-              class="avatar"
-            />
-            <i class="badgeToimg" v-show="statusOfBadge"></i>
-          </template>
-      </f7-list-item>
-      <f7-list-item
-        link="/interested-helper/" 
-        title="Eric Hofmeister"
-        after="16:43"
-        subtitle="...offered you a price"
-      >
-        <!--Profile picture-->
-        <template #media>
-            <img
-              src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              v-bind:src="item.img"
               width="40"
               class="avatar"
             >            
-            <i class="badgeToimg" v-show="statusOfHelperBadge"></i>
-          </template>
-      </f7-list-item>
-      <f7-list-item
-        link="#" 
-        title="Laura Briem"
-        after="17:21"
-        subtitle="...sent you a message"
-      >
-        <!--Profile picture-->
-        <template #media>
-            <img
-              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              width="40"
-              class="avatar"
-            />
-            <!-- <i class="badgeToimg"></i> -->
-        </template>
-      </f7-list-item>
-      <f7-list-item
-        link="#" 
-        title="Helena See"
-        after="Yesterday"
-        subtitle="...made a comment"
-      >
-      <!--Badge to indicate unread message-->
-      <!--ToDo: Correct positioning of the badge-->
-        <!--Profile picture-->
-        <template #media>
-            <img
-              src="https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              width="40"
-              class="avatar"
-            />
-          </template>
-      </f7-list-item>
-      <f7-list-item
-        link="/comment/" 
-        title="Alice Wilson"
-        after="21/11/2021"
-        subtitle="...made a comment"
-      >
-        <!--Profile picture-->
-        <template #media>
-            <img
-              src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              width="40"
-              class="avatar"  
-            />
+            <i class="badgeToimg" v-show="item.badge"></i>
           </template>
       </f7-list-item>
     </f7-list>
@@ -116,9 +54,6 @@
   --f7-list-item-subtitle-font-size: 20px;
   --f7-list-item-text-font-size: 17px;
 }
-/* .color-green {
-  display:none;
-} */
 
 </style>
 <script>
@@ -127,17 +62,61 @@ import myBus from '../js/myBus.js';
 export default {
   data() {
     return {
-      statusOfBadge: true,
-      statusOfHelperBadge: true,
+      list:[
+        {
+          img:'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+          name:'Michael Wenzel',
+          time:'16:43',
+          info: '...offered you a price',
+          badge: true,
+          link: '/interested-helper/',
+          keyword: 'Paint wall',
+        },
+        {
+          img:'https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+          name:'Laura Briem',
+          time:'17:21',
+          info: '...sent you a message',
+          badge: true,
+          link: '/chat/',
+        },
+        {
+          img:'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+          name:'Alice Wilson',
+          time:'02/02/2022',
+          info: '...made a comment',
+          badge: false,
+          link: '/comment/',
+        },
+        {
+          img:'https://images.pexels.com/photos/1918246/pexels-photo-1918246.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+          name:'Lisa Wright',
+          time:'10/12/2021',
+          info: '...offered you a price',
+          badge: false,
+          link: '/interested-helper/',
+          keyword: 'Car repair',
+        },
+      ]
     }
   },
-  mounted() {
-    myBus.on('deleteBadge', data => {
-      this.statusOfBadge = data
-    });
-    myBus.on('deleteHelperBadge', data => {
-      this.statusOfHelperBadge = data
-    })
+  methods: {
+    sendInfo(item) {
+      //delete badge
+      item.badge = false;
+      var self = this;
+      self.badge = self.list.filter(el => {
+          return el.badge === true
+       });
+      var numOfBadge = self.badge.length;
+      document.getElementById('badgeOnTab').innerHTML= numOfBadge;
+      if (document.getElementById('badgeOnTab').innerHTML == '0'){
+        document.getElementById('badgeOnTab').style.display='none';
+      }
+      //send info to another page in order to show correspondent infomation
+      myBus.emit('sendInfo',item);
+      console.log(item)
+    }
   }
 }
 </script>

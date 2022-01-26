@@ -2,34 +2,15 @@
   <f7-page name="interested-helper">
     <!-- Navbar area -->
     <f7-navbar title="Interested Helper" back-link="Back" style="font-size: 20px"></f7-navbar>
-    <!-- Helper's information -->
 
-    <!-- <div class="block-title">Request Info</div> -->
-    <!-- <div class="list media-list inset">
-        <ul>
-          <li>
-            <a class=" item-content">
-              <div class="item-media"><img v-bind:src="requestInfo.img"
-                  width="44" height='44' />
-                  </div>
-              <div class="item-inner">
-                <div class="item-title-row">
-                  <div class="item-title">{{requestInfo.title}}</div>
-                </div>
-                <div class="item-subtitle">{{requestInfo.date}}</div>
-              </div>
-            </a>
-          </li>
-        </ul>
-    </div> -->
-          
     <f7-list media-list>
       <f7-list-item 
-        v-for = "item in helpers"
-        v-bind:key="item"
+        v-for = "(item,index) in activeList"
+        v-bind:key="(item,index)"
         v-bind:title='item.name'
         v-bind:after="item.date" 
-        v-bind:text="item.location">
+        v-bind:text="item.location"
+        v-bind:style="item.decline">
         <f7-row>
           <f7-col>
             <f7-icon v-bind:f7="item.star_1" size="22px" class="star"></f7-icon>
@@ -42,10 +23,11 @@
           <f7-col>
           <!-- In data-sheet attribute we specify CSS selector of sheet we need to open-->
           <!-- <p><a class="button button-fill sheet-open" href="#" data-sheet=".my-sheet">{{item.price}}</a></p> -->
-          <p><f7-button fill sheet-open=".demo-sheet-swipe-to-close" @click='getPrice(item)'>
+          <!-- <p><f7-button fill sheet-open=".demo-sheet-swipe-to-close" @click='getPrice(item)'>
             {{item.price}}
             </f7-button>
-          </p>
+          </p> -->
+          <f7-chip outline color="#263a68" style="padding:10px 40px;">{{item.price}}</f7-chip> 
           </f7-col>
         </f7-row>
         <template #media>
@@ -56,7 +38,6 @@
           />
           <i class="badgeToimg" v-show="item.badge"></i>
         </template>
-
 
 
 
@@ -72,7 +53,7 @@
               <div style="font-size: 22px"><b>{{price}}</b></div>
             </div>
             <div class="padding-horizontal padding-bottom">
-              <f7-button large fill href="/">Make Payment</f7-button>
+              <f7-button large fill href="/explore/" >Make Payment</f7-button>
             </div>
           </f7-page-content>
         </f7-sheet>
@@ -102,6 +83,20 @@
             <f7-button fill style="background-color: #6FAAE0">
               <f7-icon f7="phone" size="20px" class="call"></f7-icon>
               Call
+            </f7-button>
+          </f7-col>
+        </f7-row>
+        <f7-row>
+          <f7-col>
+            <f7-button fill style="margin-bottom: 5px; background-color: #6FAAE0" sheet-open=".demo-sheet-swipe-to-close" @click='getPrice(item);declineOthers(item)' v-show='item.isShow'>
+              <f7-icon f7="checkmark" size="20px" class="chat" ></f7-icon>
+              Accept
+            </f7-button>
+          </f7-col>
+          <f7-col>
+            <f7-button fill style="background-color: #6FAAE0" v-show='item.isShow' @click='declineThisHelper(item)'>
+              <f7-icon f7="xmark" size="20px" class="call"></f7-icon>
+              Decline
             </f7-button>
           </f7-col>
         </f7-row>
@@ -142,17 +137,8 @@ export default {
   },
   data() {
     return {
-      requestInfo: {
-                title:"",
-                keyword: '',
-                address: '',
-                date:'',
-                text: '',
-                img: "",
-                interested: '',
-                link:''
-      },
-      // inittial helper data
+      sheetOpened: false,
+      //  helpers data
       helpers: [
                 {
                   name: 'Lisa Wright',
@@ -167,6 +153,10 @@ export default {
                   grade: '4.1/5',
                   price: '12€',
                   badge: false,
+                  request: "Audi A6's front brake pads are broken and need repair",
+                  decline: '',
+                  isShow:true,
+                  keyword: 'Car repair',
                 },
                 {
                   name: 'Jack Miller',
@@ -181,6 +171,10 @@ export default {
                   grade: '4.6/5',
                   price: '10€',
                   badge: false,
+                  request: "Audi A6's front brake pads are broken and need repair",                  
+                  decline: '',
+                  isShow: true,
+                  keyword: 'Car repair',
                 },
                 {
                   name: 'Eric Hofmeister',
@@ -194,7 +188,11 @@ export default {
                   star_5: 'star_fill',
                   grade: '4.9/5',
                   price: '15€',
-                  badge: true,
+                  badge: false,
+                  request:"Audi A6's front brake pads are broken and need repair",
+                  decline: '',
+                  isShow: true,
+                  keyword: 'Car repair',
                 },
                 {
                   name: 'Michael Wenzel',
@@ -209,6 +207,10 @@ export default {
                   grade: '4.6/5',
                   price: '10€',
                   badge: false,
+                  request:"Four walls of the bedroom need to be renovated and painted",
+                  decline: '',
+                  isShow: true,
+                  keyword: 'Paint wall',
                 },
                 {
                   name: 'Laura Briem',
@@ -223,6 +225,10 @@ export default {
                   grade: '4.6/5',
                   price: '10€',
                   badge: false,
+                  request:"Newly purchased IKEA nightstand needs to be assembled",
+                  decline: '',
+                  isShow: true,
+                  keyword: 'Assemble furniture',
                 },
                 {
                   name: 'Helena See',
@@ -237,34 +243,34 @@ export default {
                   grade: '4.6/5',
                   price: '10€',
                   badge: false,
-                },
-                {
-                  name: 'Sarah Müller',
-                  img: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                  date: '14/12/2021',
-                  location: '81551 Munich',
-                  star_1: 'star_fill',
-                  star_2: 'star_fill',
-                  star_3: 'star_fill',
-                  star_4: 'star_fill',
-                  star_5: 'star_lefthalf_fill',
-                  grade: '4.6/5',
-                  price: '10€',
-                  badge: false,
+                  request:"Newly purchased IKEA nightstand needs to be assembled",
+                  decline: '',
+                  isShow: true,
+                  keyword: 'Assemble furniture',
                 },
       ],
       price: '',
+      initialHelpers: [],
+      keyword: '',
     }
   },
   mounted() {
+    var self = this;
+    // get different numbers of helpers
     myBus.on("helpers", data => {
-      let num = parseInt(data);
-      this.helpers.splice(num,7 - num);
+      self.keyword = data;
     });
-    myBus.on('requestInfo',data => {
-      this.requestInfo = data;
+    //get info from notification page
+    myBus.on('sendInfo', data => {      
+      self.keyword = data.keyword;
+      self.activeList.badge === data.badge;
     });
-  },
+    },
+    computed: {
+      activeList() {
+        return this.helpers.filter((item) => item.keyword == this.keyword)
+      }
+    },
   methods: {
     //click chat button to send helper info to chat page
     changeChatInfo(item) {
@@ -272,18 +278,36 @@ export default {
     },
     //delete helper's badge
     deleteHelperBadge(item) {
-      item.badge = false;
-      myBus.emit('deleteHelperBadge',item.badge)
-      console.log(item.badge)
-      document.getElementById('badgeOnTab').innerHTML= "1"
-    },
-    // send request info to home page
-    payment() {
-      myBus.emit('payment', requestInfo);
+      if (item.badge == true){      
+        item.badge = false;
+        myBus.emit('deleteHelperBadge',item.badge)
+        document.getElementById('badgeOnTab').innerHTML= "1"    
+      }
     },
     // get price info from helper list
     getPrice(item) {
       this.price = item.price;
+    },
+    declineOthers(item) {
+      var self = this;
+
+      for(var i=0;i<self.helpers.length;i++){
+        if(self.helpers[i].keyword == item.keyword){
+          if(self.helpers[i].name !== item.name) {
+            self.helpers[i].decline = 'filter：gray; -moz-opacity:.3;opacity:0.3;';
+            self.helpers[i].isShow = false;
+          }
+        }
+      }
+    },
+    declineThisHelper(item) {
+      var self = this;
+      for(var i=0;i<self.helpers.length;i++){
+          if(self.helpers[i].name == item.name) {
+            self.helpers[i].decline = 'filter：gray; -moz-opacity:.3;opacity:0.3;';
+            self.helpers[i].isShow = false;
+          }
+      }
     }
   }
 
