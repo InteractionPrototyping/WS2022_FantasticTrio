@@ -14,7 +14,7 @@
       </f7-fab>
     </template>
     <!-- request list  -->
-    <f7-block-title style="text-align: center; font-size: 20px">
+    <f7-block-title style="text-align: center; font-size: 25px">
       Check your request status here
     </f7-block-title>
 

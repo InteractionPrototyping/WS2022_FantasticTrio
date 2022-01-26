@@ -16,7 +16,7 @@
 
     <!-- request list information -->
     <f7-block-title
-      style="text-align: center; color: #263a68; font-weight: bold"
+      style="text-align: center; color: #263a68; font-weight: bold; font-size: 20px"
     >
       Check your request status here
     </f7-block-title>
