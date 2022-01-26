@@ -14,7 +14,7 @@
             >
             </f7-icon><br>
             <p class='instructionText' >
-                Add request easily and find other Craftsmen to solve your problem with reasonable price.
+                Simply add a request and find craftsmen who will solve your problems at a reasonable price.
             </p>
         </f7-swiper-slide>
         <f7-swiper-slide class="instruction">
