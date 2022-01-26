@@ -161,6 +161,7 @@
 .button{
   --f7-button-font-size: 20px;
   --f7-button-height: 30px;
+  --f7-button-bg-color: #468DCE;
 }
 .payment-button{
   --f7-button-font-size: 25px;

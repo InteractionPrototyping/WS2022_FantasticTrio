@@ -108,6 +108,9 @@
     font-size: 30px;
     height: 80px;
   }
+  .button{
+  --f7-button-bg-color: #468DCE;
+  }
 </style>
 
 <script>
