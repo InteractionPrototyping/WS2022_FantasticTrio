@@ -11,7 +11,6 @@ import Chat from '../pages/chat.vue';
 import AddRequestPage from '../pages/add-request.vue';
 import MyRequestPage from '../pages/my-request.vue';
 import ToastPage from '../pages/components from f7/toast.vue';
-import ChooseRequestFunctionPage from '../pages/choose-request-function.vue';
 import AutocompletePage from '../pages/components from f7/autocomplete.vue';
 
 import RequestAndLoad from '../pages/request-and-load.vue';
@@ -49,11 +48,6 @@ var routes = [
   {
     path: '/toast/',
     component: ToastPage,
-  },
-  // set route for choose-request-function page
-  {
-    path: '/choose-request-function/',
-    component: ChooseRequestFunctionPage,
   },
   // set route for autocomplete page
   {
