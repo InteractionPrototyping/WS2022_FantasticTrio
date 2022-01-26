@@ -1,191 +1,197 @@
 <template>
   <f7-page name="profile-helper">
-    <f7-navbar title="Profile" back-link="Back" style="font-size: 20px"></f7-navbar>
+    <f7-navbar
+      title="Profile"
+      back-link="Back"
+      style="font-size: 20px"
+    ></f7-navbar>
 
-  <!-- Individual parts of the page are each structured as a media list-->
-  <!-- Template from List View component: Media List -->
+    <!-- Individual parts of the page are each structured as a media list-->
+    <!-- Template from List View component: Media List -->
     <f7-list media-list class="person">
       <!--Profile information-->
-      <f7-list-item        
+      <f7-list-item
         title="Alice Manz"
-        subtitle="&#8982; 86378, Munich" 
-        style="margin-bottom: 10px"     
+        subtitle="&#8982; 86378, Munich"
+        style="margin-bottom: 10px"
       >
-      <a class="link" href="/review/">
-      <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
-      <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
-      <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
-      <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
-      <f7-icon f7="star_lefthalf_fill" size="25px" class="star"></f7-icon>
-      <span style="font-size: 20px">&nbsp;4.6/5</span>
-      </a>
-      <br>
-      <!--Button "Get in contact"-->
-      <f7-button fill raised href="/chat/" @click="changeChatInfo(item)">Contact</f7-button>
+        <a class="link" href="/review/">
+          <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
+          <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
+          <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
+          <f7-icon f7="star_fill" size="25px" class="star"></f7-icon>
+          <f7-icon f7="star_lefthalf_fill" size="25px" class="star"></f7-icon>
+          <span style="font-size: 20px">&nbsp;4.6/5</span>
+        </a>
+        <br />
+        <!--Button "Get in contact"-->
+        <f7-button fill raised href="/chat/" @click="changeChatInfo(item)"
+          >Contact</f7-button
+        >
         <!--Profile picture-->
-         <template #media>
-            <img  class="avatar" src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="80" />
-          </template>
+        <template #media>
+          <img
+            class="avatar"
+            src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            width="80"
+          />
+        </template>
       </f7-list-item>
     </f7-list>
 
     <!--Media List for Skills-->
     <f7-list media-list class="skills">
-      <f7-list-item        
+      <f7-list-item
         title="SKILLS"
         subtitle="Car repair"
-        text="I am good at repairing cars."       
+        text="I am good at repairing cars."
       >
       </f7-list-item>
-      <f7-list-item
-        subtitle="Gardening"
-        text="I am good at gardening as well." 
-      >  
-      <!-- show more button -->
-      <br>
-      <f7-button fill raised>Show more</f7-button>
+      <f7-list-item subtitle="Gardening" text="I am good at gardening as well.">
+        <!-- show more button -->
+        <br />
+        <f7-button fill raised>Show more</f7-button>
       </f7-list-item>
     </f7-list>
 
     <!--Media List for Description-->
     <f7-list media-list class="description">
-      <f7-list-item        
+      <f7-list-item
         title="DESCRIPTION"
-        subtitle="Hello, I´m Alice. I am 34 years old and a qualified car mechanic."       
+        subtitle="Hello, I´m Alice. I am 34 years old and a qualified car mechanic."
       >
-      <!-- show more button -->
-      <br>
-      <f7-button fill raised>Show more</f7-button>
+        <!-- show more button -->
+        <br />
+        <f7-button fill raised>Show more</f7-button>
       </f7-list-item>
     </f7-list>
 
     <!--Media List for Profile Gallery-->
     <f7-list media-list class="projects">
-      <f7-list-item      
-        title="PROFILE GALLERY"      
-      >
-      <f7-row class="exploreCard">
-      <f7-col width='50'>
-        <f7-link>
-          <f7-card class="demo-card-header-pic">
-            <!--Gallery header-->
-            <f7-card-header
-              class="no-border"
-              valign="bottom"
-              style="background-image:url(https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg)"
-            >
-            </f7-card-header>
-            <!--Gallery content-->
-            <f7-card-content>
-              <strong>The fixing work is awesome!!!</strong>
-            </f7-card-content>
-            <!--Gallery footer-->
-            <f7-card-footer>
-              <f7-link
-                href="/profile-helper/"
-                icon-ios="f7:person_fill"
-                icon-aurora="f7:person_fill"
-                icon-md="material:person"
-              >
-              Alice
-              </f7-link>
-              <f7-link
-              >
-            <f7-icon
-            size="20px"
-            class="black_heart"
-            f7="suit_heart_fill"
-            ></f7-icon>
-              7
-              </f7-link>
-            </f7-card-footer>
-          </f7-card>
-        </f7-link>
-      </f7-col>
-            <f7-col width='50'>
-        <f7-link>
-          <f7-card class="demo-card-header-pic">
-            <!--Gallery header-->
-            <f7-card-header
-              class="no-border"
-              valign="bottom"
-              style="background-image:url(https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg)"
-            >
-            </f7-card-header>
-            <!--Gallery content-->
-            <f7-card-content>
-              <strong>Tip to keep you garden clean</strong>
-            </f7-card-content>
-            <!--Gallery footer-->
-            <f7-card-footer>
-              <f7-link
-                href="/profile-helper/"
-                icon-ios="f7:person_fill"
-                icon-aurora="f7:person_fill"
-                icon-md="material:person"
-              >
-              Alice
-              </f7-link>
-              <f7-link
-              >
-            <f7-icon
-            size="20px"
-            class="black_heart"
-            f7="suit_heart_fill"
-            ></f7-icon>
-              14
-              </f7-link>
-            </f7-card-footer>
-          </f7-card>
-        </f7-link>
-      </f7-col>
-    </f7-row>
-      <br>
+      <f7-list-item title="PROFILE GALLERY">
+        <f7-row class="exploreCard">
+          <f7-col width="50">
+            <f7-link>
+              <f7-card class="demo-card-header-pic">
+                <!--Gallery header-->
+                <f7-card-header
+                  class="no-border"
+                  valign="bottom"
+                  style="
+                    background-image: url(https://www.cashcarsbuyer.com/wp-content/uploads/2019/10/fixing-a-car.jpeg);
+                  "
+                >
+                </f7-card-header>
+                <!--Gallery content-->
+                <f7-card-content>
+                  <strong>The fixing work is awesome!!!</strong>
+                </f7-card-content>
+                <!--Gallery footer-->
+                <f7-card-footer>
+                  <f7-link
+                    href="/profile-helper/"
+                    icon-ios="f7:person_fill"
+                    icon-aurora="f7:person_fill"
+                    icon-md="material:person"
+                  >
+                    Alice
+                  </f7-link>
+                  <f7-link>
+                    <f7-icon
+                      size="20px"
+                      class="black_heart"
+                      f7="suit_heart_fill"
+                    ></f7-icon>
+                    7
+                  </f7-link>
+                </f7-card-footer>
+              </f7-card>
+            </f7-link>
+          </f7-col>
+          <f7-col width="50">
+            <f7-link>
+              <f7-card class="demo-card-header-pic">
+                <!--Gallery header-->
+                <f7-card-header
+                  class="no-border"
+                  valign="bottom"
+                  style="
+                    background-image: url(https://imgs.wantubizhi.com/upload/i_0/T1huMFdJZ3Y2V3VzVloxUEtCaExYZz09/3009539753x1910106365_26_0.jpg);
+                  "
+                >
+                </f7-card-header>
+                <!--Gallery content-->
+                <f7-card-content>
+                  <strong>Tip to keep you garden clean</strong>
+                </f7-card-content>
+                <!--Gallery footer-->
+                <f7-card-footer>
+                  <f7-link
+                    href="/profile-helper/"
+                    icon-ios="f7:person_fill"
+                    icon-aurora="f7:person_fill"
+                    icon-md="material:person"
+                  >
+                    Alice
+                  </f7-link>
+                  <f7-link>
+                    <f7-icon
+                      size="20px"
+                      class="black_heart"
+                      f7="suit_heart_fill"
+                    ></f7-icon>
+                    14
+                  </f7-link>
+                </f7-card-footer>
+              </f7-card>
+            </f7-link>
+          </f7-col>
+        </f7-row>
+        <br />
       </f7-list-item>
     </f7-list>
-
   </f7-page>
 </template>
 
 <!--Style-->
 <style scoped>
-.date{
+.date {
   float: left;
   font-size: 17px;
 }
-.avatar{
-  border-radius: 50%; 
+.avatar {
+  border-radius: 50%;
   width: 28vmin;
-   height: 28vmin; 
-   object-fit: cover; 
-   object-position: center;
+  height: 28vmin;
+  object-fit: cover;
+  object-position: center;
 }
-.person{
+.person {
   --f7-list-item-title-font-size: 30px;
   --f7-list-item-subtitle-font-size: 20px;
-  --f7-list-item-title-text-color: #2D4066;
+  --f7-list-item-title-text-color: #2d4066;
 }
-.button{
-  --f7-button-bg-color: #468DCE;
+.button {
+  --f7-button-bg-color: #468dce;
   --f7-button-font-size: 15px;
 }
-.skills{
+.skills {
   --f7-list-item-title-font-size: 25px;
-  --f7-list-item-title-text-color: #2D4066;
+  --f7-list-item-title-text-color: #2d4066;
   --f7-list-item-subtitle-font-size: 20px;
   --f7-list-item-text-font-size: 19px;
 }
-.description{
+.description {
   --f7-list-item-title-font-size: 25px;
-  --f7-list-item-title-text-color: #2D4066;
+  --f7-list-item-title-text-color: #2d4066;
   --f7-list-item-text-font-size: 20px;
   --f7-list-item-subtitle-font-size: 20px;
 }
-.projects{
+.projects {
   --f7-list-item-title-font-size: 25px;
-  --f7-list-item-title-text-color: #2D4066;
+  --f7-list-item-title-text-color: #2d4066;
 }
-p{
+p {
   margin: 0px;
   padding: 0px;
   height: 50px;
@@ -195,13 +201,13 @@ p{
 .black_heart {
   display: inline;
   float: right;
-  bottom:0px;
+  bottom: 0px;
 }
 .follower {
   float: right;
   font-size: 20px;
 }
-.gallery{
+.gallery {
   position: relative;
   right: 2px;
 }
@@ -212,53 +218,53 @@ p{
   margin: 10px;
 }
 .demo-card-header-pic {
-    margin:4px;
-  }
-  .demo-card-header-pic .card-header {
-    height: 40vw;
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-  }
-  .demo-card-header-pic .card-content-padding .date{
-    color: #8e8e93;
-  }
-  
-  .theme-dark .demo-facebook-card .card-footer {
-    background-color: transparent;
-  }
-  .exploreCard {
-    justify-content: space-evenly;
-  }
-  .card-content-padding {
-    padding:8px
-  }
-  .card-footer {
-    padding: 8px
-  }
-  .no-border {
-    padding: 8px
-  }
+  margin: 4px;
+}
+.demo-card-header-pic .card-header {
+  height: 40vw;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+.demo-card-header-pic .card-content-padding .date {
+  color: #8e8e93;
+}
+
+.theme-dark .demo-facebook-card .card-footer {
+  background-color: transparent;
+}
+.exploreCard {
+  justify-content: space-evenly;
+}
+.card-content-padding {
+  padding: 8px;
+}
+.card-footer {
+  padding: 8px;
+}
+.no-border {
+  padding: 8px;
+}
 </style>
 
 <!--Dynamic functionalities-->
 <script>
-import { f7Navbar, f7Page, f7Block, f7Button, f7, theme } from 'framework7-vue';
-import myBus from '../js/myBus.js'; 
+import { f7Navbar, f7Page, f7Block, f7Button, f7, theme } from "framework7-vue";
+import myBus from "../js/myBus.js";
 export default {
   components: {
     f7Navbar,
     f7Page,
     f7Block,
     f7Button,
-    f7, 
-    myBus, 
+    f7,
+    myBus,
   },
   props: {
-      f7route: Object,
-      f7router: Object,
+    f7route: Object,
+    f7router: Object,
   },
-  methods: {  
+  methods: {
     showToastIcon() {
       const self = this;
       // Create toast
@@ -269,7 +275,7 @@ export default {
               ? '<i class="f7-icons">paperplane_fill</i>'
               : '<i class="material-icons">send</i>',
           text: "User receives your request:)",
-          position: 'center',
+          position: "center",
           closeTimeout: 1500,
         });
       }
@@ -286,9 +292,9 @@ export default {
     },
     //click chat button to send helper info to chat page
     changeChatInfo(item) {
-      myBus.emit('changeChatInfo', item)
+      myBus.emit("changeChatInfo", item);
     },
-  }
-}
+  },
+};
 </script>
 
