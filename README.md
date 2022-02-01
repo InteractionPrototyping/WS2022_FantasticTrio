@@ -1,5 +1,5 @@
 # CRAFTIVE APP
-Browse App: http://192.168.178.34:3000/
+Browse App: https://interactionprototyping.github.io/WS2022_FantasticTrio/
 
 
 App code -> gh-pages branch
